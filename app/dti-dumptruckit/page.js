@@ -60,7 +60,6 @@ export default function DTI() {
   }
   return (
     <>
-
       <div className='container-fluid'>
         <div className='row'>
           <div className='col p-0'>
