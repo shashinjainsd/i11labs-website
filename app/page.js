@@ -227,14 +227,16 @@ export default function Home() {
 
       <div className='container py-lg-5 py-3 d-lg-block d-none'>
         <div className='row' data-aos="fade-up">
+
           <div className='col-lg-4 col-md-6 col-12 h-100'>
             <div style={{ borderRight: "1px solid  #C1D1E0" }}>
-              <p className={`${styles.para1}`}>DTI</p>
-              <p className={`${styles.para2}`}><b>D</b>ump<b>T</b>ruck<b>I</b>t</p>
-              <p className={`${styles.para3}`}>Seamless Fleet Management- Powered by AI</p>
-              <div className="pt-xl-5 pt-0"><button className="viewall ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink">Know More</Link></button></div>
+              <p className={`${styles.para1}`}>iFM</p>
+              <p className={`${styles.para2}`}><b>i</b>11 <b>F</b>leet <b>M</b>anagement</p>
+              <p className={`${styles.para3}`}>i11 Fleet Management Solutions by i11Labs</p>
+              <div className="pt-xl-5 pt-0"><button className="viewall ps-0"><Link href="/i11fleet" className="viewallvoiletlink">Know More</Link></button></div>
             </div>
           </div>
+          
 
           <div className='col-lg-4 col-md-6 col-12 h-100'>
             <div style={{ borderRight: "1px solid  #C1D1E0" }}>
@@ -246,17 +248,26 @@ export default function Home() {
           </div>
 
           <div className='col-lg-4 col-md-6 col-12 h-100'>
+            <div style={{ borderRight: "1px solid  #C1D1E0" }}>
+              <p className={`${styles.para1}`}>DTI</p>
+              <p className={`${styles.para2}`}><b>D</b>ump<b>T</b>ruck<b>I</b>t</p>
+              <p className={`${styles.para3}`}>Seamless Fleet Management- Powered by AI</p>
+              <div className="pt-xl-5 pt-0"><button className="viewall ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink">Know More</Link></button></div>
+            </div>
+          </div>
+
+          {/* <div className='col-lg-4 col-md-6 col-12 h-100'>
             <p className={`${styles.para1}`}>KWC</p>
             <p className={`${styles.para2}`}><b>K</b>now <b>W</b>hereabouts of <b>C</b>rew</p>
             <p className={`${styles.para3}`}>Monitor Your Crew's Whereabouts in Real Time</p>
             <div className="pt-xl-5 pt-4"><button className="viewall ps-0"><Link href="/know-whereabouts-of-crew" className="viewallvoiletlink">Know More</Link></button></div>
-          </div>
+          </div> */}
         </div>
 
         <div className='row py-lg-5 py-3' data-aos="fade-up">
           <div className='col-lg-4 col-md-6 col-12 text-end'>
-            <Link href="/dti-dumptruckit">
-              <Image src={DTI} className='img-fluid' width={278} height={268} alt='DumpTruckIt' title='DumpTruckIt' />
+            <Link href="/i11fleet">
+              <Image src={KWC} className='img-fluid' width={278} height={268} alt='i11Fleet' title='i11Fleet' />
             </Link>
           </div>
 
@@ -267,10 +278,16 @@ export default function Home() {
           </div>
 
           <div className='col-lg-4 col-md-6 col-12 text-end'>
+            <Link href="/dti-dumptruckit">
+              <Image src={DTI} className='img-fluid' width={278} height={268} alt='DumpTruckIt' title='DumpTruckIt' />
+            </Link>
+          </div>
+
+          {/* <div className='col-lg-4 col-md-6 col-12 text-end'>
             <Link href="/know-whereabouts-of-crew">
               <Image src={KWC} className='img-fluid' width={278} height={268} alt='Know Whereabouts of Crew' title='Know Whereabouts of Crew' />
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
 
