@@ -80,6 +80,15 @@
 }
 
 /* Why We Built Section */
+/* .whyWeBuiltSection {
+  padding: 2.5rem 0;
+  background: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+} */
+
 .whyWeBuiltSection {
   padding: 2.5rem 0;
   background: white;
@@ -87,6 +96,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  overflow: hidden; /* Add this to prevent horizontal scroll */
 }
 
 .redText {
@@ -103,12 +113,20 @@
   margin-right: 0.5rem;
 }
 
-.whyWeBuiltContainer {
+/* .whyWeBuiltContainer {
   width: 100%;
   max-width: 80%;
   margin: 0 auto;
   padding: 0 2rem;
   overflow: hidden;
+} */
+
+.whyWeBuiltContainer {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  overflow: hidden; /* Ensure container doesn't overflow */
 }
 
 .whyWeBuiltTitle {
@@ -131,6 +149,15 @@
 }
 
 /* Keep the exact flex layout from React component */
+/* .whyWeBuiltContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  gap: 1.5rem;
+} */
+
 .whyWeBuiltContent {
   display: flex;
   flex-direction: row;
@@ -138,11 +165,14 @@
   align-items: center;
   position: relative;
   gap: 1.5rem;
+  width: 100%; /* Ensure it takes full width of container */
+  max-width: 100%; /* Prevent overflow */
 }
 
 /* Pain Points Column - Keep exact positioning */
 .painPointsColumn {
   flex: 1;
+  min-width: 0; /* Allow flex item to shrink */
 }
 
 .painPointsHeading {
@@ -157,9 +187,9 @@
   color: var(--Black-color);
 }
 
-/* Solutions Column - Keep exact positioning */
 .solutionsColumn {
   flex: 1;
+  min-width: 0; /* Allow flex item to shrink */
 }
 
 .solutionsHeading {
@@ -219,6 +249,7 @@
 }
 
 /* Pain Point and Solution Items - Keep exact styling */
+
 .painPointItem,
 .solutionItem {
   display: flex;
@@ -233,6 +264,7 @@
   font-size: 1rem;
   color: var(--Black-color);
   white-space: nowrap;
+  max-width: 100%; /* Prevent items from overflowing */
 }
 
 /* Single line text - ensures no text wrapping */
@@ -297,6 +329,7 @@
   align-items: center;
   padding: 0 1rem;
   flex-shrink: 0;
+  min-width: fit-content; /* Ensure circle container doesn't shrink too much */
 }
 
 .circleBorder1 {
