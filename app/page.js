@@ -298,13 +298,13 @@ export default function Home() {
             <div className='col-lg-4 col-md-6 col-11 h-100 me-3'>
               <div className="card">
                 <div className="card-bodyies">
-                  <p className={`${styles.para1}`}>DTI</p>
-                  <p className={`${styles.para2}`}><b>D</b>ump<b>T</b>ruck<b>I</b>t</p>
-                  <p className={`${styles.para3}`}>Seamless Fleet Management- Powered by AI</p>
-                  <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink">Know More</Link></button></div>
+                  <p className={`${styles.para1}`}>iFM</p>
+                  <p className={`${styles.para2}`}><b>i</b>11 <b>F</b>leet <b>M</b>anagement</p>
+                  <p className={`${styles.para3}`}>i11 Fleet Management Solutions by i11Labs</p>
+                  <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/i11fleet" className="viewallvoiletlink">Know More</Link></button></div>
                 </div>
-                <Link href="/dti-dumptruckit">
-                  <Image src={DTI} className='pt-md-5 pt-4' width={278} height={268} alt='DumpTruckIt' title='DumpTruckIt' />
+                <Link href="/i11fleet">
+                  <Image src={KWC} className='pt-md-5 pt-4' width={278} height={268} alt='i11Fleet' title='i11Fleet' />
                 </Link>
               </div>
             </div>
@@ -326,6 +326,20 @@ export default function Home() {
             <div className='col-lg-4 col-md-6 col-11 h-100 me-3'>
               <div className="card">
                 <div className="card-bodyies">
+                  <p className={`${styles.para1}`}>DTI</p>
+                  <p className={`${styles.para2}`}><b>D</b>ump<b>T</b>ruck<b>I</b>t</p>
+                  <p className={`${styles.para3}`}>Seamless Fleet Management- Powered by AI</p>
+                  <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink">Know More</Link></button></div>
+                </div>
+                <Link href="/dti-dumptruckit">
+                  <Image src={DTI} className='pt-md-5 pt-4' width={278} height={268} alt='DumpTruckIt' title='DumpTruckIt' />
+                </Link>
+              </div>
+            </div>
+
+            {/* <div className='col-lg-4 col-md-6 col-11 h-100 me-3'>
+              <div className="card">
+                <div className="card-bodyies">
                   <p className={`${styles.para1}`}>KWC</p>
                   <p className={`${styles.para2}`}><b>K</b>now <b>W</b>hereabouts of <b>C</b>rew</p>
                   <p className={`${styles.para3}`}>Monitor Your Crew's Whereabouts in Real Time</p>
@@ -335,7 +349,7 @@ export default function Home() {
                   <Image src={KWC} className='pt-md-5 pt-4' width={278} height={268} alt='Know Whereabouts of Crew' title='Know Whereabouts of Crew' />
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
