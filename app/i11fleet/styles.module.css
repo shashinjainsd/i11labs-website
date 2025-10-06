@@ -90,7 +90,7 @@
 } */
 
 .whyWeBuiltSection {
-  padding: 2.5rem 0;
+  padding: 2rem 0;
   background: white;
   position: relative;
   display: flex;
@@ -125,7 +125,7 @@
   width: 100%;
   max-width: 90%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   overflow: hidden; /* Ensure container doesn't overflow */
 }
 
@@ -164,7 +164,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  gap: 1.5rem;
+  gap: 1rem;
   width: 100%; /* Ensure it takes full width of container */
   max-width: 100%; /* Prevent overflow */
 }
@@ -206,7 +206,7 @@
 .painPointsGrid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .painPointRowRight {
@@ -229,7 +229,7 @@
 .solutionsGrid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .solutionRowLeft {
@@ -254,14 +254,14 @@
 .solutionItem {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   background: white;
   border: 1px solid var(--Black-color);
-  padding: 1.25rem 2rem;
+  padding: 1rem 1.5rem;
   box-shadow: 2.44px 2.44px 14.62px 0px rgba(0, 0, 0, 0.25);
   width: fit-content;
   font-family: "Erode Regular";
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--Black-color);
   white-space: nowrap;
   max-width: 100%; /* Prevent items from overflowing */
@@ -274,20 +274,20 @@
 }
 
 .painIcon {
-  width: 2rem;
-  height: 2rem;
+  width: 1.75rem;
+  height: 1.75rem;
   background-color: #fecaca;
   color: #dc2626;
   border-radius: 50%;
-  padding: 0.5rem;
+  padding: 0.4rem;
   flex-shrink: 0;
 }
 
 .solutionIcon {
-  width: 2rem;
-  height: 2rem;
+  width: 1.75rem;
+  height: 1.75rem;
   border-radius: 50%;
-  padding: 0.5rem;
+  padding: 0.4rem;
   flex-shrink: 0;
 }
 
@@ -335,7 +335,7 @@
 .circleBorder1 {
   border: 1px solid #e5e7eb;
   border-radius: 50%;
-  padding: 0.5rem;
+  padding: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,7 +344,7 @@
 .circleBorder2 {
   border: 1px solid #d1d5db;
   border-radius: 50%;
-  padding: 0.6rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,7 +353,7 @@
 .circleBorder3 {
   border: 1px solid #d1d5db;
   border-radius: 50%;
-  padding: 3rem;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -365,8 +365,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   background: var(--Black-color);
   border-radius: 50%;
   display: flex;
@@ -377,27 +377,27 @@
 }
 
 .centerMessageIcon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 /* Responsive Design for Why We Built Section */
 @media only screen and (max-width: 1200px) {
   .whyWeBuiltContainer {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 
   .painPointItem,
   .solutionItem {
-    padding: 1.25rem 1.5rem;
-    font-size: 0.95rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .whyWeBuiltContent {
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .solutionsHeading {
@@ -413,63 +413,63 @@
 
   .painPointItem,
   .solutionItem {
-    font-size: 0.9rem;
-    padding: 1rem 1.25rem;
+    font-size: 0.8rem;
+    padding: 0.875rem 1.125rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .whyWeBuiltContainer {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 
   .whyWeBuiltTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .painPointItem,
   .solutionItem {
-    padding: 1rem 1.25rem;
-    font-size: 0.85rem;
+    padding: 0.875rem 1rem;
+    font-size: 0.8rem;
   }
 
   .circleBorder3 {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .centerIconCircle {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .centerMessageIcon {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1rem;
+    height: 1rem;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .whyWeBuiltSection {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 
   .whyWeBuiltTitle {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 
   .whyWeBuiltSubtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .painPointsHeading,
   .solutionsHeading {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .painPointItem,
   .solutionItem {
-    padding: 0.75rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.75rem 0.875rem;
+    font-size: 0.75rem;
   }
 
   .painIcon,
@@ -489,8 +489,8 @@
   }
 
   .centerMessageIcon {
-    width: 1rem;
-    height: 1rem;
+    width: 0.875rem;
+    height: 0.875rem;
   }
 }
 
