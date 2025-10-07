@@ -60,13 +60,13 @@ export default function Header() {
                                             </Link>
                                             <ul className={`dropdown-menu ps-3 ${isDropdownOpen.built ? 'show' : ''}`} aria-labelledby="navbarDropdown">
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/i11fleet" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>i11Fleet – Fleet Management</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/i11fleet" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>i11Fleet</Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/feeds-to-leads" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>FTL – Feeds To Leads</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/feeds-to-leads" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Feeds To Leads</Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/dti-dumptruckit" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>DTI – Dump Truck It</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/dti-dumptruckit" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Dump Truck It</Link>
                                                 </li>
                                                 {/* <li data-bs-dismiss="offcanvas" aria-current="page">
                                                     <Link className={`${styles.subheadercontent1} dropdown-item ms-2 pt-3`} href="/know-whereabouts-of-crew/" rel="noreferrer">KWC – Know Whereabout of Crew</Link>
@@ -88,20 +88,11 @@ export default function Header() {
                                                     <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/application-modernization/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Application Modernization</Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/meta-data-driven-applications/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Meta Data Driven Applications</Link>
-                                                </li>
-                                                <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/cloud-computing-infrastructure-solutions/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Cloud Computing and Infrastructure Solutions</Link>
-                                                </li>
-                                                <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/technology-consultation-strategy" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Technology Consultation and Strategy</Link>
-                                                </li>
-                                                <li data-bs-dismiss="offcanvas" aria-current="page">
                                                     <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/custom-software-development-integration/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Custom Software Development and Integration</Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 pt-3`} href="/how-we-serve-you/" rel="noreferrer">How We Serve You</Link>
-                                                </li>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/technology-consultation-strategy" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Technology Consultation and Strategy</Link>
+                                                </li>   
                                             </ul>
                                         </li>
                                         {/* <li className="nav-item navunderline py-2" data-bs-dismiss="offcanvas">
@@ -140,13 +131,13 @@ export default function Header() {
                                     </Link>
                                     <ul className={`dropdown-menu ${isDropdownOpen.built ? 'show' : ''}`} aria-labelledby="navbarDropdown">
                                         <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/i11fleet" ? styles.activeLink : ""}`} href="/i11fleet">i11Fleet – Fleet Management</Link>
+                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/i11fleet" ? styles.activeLink : ""}`} href="/i11fleet">i11Fleet</Link>
                                         </li>
                                         <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/feeds-to-leads" ? styles.activeLink : ""}`} href="/feeds-to-leads">FTL – Feeds To Leads</Link>
+                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/feeds-to-leads" ? styles.activeLink : ""}`} href="/feeds-to-leads">Feeds To Leads</Link>
                                         </li>
                                         <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/dti-dumptruckit" ? styles.activeLink : ""}`} href="/dti-dumptruckit">DTI – Dump Truck It</Link>
+                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/dti-dumptruckit" ? styles.activeLink : ""}`} href="/dti-dumptruckit">Dump Truck It</Link>
                                         </li>
                                         {/* <li className="centerheader">
                                             <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/know-whereabouts-of-crew/" ? styles.activeLink : ""}`} href="/know-whereabouts-of-crew/">KWC – Know Whereabout of Crew</Link>
@@ -174,21 +165,12 @@ export default function Header() {
                                             <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/application-modernization/" ? styles.activeLink : ""}`} href="/application-modernization/">Application Modernization</Link>
                                         </li>
                                         <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/meta-data-driven-applications/" ? styles.activeLink : ""}`} href="/meta-data-driven-applications/">Meta Data Driven Applications</Link>
-                                        </li>
-                                        <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/cloud-computing-infrastructure-solutions/" ? styles.activeLink : ""}`} href="/cloud-computing-infrastructure-solutions/">Cloud Computing and Infrastructure Solutions</Link>
-                                        </li>
-                                        <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/technology-consultation-strategy/" ? styles.activeLink : ""}`} href="/technology-consultation-strategy/">Technology Consultation and Strategy</Link>
-                                        </li>
-                                        <li className="centerheader">
                                             <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/custom-software-development-integration/" ? styles.activeLink : ""}`} href="/custom-software-development-integration/">Custom Software Development and Integration</Link>
                                         </li>
                                         <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/how-we-serve-you/" ? styles.activeLink : ""}`} href="/how-we-serve-you/">How We Serve You</Link>
-                                        </li>
-                                    </ul>
+                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/technology-consultation-strategy/" ? styles.activeLink : ""}`} href="/technology-consultation-strategy/">Technology Consultation and Strategy</Link>
+                                        </li>                                   
+                                   </ul>
                                 </li>
 
                                 <li className="nav-item">

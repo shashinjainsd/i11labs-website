@@ -15,7 +15,7 @@ import MobBnrimage2 from "../../public/images/home/new/know whereabouts crew her
 import MobBnrimage3 from "../../public/images/home/new/service offerings@2x.webp";
 import DTI from "../../public/images/home/new/DumpTruckIt.png";
 import FTL from "../../public/images/home/new/FeedsToLeads_1.png";
-import KWC from "../../public/images/home/new/Know Whereabouts of Crew.png";
+import i11 from "../../public/images/home/new/i11fleet.png";
 import React, { createRef } from "react";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -440,7 +440,7 @@ export default function Home() {
           </div>
           <div className="col-12 col-lg-5 py-2 pt-md-3 pt-2 pt-lg-0">
             <p className={`${styles.para} pt-md-4 pt-2`}>
-              Discover our innovative products designed to drive efficiency, enhance performance, and transform your business operations in the digital age.
+              We are your partner who listens, steps into shoes of the end user and then builds tech that actually works in the real world.
             </p>
           </div>
         </div>
@@ -450,16 +450,14 @@ export default function Home() {
         <div className='row' data-aos="fade-up">
 
           <div className='col-lg-4 col-md-6 col-12 h-100'>
-            <p className={`${styles.para1}`}>iFM</p>
-            <p className={`${styles.para2}`}><b>i</b>11 <b>F</b>leet <b>M</b>anagement</p>
+            <p className={`${styles.para1}`}>i11fleet</p>
             <p className={`${styles.para3}`}>i11 Fleet Management Solutions by i11Labs</p>
             <div className="pt-xl-5 pt-4"><button className="viewall ps-0"><Link href="/i11fleet" className="viewallvoiletlink">Know More</Link></button></div>
           </div>
 
           <div className='col-lg-4 col-md-6 col-12 h-100'>
             <div style={{ borderRight: "1px solid  #C1D1E0" }}>
-              <p className={`${styles.para1}`}>FTL</p>
-              <p className={`${styles.para2}`}><b>F</b>eeds <b>T</b>o <b>L</b>eads</p>
+              <p className={`${styles.para1}`}>Feeds To Leads</p>
               <p className={`${styles.para3}`}>Effortless Lead Generation- AI for Smarter Prospecting</p>
               <div className="pt-xl-3 pt-0"><button className="viewall ps-0"><Link href="/feeds-to-leads" className="viewallvoiletlink">Know More</Link></button></div>
             </div>
@@ -467,25 +465,17 @@ export default function Home() {
 
           <div className='col-lg-4 col-md-6 col-12 h-100'>
             <div style={{ borderRight: "1px solid  #C1D1E0" }}>
-              <p className={`${styles.para1}`}>DTI</p>
-              <p className={`${styles.para2}`}><b>D</b>ump<b>T</b>ruck<b>I</b>t</p>
+              <p className={`${styles.para1}`}>DumpTruckIt</p>
               <p className={`${styles.para3}`}>Seamless Fleet Management- Powered by AI</p>
               <div className="pt-xl-5 pt-0"><button className="viewall ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink">Know More</Link></button></div>
             </div>
           </div>
         </div>
 
-          {/* <div className='col-lg-4 col-md-6 col-12 h-100'>
-            <p className={`${styles.para1}`}>KWC</p>
-            <p className={`${styles.para2}`}><b>K</b>now <b>W</b>hereabouts of <b>C</b>rew</p>
-            <p className={`${styles.para3}`}>Monitor Your Crew's Whereabouts in Real Time</p>
-            <div className="pt-xl-5 pt-4"><button className="viewall ps-0"><Link href="/know-whereabouts-of-crew" className="viewallvoiletlink">Know More</Link></button></div>
-          </div> */}
-
         <div className='row py-lg-5 py-3' data-aos="fade-up">
           <div className='col-lg-4 col-md-6 col-12 text-end'>
-            <Link href="/know-whereabouts-of-crew">
-              <Image src={KWC} className='img-fluid' width={278} height={268} alt='Know Whereabouts of Crew' title='Know Whereabouts of Crew' />
+            <Link href="/i11fleet">
+              <Image src={i11} className='img-fluid' width={278} height={268} alt='i11Fleet' title='i11Fleet' />
             </Link>
           </div>
 
@@ -500,12 +490,6 @@ export default function Home() {
               <Image src={DTI} className='img-fluid' width={278} height={268} alt='DumpTruckIt' title='DumpTruckIt' />
             </Link>
           </div>
-
-          {/* <div className='col-lg-4 col-md-6 col-12 text-end'>
-            <Link href="/know-whereabouts-of-crew">
-              <Image src={KWC} className='img-fluid' width={278} height={268} alt='Know Whereabouts of Crew' title='Know Whereabouts of Crew' />
-            </Link>
-          </div> */}
         </div>
       </div>
 
@@ -516,13 +500,12 @@ export default function Home() {
             <div className='col-lg-4 col-md-6 col-11 h-100 me-3'>
               <div className="card">
                 <div className="card-bodyies">
-                  <p className={`${styles.para1}`}>DTI</p>
-                  <p className={`${styles.para2}`}><b>D</b>ump<b>T</b>ruck<b>I</b>t</p>
-                  <p className={`${styles.para3}`}>Seamless Fleet Management- Powered by AI</p>
-                  <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink">Know More</Link></button></div>
+                  <p className={`${styles.para1}`}>i11fleet</p>
+                  <p className={`${styles.para3}`}>Managing fleets is complex. Drivers, brokers, clients, deliveries—it all needs to work together. That’s where i11Fleet comes in.</p>
+                  <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/i11fleet" className="viewallvoiletlink">Know More</Link></button></div>
                 </div>
                 <Link href="/dti-dumptruckit">
-                  <Image src={DTI} className='pt-md-5 pt-4' width={278} height={268} alt='DumpTruckIt' title='DumpTruckIt' />
+                  <Image src={i11} className='pt-md-5 pt-4' width={278} height={268} alt='i11Fleet' title='i11Fleet' />
                 </Link>
               </div>
             </div>
@@ -531,7 +514,6 @@ export default function Home() {
               <div className="card">
                 <div className="card-bodyies">
                   <p className={`${styles.para1}`}>FTL</p>
-                  <p className={`${styles.para2}`}><b>F</b>eeds <b>T</b>o <b>L</b>eads</p>
                   <p className={`${styles.para3}`}>Effortless Lead Generation- AI for Smarter Prospecting</p>
                   <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/feeds-to-leads" className="viewallvoiletlink">Know More</Link></button></div>
                 </div>
@@ -544,13 +526,12 @@ export default function Home() {
             <div className='col-lg-4 col-md-6 col-11 h-100 me-3'>
               <div className="card">
                 <div className="card-bodyies">
-                  <p className={`${styles.para1}`}>KWC</p>
-                  <p className={`${styles.para2}`}><b>K</b>now <b>W</b>hereabouts of <b>C</b>rew</p>
-                  <p className={`${styles.para3}`}>Monitor Your Crew's Whereabouts in Real Time</p>
-                  <div className="pt-md-5 pt-4"><button className="viewall ps-0"><Link href="/know-whereabouts-of-crew" className="viewallvoiletlink">Know More</Link></button></div>
+                  <p className={`${styles.para1}`}>DTI</p>
+                  <p className={`${styles.para3}`}>Seamless Fleet Management- Powered by AI</p>
+                  <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink">Know More</Link></button></div>
                 </div>
-                <Link href="/know-whereabouts-of-crew">
-                  <Image src={KWC} className='pt-md-5 pt-4' width={278} height={268} alt='Know Whereabouts of Crew' title='Know Whereabouts of Crew' />
+                <Link href="/dti-dumptruckit">
+                  <Image src={DTI} className='pt-md-5 pt-4' width={278} height={268} alt='DumpTruckIt' title='DumpTruckIt' />
                 </Link>
               </div>
             </div>

@@ -59,13 +59,13 @@ export default function i11fleet() {
           <div className="col p-0">
             <div className={styles.heroSection}>
               <div className={styles.heroContent}>
-                <h1 className={styles.heroTitle}>
+                <h2 className={styles.heroTitle}>
                   Built to work. Built to last.
-                </h1>
-                <h1 className={styles.heroTitle}>
+                </h2>
+                <h2 className={styles.heroTitle}>
                   Designed for fleets that never
-                </h1>
-                <h1 className={styles.heroTitle}>slow down!</h1>
+                </h2>
+                <h2 className={styles.heroTitle}>slow down!</h2>
                 <p className={styles.heroSubtitle}>
                   Transform your fleet with intelligent automation, real-time
                   insights, and seamless communication - all in one powerful

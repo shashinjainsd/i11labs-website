@@ -32,9 +32,9 @@ export default function Footer() {
                     </div>
                     <div className="col-xl-3 col-lg-3 col-md-6 col-12 pt-4 pt-md-0">
                     <div className={`${style.footerheading}`}><Link href="/products" style={{textDecoration:"none", color:"#191E23"}}>Products</Link></div>
-                      <div className={`${style.footercontent} pt-3`}><Link href="/i11fleet" className={`${style.commonlink}`} >i11Fleet – Fleet Management</Link></div>
-                      <div className={`${style.footercontent} pt-3`}><Link href="/feeds-to-leads" className={`${style.commonlink}`} >FTL – Feeds To Leads</Link></div>
-                      <div className={`${style.footercontent} pt-3`}><Link href="/dti-dumptruckit" className={`${style.commonlink}`}>DTI – Dump Truck It</Link></div>
+                      <div className={`${style.footercontent} pt-3`}><Link href="/i11fleet" className={`${style.commonlink}`} >i11Fleet</Link></div>
+                      <div className={`${style.footercontent} pt-3`}><Link href="/feeds-to-leads" className={`${style.commonlink}`} >Feeds To Leads</Link></div>
+                      <div className={`${style.footercontent} pt-3`}><Link href="/dti-dumptruckit" className={`${style.commonlink}`}>Dump Truck It</Link></div>
                       {/* <div className={`${style.footercontent} pt-3`}><Link href="/know-whereabouts-of-crew" className={`${style.commonlink}`}>KWC – Know Whereabout of Crew</Link></div> */}
                     </div>
                     <div className="col-xl-7 col-lg-6 col-12 pt-4 pt-lg-0">
@@ -42,15 +42,11 @@ export default function Footer() {
                       <div className={`${style.footerheading}`}><Link href="/service-offerings" style={{textDecoration:"none", color:"#191E23"}}>Service Offerings</Link></div>
                         <div className="col-lg-6">
                           <div className={`${style.footercontent} pt-3`}><Link href="/ai-integration-development/" className={`${style.commonlink}`}>AI Integration and Development</Link></div>
-                          <div className={`${style.footercontent} pt-3`}><Link href="/application-modernization/" className={`${style.commonlink}`}>Application Modernization</Link></div>
-                          <div className={`${style.footercontent} pt-3`}><Link href="/meta-data-driven-applications/" className={`${style.commonlink}`} >Meta Data Driven Applications</Link></div>
-                          <div className={`${style.footercontent} pt-3`}><Link href="/cloud-computing-infrastructure-solutions/" className={`${style.commonlink}`}>Cloud Computing and Infrastructure Solutions</Link></div>
+                          <div className={`${style.footercontent} pt-3`}><Link href="/custom-software-development-integration/" className={`${style.commonlink}`} >Custom Software Development and Integration</Link></div>
                         </div>
                         <div className="col-lg-6">
-                         
+                          <div className={`${style.footercontent} pt-3`}><Link href="/application-modernization/" className={`${style.commonlink}`}>Application Modernization</Link></div>
                           <div className={`${style.footercontent} pt-3`}><Link href="/technology-consultation-strategy/" className={`${style.commonlink}`} >Technology Consultation and Strategy</Link></div>
-                          <div className={`${style.footercontent} pt-3`}><Link href="/custom-software-development-integration/" className={`${style.commonlink}`} >Custom Software Development and Integration</Link></div>
-                          <div className={`${style.footercontent} pt-3`}><Link href="/how-we-serve-you/" className={`${style.commonlink}`} >How we Serve You</Link></div>
                         </div>
                       </div>
                     </div>

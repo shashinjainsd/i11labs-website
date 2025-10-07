@@ -646,6 +646,11 @@ overflow: hidden;
   opacity: 1;
   visibility: visible;
 }
+
+.cards:hover .text-p1 {
+  opacity: 1;
+  visibility: visible;
+}
 .cards:hover .redline {
   opacity: 1;
   visibility: visible;
@@ -654,6 +659,11 @@ overflow: hidden;
   opacity: 1;
   visibility: visible;
   margin-top: 60% !important;
+}
+.cards:hover .text-h2 {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 30% !important;
 }
 .text-h1 {
   margin: 10px;
@@ -665,8 +675,19 @@ overflow: hidden;
   line-height: 36px;
 }
 
+.text-h2 {
+  margin: 10px;
+  font-size: 20px;
+  font-family: "Erode Regular";
+  color: var(--White-color1);
+  opacity: 100% !important;
+  text-align: Left;
+  line-height: 36px;
+  width: 80%;
+}
+
 .text-p {
-  font-size: 21px;
+  font-size: 28px;
   font-family: "Erode Regular";
   color: var(--White-color1);
   text-align: Left;
@@ -674,6 +695,18 @@ overflow: hidden;
   visibility: hidden;
   opacity: 0;
 }
+
+.text-p1 {
+  font-size: 16px;
+  font-family: "Erode Regular";
+  color: var(--White-color1);
+  text-align: Left;
+  line-height: 32px;
+  visibility: hidden;
+  opacity: 0;
+  width: 80%;
+}
+
 @media screen and (min-width: 1400px) {
   .intro {
     width: 378px;
@@ -899,31 +932,6 @@ overflow: hidden;
   padding-right: 0px !important;
 }
 
-/* How we Serve You */
-.bg-serve {
-  background: url("../public/images/serve/How We Serve You@2x.webp") no-repeat;
-  background-size: 100% 100%;
-  padding: 27% 10% 3% 10%;
-}
-
-.bg-serve-mb {
-  background: url("../public/images/serve/How\ We\ Serve\ You\ m.webp")
-    no-repeat;
-  background-size: 100% 100%;
-  padding: 48% 10% 3% 10%;
-}
-
-.bgcolor {
-  background-color: #f0f4f7;
-}
-
-@media only screen and (min-width: 768px) {
-  .slick-slider {
-    width: 100% !important;
-    /* margin-left: 10% !important; */
-  }
-}
-
 /* Custom software development and integration */
 .bg-software {
   background: url("../public/images/software/Custom Software @2x.webp")
@@ -1015,30 +1023,7 @@ overflow: hidden;
   }
 }
 
-/* metadata driven */
-.bg-meta {
-  background: url("../public/images/metadata/MetaDataDrivenApplications@2x.webp")
-    no-repeat;
-  background-size: 100% 100%;
-  padding: 27% 10% 3% 10%;
-}
-.bg-meta-mb {
-  background: url("../public/images/metadata/MetaDataDrivenApplications_mob.webp")
-    no-repeat;
-  background-size: 100% 100%;
-  padding: 27% 10% 3% 10%;
-}
-/* Cloud computing */
-.bg-cloud {
-  background: url("../public/images/cloud/CloudComputing@2x.webp") no-repeat;
-  background-size: 100% 100%;
-  padding: 20% 10% 3% 10%;
-}
-.bg-cloud-mb {
-  background: url("../public/images/cloud/CloudComputing_mob.webp") no-repeat;
-  background-size: 100% 100%;
-  padding: 27% 10% 3% 10%;
-}
+
 /* technology and strategy */
 .bg-tech {
   background: url("../public/images/technology/TechnologyConsultation@2x.webp")
