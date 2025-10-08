@@ -665,6 +665,13 @@ overflow: hidden;
   visibility: visible;
   margin-top: 30% !important;
 }
+
+.cards:hover .text-h3 {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 60% !important;
+}
+
 .text-h1 {
   margin: 10px;
   font-size: 30px;
@@ -678,6 +685,17 @@ overflow: hidden;
 .text-h2 {
   margin: 10px;
   font-size: 20px;
+  font-family: "Erode Regular";
+  color: var(--White-color1);
+  opacity: 100% !important;
+  text-align: Left;
+  line-height: 36px;
+  width: 80%;
+}
+
+.text-h3 {
+  margin: 10px;
+  font-size: 18px;
   font-family: "Erode Regular";
   color: var(--White-color1);
   opacity: 100% !important;

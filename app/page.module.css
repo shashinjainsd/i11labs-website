@@ -1,6 +1,7 @@
 /* Carousel */
 .carouselheading {
-  font-size: var(--heading);
+  /* font-size: var(--heading); */
+  font-size: 36px;
   font-family: "Bespoke-sans Light";
   line-height: 64px;
   color: var(--White-color1);

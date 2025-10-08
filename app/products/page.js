@@ -1,84 +1,83 @@
-'use client'
-import { useRef, useEffect, useState } from 'react';
+"use client";
+import { useRef, useEffect, useState } from "react";
 import styles from "../page.module.css";
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Bnrimage from "../../public/images/home/new/dump truck it hero image@2x.webp";
+import Bnrimage from "../../public/images/home/new/i11fleetbnr.jpg";
 import Bnrimage1 from "../../public/images/home/new/feeds to leads hero bnr@2x.png";
-import Bnrimage2 from "../../public/images/home/new/know whereabouts crew hero bnr@2x.webp";
+// import Bnrimage2 from "../../public/images/home/new/know whereabouts crew hero bnr@2x.webp";
+import Bnrimage2 from "../../public/images/home/new/dtibnr.jpg";
 import Bnrimage3 from "../../public/images/home/new/how we serve you hero bnr@2x.webp";
-import MobBnrimage from "../../public/images/home/new/dump truck it@2x.webp";
+import MobBnrimage from "../../public/images/home/new/i11fleetbnr@2x.jpg";
 import MobBnrimage1 from "../../public/images/home/new/feeds to leads m@2x.png";
-import MobBnrimage2 from "../../public/images/home/new/know whereabouts crew hero bnr m@2x.webp";
+import MobBnrimage2 from "../../public/images/home/new/dump truck it@2x.webp";
 import MobBnrimage3 from "../../public/images/home/new/service offerings@2x.webp";
-import DTI from "../../public/images/home/new/DumpTruckIt.png";
-import FTL from "../../public/images/home/new/FeedsToLeads_1.png";
+import DTI from "../../public/images/home/new/DumpTruckIt1.png";
+import FTL from "../../public/images/home/new/feedsToLeads.png";
 import i11 from "../../public/images/home/new/i11fleet.png";
 import React, { createRef } from "react";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
-
   const [checkLoader, setCheckLoader] = useState(false);
   useEffect(() => {
-    requestAnimationFrame(animate)
+    requestAnimationFrame(animate);
   }, []);
-
 
   const animate = () => {
     if (checkLoader === false) {
-      document.getElementById('carouselExampleFade').addEventListener('slide.bs.carousel', function () {
-        const element = document.getElementById('carousel1');
-        if (element) {
-          if (element.classList.contains("carousalSliderRight")) {
-            element.classList.remove("carousalSliderRight");
+      document
+        .getElementById("carouselExampleFade")
+        .addEventListener("slide.bs.carousel", function () {
+          const element = document.getElementById("carousel1");
+          if (element) {
+            if (element.classList.contains("carousalSliderRight")) {
+              element.classList.remove("carousalSliderRight");
+            }
+            element.classList.add("carousalSliderleft");
+          } else {
+            console.error("Element with ID 'carousel1' not found.");
           }
-          element.classList.add("carousalSliderleft");
-        } else {
-          console.error("Element with ID 'carousel1' not found.");
-        }
 
-        const element1 = document.getElementById('carousel2')
-        if (element1.classList.contains("carousalSliderRight")) {
-          element1.classList.remove("carousalSliderRight");
-        }
-        element1.classList.add("carousalSliderleft");
+          const element1 = document.getElementById("carousel2");
+          if (element1.classList.contains("carousalSliderRight")) {
+            element1.classList.remove("carousalSliderRight");
+          }
+          element1.classList.add("carousalSliderleft");
 
+          const element2 = document.getElementById("carousel3");
+          if (element2.classList.contains("carousalSliderRight")) {
+            element2.classList.remove("carousalSliderRight");
+          }
+          element2.classList.add("carousalSliderleft");
 
-        const element2 = document.getElementById('carousel3')
-        if (element2.classList.contains("carousalSliderRight")) {
-          element2.classList.remove("carousalSliderRight");
-        }
-        element2.classList.add("carousalSliderleft");
-
-
-        // const element3 = document.getElementById('carousel4')
-        // if (element3.classList.contains("carousalSliderRight")) {
-        //   element3.classList.remove("carousalSliderRight");
-        // }
-        // element3.classList.add("carousalSliderleft");
-      });
+          // const element3 = document.getElementById('carousel4')
+          // if (element3.classList.contains("carousalSliderRight")) {
+          //   element3.classList.remove("carousalSliderRight");
+          // }
+          // element3.classList.add("carousalSliderleft");
+        });
     }
   };
 
   const handleclickRight = () => {
     setCheckLoader(true);
-    const element = document.getElementById('carousel1');
+    const element = document.getElementById("carousel1");
     if (element.classList.contains("carousalSliderRight")) {
       element.classList.remove("carousalSliderRight");
     }
     element.classList.add("carousalSliderleft");
 
-    const element1 = document.getElementById('carousel2');
+    const element1 = document.getElementById("carousel2");
     if (element1.classList.contains("carousalSliderRight")) {
       element1.classList.remove("carousalSliderRight");
     }
     element1.classList.add("carousalSliderleft");
 
-    const element2 = document.getElementById('carousel3');
+    const element2 = document.getElementById("carousel3");
     if (element2.classList.contains("carousalSliderRight")) {
       element2.classList.remove("carousalSliderRight");
     }
@@ -90,22 +89,22 @@ export default function Home() {
     // }
     // element3.classList.add("carousalSliderleft");
     setCheckLoader(false);
-  }
+  };
   const handleclickLeft = () => {
     setCheckLoader(true);
-    const element = document.getElementById('carousel1')
+    const element = document.getElementById("carousel1");
     if (element.classList.contains("carousalSliderleft")) {
       element.classList.remove("carousalSliderleft");
     }
     element.classList.add("carousalSliderRight");
 
-    const element1 = document.getElementById('carousel2')
+    const element1 = document.getElementById("carousel2");
     if (element1.classList.contains("carousalSliderleft")) {
       element1.classList.remove("carousalSliderleft");
     }
     element1.classList.add("carousalSliderRight");
 
-    const element2 = document.getElementById('carousel3')
+    const element2 = document.getElementById("carousel3");
     if (element2.classList.contains("carousalSliderleft")) {
       element2.classList.remove("carousalSliderleft");
     }
@@ -116,7 +115,7 @@ export default function Home() {
     // }
     // element3.classList.add("carousalSliderRight");
     setCheckLoader(false);
-  }
+  };
 
   useEffect(() => {
     AOS.init({
@@ -126,189 +125,414 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-  
-    const carouselElement = document.getElementById('carouselExampleFade');
+    const carouselElement = document.getElementById("carouselExampleFade");
     if (carouselElement) {
       new bootstrap.Carousel(carouselElement, {
-        interval: 3000, 
+        interval: 3000,
       });
     }
   }, []);
 
   return (
     <>
-
       {/* carousel */}
       <div className="container-fluid">
         <div className="row">
           <div className="col p-0">
-            <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
-              <div className={`${styles.mobilehideindicator} carousel-indicators`}>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <div
+              id="carouselExampleFade"
+              className="carousel slide carousel-fade"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+              data-bs-pause="false"
+            >
+              <div
+                className={`${styles.mobilehideindicator} carousel-indicators`}
+              >
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="0"
+                  className="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
                 {/* <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button> */}
               </div>
 
-              <div className="carousel-inner" id="carouselbodysection" style={{ backgroundColor: "#191E23", height: "max-contant" }}>
-
-
+              <div
+                className="carousel-inner"
+                id="carouselbodysection"
+                style={{ backgroundColor: "#191E23", height: "max-contant" }}
+              >
                 <div className="carousel-item active">
                   <div className="d-none d-lg-block">
-                    <div className="Hideimage" style={{ backgroundColor: "#FFFFFF" }}>
-                      <Image src={Bnrimage2} className="img-fluid" loading="eager" alt="KWC Banner" title='Know Whereabouts of Crew' />
+                    <div
+                      className="Hideimage"
+                      style={{ backgroundColor: "#FFFFFF" }}
+                    >
+                      <Image
+                        src={Bnrimage}
+                        className="img-fluid"
+                        loading="eager"
+                        alt="i11Fleet Banner"
+                        title="i11Fleet"
+                      />
                     </div>
-                    <div className="carousel-caption2 p-5 carousalSliderleft" id="carousel3">
+                    <div
+                      className="carousel-caption p-5 carousalSliderleft"
+                      id="carousel1"
+                    >
                       <div className="leftborder">
-                        <h1 className={`${styles.carouselheading} mx-3`}>iFM</h1>
-                        <p className={`${styles.smallheading} mx-3`}><b>I</b>11<b>F</b>leet <b>M</b>anagement</p>
+                        <h2 className={`${styles.carouselheading} mx-3`}>
+                          i11Fleet
+                        </h2>
                       </div>
                       <div className="pt-xl-5 pt-lg-3">
-                        <p className={`${styles.paragraph}`}>i11 Fleet Management Solutions by i11Labs</p>
+                        <p className={`${styles.paragraph}`}>
+                          Managing fleets is complex. Drivers, brokers, clients,
+                          deliveries - it all needs to work together. That’s
+                          where i11Fleet comes in.
+                        </p>
                       </div>
-                      <div className="pt-3"><button className="viewall2 ps-0"><Link href="/know-whereabouts-of-crew" className="viewallvoiletlink2">Know More</Link></button></div>
+                      <div className="pt-3">
+                        <button className="viewall2 ps-0">
+                          <Link href="/i11fleet" className="viewallvoiletlink2">
+                            Know More
+                          </Link>
+                        </button>
+                      </div>
                     </div>
                   </div>
 
                   <div className="card d-none d-md-block d-lg-none">
-                    <Image src={Bnrimage2} className="img-fluid" loading="eager" alt="KWC Banner" title='Know Whereabouts of Crew' />
-                    <div className="card-body" style={{ backgroundColor: "#191E23" }}>
+                    <Image
+                      src={Bnrimage}
+                      className="img-fluid"
+                      loading="eager"
+                      alt="i11Fleet Banner"
+                      title="i11Fleet"
+                    />
+                    <div
+                      className="card-body"
+                      style={{ backgroundColor: "#191E23" }}
+                    >
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
-                          <h1 className={`${styles.carouselheading} mx-3`}>iFM</h1>
-                          <p className={`${styles.smallheading} mx-3`}><b>I</b>11<b>F</b>leet <b>M</b>anagement</p>
+                          <h2 className={`${styles.carouselheading} mx-3`}>
+                            i11Fleet
+                          </h2>
                         </div>
                         <div className="pt-3">
-                          <p className={`${styles.paragraph}`}>i11 Fleet Management Solutions by i11Labs</p>
+                          <p className={`${styles.paragraph}`}>
+                            Managing fleets is complex. Drivers, brokers,
+                            clients, deliveries - it all needs to work together.
+                            That’s where i11Fleet comes in.
+                          </p>
                         </div>
-                        <div className="pt-3"><button className="viewall2 ps-0"><Link href="/i11fleet" className="viewallvoiletlink2">Know More</Link></button></div>
+                        <div className="pt-3">
+                          <button className="viewall2 ps-0">
+                            <Link
+                              href="/i11fleet"
+                              className="viewallvoiletlink2"
+                            >
+                              Know More
+                            </Link>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="card d-block d-md-none">
-                    <Image src={MobBnrimage2} className="img-fluid w-100" loading="eager" alt="KWC Banner" title='Know Whereabouts of Crew' />
-                    <div className="card-body" style={{ backgroundColor: "#191E23" }}>
+                    <Image
+                      src={MobBnrimage}
+                      className="img-fluid"
+                      loading="eager"
+                      alt="i11Fleet Banner"
+                      title="i11Fleet"
+                    />
+                    <div
+                      className="card-body"
+                      style={{ backgroundColor: "#191E23" }}
+                    >
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
-                          <h1 className={`${styles.carouselheading} mx-3`}>iFM</h1>
-                          <p className={`${styles.smallheading} mx-3`}><b>I</b>11<b>F</b>leet <b>M</b>anagement</p>
+                          <h2 className={`${styles.carouselheading} mx-3`}>
+                            i11Fleet
+                          </h2>
                         </div>
                         <div className="pt-3">
-                          <p className={`${styles.paragraph}`}>i11 Fleet Management Solutions by i11Labs</p>
+                          <p className={`${styles.paragraph}`}>
+                            Managing fleets is complex. Drivers, brokers,
+                            clients, deliveries - it all needs to work together.
+                            That’s where i11Fleet comes in.
+                          </p>
                         </div>
-                        <div className="pt-3"><button className="viewall2 ps-0"><Link href="/know-whereabouts-of-crew" className="viewallvoiletlink2">Know More</Link></button></div>
+                        <div className="pt-3">
+                          <button className="viewall2 ps-0">
+                            <Link
+                              href="/i11fleet"
+                              className="viewallvoiletlink2"
+                            >
+                              Know More
+                            </Link>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-
 
                 <div className="carousel-item">
                   <div className="d-none d-lg-block">
-                    <div className="Hideimage" style={{ backgroundColor: "#FFFFFF" }}>
-                      <Image src={Bnrimage1} className="img-fluid" loading="eager" alt="FTL Banner" title='Feeds To Leads' />
+                    <div
+                      className="Hideimage"
+                      style={{ backgroundColor: "#FFFFFF" }}
+                    >
+                      <Image
+                        src={Bnrimage1}
+                        className="img-fluid"
+                        loading="eager"
+                        alt="FTL Banner"
+                        title="Feeds To Leads"
+                      />
                     </div>
-                    <div className="carousel-caption1 p-5 carousalSliderleft" id="carousel2">
+                    <div
+                      className="carousel-caption1 p-5 carousalSliderleft"
+                      id="carousel2"
+                    >
                       <div className="leftborder">
-                        <h1 className={`${styles.carouselheading} mx-3`}>FTL</h1>
-                        <p className={`${styles.smallheading} mx-3`}><b>F</b>eeds <b>T</b>o <b>L</b>eads</p>
+                        <h1 className={`${styles.carouselheading} mx-3`}>
+                          Feeds To Leads
+                        </h1>
                       </div>
                       <div className="pt-xl-5 pt-lg-3">
-                        <p className={`${styles.paragraph}`}>Effortless Lead Generation- AI for Smarter Prospecting</p>
+                        <p className={`${styles.paragraph}`}>
+                          Less chasing, more closing — that’s the promise of
+                          Feeds To Leads.
+                        </p>
                       </div>
-                      <div className="pt-3"><button className="viewall2 ps-0" ><Link href="/feeds-to-leads" className="viewallvoiletlink2">Know More</Link></button></div>
+                      <div className="pt-3">
+                        <button className="viewall2 ps-0">
+                          <Link
+                            href="/feeds-to-leads"
+                            className="viewallvoiletlink2"
+                          >
+                            Know More
+                          </Link>
+                        </button>
+                      </div>
                     </div>
                   </div>
 
                   <div className="card d-none d-md-block d-lg-none">
-                    <Image src={Bnrimage1} className="img-fluid" loading="eager" alt="FTL Banner" title='Feeds To Leads' />
-                    <div className="card-body" style={{ backgroundColor: "#191E23" }}>
+                    <Image
+                      src={Bnrimage1}
+                      className="img-fluid"
+                      loading="eager"
+                      alt="FTL Banner"
+                      title="Feeds To Leads"
+                    />
+                    <div
+                      className="card-body"
+                      style={{ backgroundColor: "#191E23" }}
+                    >
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
-                          <h1 className={`${styles.carouselheading} mx-3`}>FTL</h1>
-                          <p className={`${styles.smallheading} mx-3`}><b>F</b>eeds <b>T</b>o <b>L</b>eads</p>
+                          <h1 className={`${styles.carouselheading} mx-3`}>
+                            Feeds To Leads
+                          </h1>
                         </div>
                         <div className="pt-3">
-                          <p className={`${styles.paragraph}`}>Effortless Lead Generation- AI for Smarter Prospecting</p>
+                          <p className={`${styles.paragraph}`}>
+                            Less chasing, more closing — that’s the promise of
+                            Feeds To Leads.
+                          </p>
                         </div>
-                        <div className="pt-3"><button className="viewall2 ps-0" ><Link href="/feeds-to-leads" className="viewallvoiletlink2">Know More</Link></button></div>
+                        <div className="pt-3">
+                          <button className="viewall2 ps-0">
+                            <Link
+                              href="/feeds-to-leads"
+                              className="viewallvoiletlink2"
+                            >
+                              Know More
+                            </Link>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="card d-block d-md-none">
-                    <Image src={MobBnrimage1} className="img-fluid w-100" loading="eager" alt="FTL Banner" title='Feeds To Leads' />
-                    <div className="card-body" style={{ backgroundColor: "#191E23" }}>
+                    <Image
+                      src={MobBnrimage1}
+                      className="img-fluid w-100"
+                      loading="eager"
+                      alt="FTL Banner"
+                      title="Feeds To Leads"
+                    />
+                    <div
+                      className="card-body"
+                      style={{ backgroundColor: "#191E23" }}
+                    >
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
-                          <h1 className={`${styles.carouselheading} mx-3`}>FTL</h1>
-                          <p className={`${styles.smallheading} mx-3`}><b>F</b>eeds <b>T</b>o <b>L</b>eads</p>
+                          <h1 className={`${styles.carouselheading} mx-3`}>
+                            Feeds To Leads
+                          </h1>
                         </div>
                         <div className="pt-3">
-                          <p className={`${styles.paragraph}`}>Effortless Lead Generation- AI for Smarter Prospecting</p>
+                          <p className={`${styles.paragraph}`}>
+                            Less chasing, more closing — that’s the promise of
+                            Feeds To Leads.
+                          </p>
                         </div>
-                        <div className="pt-3"><button className="viewall2 ps-0" ><Link href="/feeds-to-leads" className="viewallvoiletlink2">Know More</Link></button></div>
+                        <div className="pt-3">
+                          <button className="viewall2 ps-0">
+                            <Link
+                              href="/feeds-to-leads"
+                              className="viewallvoiletlink2"
+                            >
+                              Know More
+                            </Link>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-
-
-
 
                 <div className="carousel-item">
                   <div className="d-none d-lg-block">
-                    <div className="Hideimage" style={{ backgroundColor: "#FFFFFF" }}>
-                      <Image src={Bnrimage} className="img-fluid" loading="eager" alt="DTI Banner" title='DumpTruckIt' />
+                    <div
+                      className="Hideimage"
+                      style={{ backgroundColor: "#FFFFFF" }}
+                    >
+                      <Image
+                        src={Bnrimage2}
+                        className="img-fluid"
+                        loading="eager"
+                        alt="DTI Banner"
+                        title="DumpTruckIt"
+                      />
                     </div>
-                    <div className="carousel-caption p-5 carousalSliderleft" id="carousel1">
+                    <div
+                      className="carousel-caption2 p-5 carousalSliderleft"
+                      id="carousel3"
+                    >
                       <div className="leftborder">
-                        <h1 className={`${styles.carouselheading} mx-3`}>DTI</h1>
-                        <p className={`${styles.smallheading} mx-3`}><b>D</b>ump<b>T</b>ruck<b>I</b>t</p>
+                        <h1 className={`${styles.carouselheading} mx-3`}>
+                          DumpTruckIt
+                        </h1>
                       </div>
                       <div className="pt-xl-5 pt-lg-3">
-                        <p className={`${styles.paragraph}`}>Seamless Fleet Management- Powered by AI</p>
+                        <p className={`${styles.paragraph}`}>
+                          Meet the mobile app built specifically for dump truck
+                          businesses
+                        </p>
                       </div>
-                      <div className="pt-3"><button className="viewall2 ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink2">Know More</Link></button></div>
+                      <div className="pt-3">
+                        <button className="viewall2 ps-0">
+                          <Link
+                            href="/dti-dumptruckit"
+                            className="viewallvoiletlink2"
+                          >
+                            Know More
+                          </Link>
+                        </button>
+                      </div>
                     </div>
                   </div>
 
                   <div className="card d-none d-md-block d-lg-none">
-                    <Image src={Bnrimage} className="img-fluid" loading="eager" alt="DTI Banner" title='DumpTruckIt' />
-                    <div className="card-body" style={{ backgroundColor: "#191E23" }}>
+                    <Image
+                      src={Bnrimage2}
+                      className="img-fluid"
+                      loading="eager"
+                      alt="DTI Banner"
+                      title="DumpTruckIt"
+                    />
+                    <div
+                      className="card-body"
+                      style={{ backgroundColor: "#191E23" }}
+                    >
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
-                          <h1 className={`${styles.carouselheading} mx-3`}>DTI</h1>
-                          <p className={`${styles.smallheading} mx-3`}><b>D</b>ump<b>T</b>ruck<b>I</b>t</p>
+                          <h1 className={`${styles.carouselheading} mx-3`}>
+                            DumpTruckIt
+                          </h1>
                         </div>
                         <div className="pt-3">
-                          <p className={`${styles.paragraph}`}>Seamless Fleet Management- Powered by AI</p>
+                          <p className={`${styles.paragraph}`}>
+                            Meet the mobile app built specifically for dump
+                            truck businesses
+                          </p>
                         </div>
-                        <div className="pt-3"><button className="viewall2 ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink2">Know More</Link></button></div>
+                        <div className="pt-3">
+                          <button className="viewall2 ps-0">
+                            <Link
+                              href="/dti-dumptruckit"
+                              className="viewallvoiletlink2"
+                            >
+                              Know More
+                            </Link>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="card d-block d-md-none">
-                    <Image src={MobBnrimage} className="img-fluid" loading="eager" alt="DTI Banner" title='DumpTruckIt' />
-                    <div className="card-body" style={{ backgroundColor: "#191E23" }}>
+                    <Image
+                      src={MobBnrimage2}
+                      className="img-fluid w-100"
+                      loading="eager"
+                      alt="DTI Banner"
+                      title="DumpTruckIt"
+                    />
+                    <div
+                      className="card-body"
+                      style={{ backgroundColor: "#191E23" }}
+                    >
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
-                          <h1 className={`${styles.carouselheading} mx-3`}>DTI</h1>
-                          <p className={`${styles.smallheading} mx-3`}><b>D</b>ump<b>T</b>ruck<b>I</b>t</p>
+                          <h1 className={`${styles.carouselheading} mx-3`}>
+                            DumpTruckIt
+                          </h1>
                         </div>
                         <div className="pt-3">
-                          <p className={`${styles.paragraph}`}>Seamless Fleet Management- Powered by AI</p>
+                          <p className={`${styles.paragraph}`}>
+                            Meet the mobile app built specifically for dump
+                            truck businesses
+                          </p>
                         </div>
-                        <div className="pt-3"><button className="viewall2 ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink2">Know More</Link></button></div>
+                        <div className="pt-3">
+                          <button className="viewall2 ps-0">
+                            <Link
+                              href="/dti-dumptruckit"
+                              className="viewallvoiletlink2"
+                            >
+                              Know More
+                            </Link>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
 
                 {/* <div className="carousel-item">
                   <div className="d-none d-lg-block">
@@ -411,23 +635,42 @@ export default function Home() {
                     </div>
                   </div>
                 </div> */}
-
               </div>
 
-              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" onClick={() => { handleclickLeft() }}>
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <button
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev"
+                onClick={() => {
+                  handleclickLeft();
+                }}
+              >
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
                 <span className="visually-hidden">Previous</span>
               </button>
-              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next" onClick={() => { handleclickRight() }}>
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+              <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleFade"
+                data-bs-slide="next"
+                onClick={() => {
+                  handleclickRight();
+                }}
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
                 <span className="visually-hidden">Next</span>
               </button>
             </div>
-
           </div>
         </div>
       </div>
-
 
       <div className="container pt-md-5 pt-2 mx-auto" data-aos="fade-up">
         <div className="row">
@@ -440,104 +683,213 @@ export default function Home() {
           </div>
           <div className="col-12 col-lg-5 py-2 pt-md-3 pt-2 pt-lg-0">
             <p className={`${styles.para} pt-md-4 pt-2`}>
-              We are your partner who listens, steps into shoes of the end user and then builds tech that actually works in the real world.
+              We are your partner who listens, steps into shoes of the end user
+              and then builds tech that actually works in the real world.
             </p>
           </div>
         </div>
       </div>
 
-      <div className='container py-lg-5 py-3 d-lg-block d-none'>
-        <div className='row' data-aos="fade-up">
-
-          <div className='col-lg-4 col-md-6 col-12 h-100'>
-            <p className={`${styles.para1}`}>i11fleet</p>
-            <p className={`${styles.para3}`}>i11 Fleet Management Solutions by i11Labs</p>
-            <div className="pt-xl-5 pt-4"><button className="viewall ps-0"><Link href="/i11fleet" className="viewallvoiletlink">Know More</Link></button></div>
-          </div>
-
-          <div className='col-lg-4 col-md-6 col-12 h-100'>
+      <div className="container py-lg-5 py-3 d-lg-block d-none">
+        <div className="row" data-aos="fade-up">
+          <div className="col-lg-4 col-md-6 col-12 h-100">
             <div style={{ borderRight: "1px solid  #C1D1E0" }}>
-              <p className={`${styles.para1}`}>Feeds To Leads</p>
-              <p className={`${styles.para3}`}>Effortless Lead Generation- AI for Smarter Prospecting</p>
-              <div className="pt-xl-3 pt-0"><button className="viewall ps-0"><Link href="/feeds-to-leads" className="viewallvoiletlink">Know More</Link></button></div>
+              <p className={`${styles.para1}`}>i11Fleet</p>
+              <p className={`${styles.para3}`}>
+                Managing fleets is complex. Drivers, brokers, clients,
+                deliveries—it all needs to work together. That’s where i11Fleet
+                comes in.
+              </p>
+              <div className="pt-xl-5 pt-4">
+                <button className="viewall ps-0">
+                  <Link href="/i11fleet" className="viewallvoiletlink">
+                    Know More
+                  </Link>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className='col-lg-4 col-md-6 col-12 h-100'>
+          <div className="col-lg-4 col-md-6 col-12 h-100">
+            <div style={{ borderRight: "1px solid  #C1D1E0" }}>
+              <p className={`${styles.para1}`}>Feeds To Leads</p>
+              <p className={`${styles.para3}`}>
+                Less chasing, more closing — that’s the promise of Feeds To
+                Leads.
+              </p>
+              <div className="pt-xl-3 pt-0">
+                <button className="viewall ps-0">
+                  <Link href="/feeds-to-leads" className="viewallvoiletlink">
+                    Know More
+                  </Link>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-md-6 col-12 h-100">
             <div style={{ borderRight: "1px solid  #C1D1E0" }}>
               <p className={`${styles.para1}`}>DumpTruckIt</p>
-              <p className={`${styles.para3}`}>Seamless Fleet Management- Powered by AI</p>
-              <div className="pt-xl-5 pt-0"><button className="viewall ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink">Know More</Link></button></div>
+              <p className={`${styles.para3}`}>
+                Meet the mobile app built specifically for dump truck businesses
+              </p>
+              <div className="pt-xl-5 pt-0">
+                <button className="viewall ps-0">
+                  <Link href="/dti-dumptruckit" className="viewallvoiletlink">
+                    Know More
+                  </Link>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className='row py-lg-5 py-3' data-aos="fade-up">
-          <div className='col-lg-4 col-md-6 col-12 text-end'>
+        <div className="row py-lg-5 py-3" data-aos="fade-up">
+          <div className="col-lg-4 col-md-6 col-12 text-end">
             <Link href="/i11fleet">
-              <Image src={i11} className='img-fluid' width={278} height={268} alt='i11Fleet' title='i11Fleet' />
+              <Image
+                src={i11}
+                className="img-fluid"
+                width={378}
+                height={368}
+                alt="i11Fleet"
+                title="i11Fleet"
+              />
             </Link>
           </div>
 
-          <div className='col-lg-4 col-md-6 col-12 text-end'>
+          <div className="col-lg-4 col-md-6 col-12 text-end">
             <Link href="/feeds-to-leads">
-              <Image src={FTL} className='img-fluid' width={278} height={268} alt='Feeds To Leads' title='Feeds To Leads' />
+              <Image
+                src={FTL}
+                className="img-fluid"
+                width={308}
+                height={298}
+                alt="Feeds To Leads"
+                title="Feeds To Leads"
+              />
             </Link>
           </div>
 
-          <div className='col-lg-4 col-md-6 col-12 text-end'>
+          <div className="col-lg-4 col-md-6 col-12 text-end">
             <Link href="/dti-dumptruckit">
-              <Image src={DTI} className='img-fluid' width={278} height={268} alt='DumpTruckIt' title='DumpTruckIt' />
+              <Image
+                src={DTI}
+                className="img-fluid"
+                width={288}
+                height={278}
+                alt="DumpTruckIt"
+                title="DumpTruckIt"
+              />
             </Link>
           </div>
         </div>
       </div>
 
-      <div className='container py-lg-5 py-4 d-block d-lg-none' data-aos="fade-up">
-        <div className='row'>
-          <div className='d-flex' style={{ overflowX: 'scroll', scrollbarWidth: 'none' }}>
-
-            <div className='col-lg-4 col-md-6 col-11 h-100 me-3'>
+      <div
+        className="container py-lg-5 py-4 d-block d-lg-none"
+        data-aos="fade-up"
+      >
+        <div className="row">
+          <div
+            className="d-flex"
+            style={{ overflowX: "scroll", scrollbarWidth: "none" }}
+          >
+            <div className="col-lg-4 col-md-6 col-11 h-100 me-3">
               <div className="card">
                 <div className="card-bodyies">
                   <p className={`${styles.para1}`}>i11fleet</p>
-                  <p className={`${styles.para3}`}>Managing fleets is complex. Drivers, brokers, clients, deliveries—it all needs to work together. That’s where i11Fleet comes in.</p>
-                  <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/i11fleet" className="viewallvoiletlink">Know More</Link></button></div>
+                  <p className={`${styles.para3}`}>
+                    Managing fleets is complex. Drivers, brokers, clients,
+                    deliveries—it all needs to work together. That’s where
+                    i11Fleet comes in.
+                  </p>
+                  <div className="pt-md-2 pt-2">
+                    <button className="viewall ps-0">
+                      <Link href="/i11fleet" className="viewallvoiletlink">
+                        Know More
+                      </Link>
+                    </button>
+                  </div>
                 </div>
                 <Link href="/dti-dumptruckit">
-                  <Image src={i11} className='pt-md-5 pt-4' width={278} height={268} alt='i11Fleet' title='i11Fleet' />
+                  <Image
+                    src={i11}
+                    className="pt-md-5 pt-4"
+                    width={278}
+                    height={268}
+                    alt="i11Fleet"
+                    title="i11Fleet"
+                  />
                 </Link>
               </div>
             </div>
 
-            <div className='col-lg-4 col-md-6 col-11 h-100 me-3'>
+            <div className="col-lg-4 col-md-6 col-11 h-100 me-3">
               <div className="card">
                 <div className="card-bodyies">
-                  <p className={`${styles.para1}`}>FTL</p>
-                  <p className={`${styles.para3}`}>Effortless Lead Generation- AI for Smarter Prospecting</p>
-                  <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/feeds-to-leads" className="viewallvoiletlink">Know More</Link></button></div>
+                  <p className={`${styles.para1}`}>Feeds To Leads</p>
+                  <p className={`${styles.para3}`}>
+                    Less chasing, more closing — that’s the promise of Feeds To
+                    Leads.
+                  </p>
+                  <div className="pt-md-2 pt-2">
+                    <button className="viewall ps-0">
+                      <Link
+                        href="/feeds-to-leads"
+                        className="viewallvoiletlink"
+                      >
+                        Know More
+                      </Link>
+                    </button>
+                  </div>
                 </div>
                 <Link href="/feeds-to-leads">
-                  <Image src={FTL} className='pt-md-5 pt-4' width={278} height={268} alt='Feeds To Leads' title='Feeds To Leads' />
+                  <Image
+                    src={FTL}
+                    className="pt-md-5 pt-4"
+                    width={278}
+                    height={268}
+                    alt="Feeds To Leads"
+                    title="Feeds To Leads"
+                  />
                 </Link>
               </div>
             </div>
 
-            <div className='col-lg-4 col-md-6 col-11 h-100 me-3'>
+            <div className="col-lg-4 col-md-6 col-11 h-100 me-3">
               <div className="card">
                 <div className="card-bodyies">
-                  <p className={`${styles.para1}`}>DTI</p>
-                  <p className={`${styles.para3}`}>Seamless Fleet Management- Powered by AI</p>
-                  <div className="pt-md-2 pt-2"><button className="viewall ps-0"><Link href="/dti-dumptruckit" className="viewallvoiletlink">Know More</Link></button></div>
+                  <p className={`${styles.para1}`}>DumpTruckIt</p>
+                  <p className={`${styles.para3}`}>
+                    Meet the mobile app built specifically for dump truck
+                    businesses
+                  </p>
+                  <div className="pt-md-2 pt-2">
+                    <button className="viewall ps-0">
+                      <Link
+                        href="/dti-dumptruckit"
+                        className="viewallvoiletlink"
+                      >
+                        Know More
+                      </Link>
+                    </button>
+                  </div>
                 </div>
                 <Link href="/dti-dumptruckit">
-                  <Image src={DTI} className='pt-md-5 pt-4' width={278} height={268} alt='DumpTruckIt' title='DumpTruckIt' />
+                  <Image
+                    src={DTI}
+                    className="pt-md-5 pt-4"
+                    width={278}
+                    height={268}
+                    alt="DumpTruckIt"
+                    title="DumpTruckIt"
+                  />
                 </Link>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </>
   );

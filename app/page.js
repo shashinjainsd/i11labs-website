@@ -7,7 +7,7 @@ import Right from "../public/images/home/right.webp";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import DTI from "../public/images/home/new/DumpTruckIt.png";
+import DTI from "../public/images/home/new/DumpTruckIt1.png";
 import FTL from "../public/images/home/new/feedsToLeads.png";
 import i11 from "../public/images/home/new/i11fleet.png";
 import React, { createRef, Suspense } from "react";
@@ -356,8 +356,8 @@ export default function Home() {
               <Image
                 src={DTI}
                 className="img-fluid"
-                width={228}
-                height={218}
+                width={288}
+                height={278}
                 alt="DumpTruckIt"
                 title="DumpTruckIt"
               />
@@ -791,8 +791,6 @@ export default function Home() {
                 </div>
               </Link>
             </div>
-
-            {/* </div> */}
           </div>
         </div>
       </div>
