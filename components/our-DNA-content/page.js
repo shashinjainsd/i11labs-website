@@ -267,7 +267,7 @@ export default function ourDNA() {
             </div>
           </div>
 
-          <div className="row gy-4 py-5">
+          <div className="row gy-4 py-1">
             {/* Card 1 */}
             <div className="col-12 col-md-6">
               <div
