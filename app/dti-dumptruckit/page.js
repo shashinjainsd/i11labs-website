@@ -74,7 +74,7 @@ export default function DTI() {
               </Suspense>
               <div className="container">
                 <div className={`${styles.homeContent} ps-2 ps-md-0`}>
-                  <h1 className={`${styles.banner_text} mt-5`}>DTI</h1>
+                  <h1 className={`${styles.banner_text} mt-5`}>DumpTruckIt</h1>
                 </div>
               </div>
             </div>

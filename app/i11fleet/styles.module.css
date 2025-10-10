@@ -437,6 +437,53 @@
     width: 1rem;
     height: 1rem;
   }
+
+  /* Pain Points Grid Layout - Keep exact positioning */
+  .painPointsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .painPointRowRight {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .painPointRowCenter {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .painPointRowLeftDouble {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+  }
+
+  /* Solutions Grid Layout - Keep exact positioning */
+  .solutionsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .solutionRowLeft {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .solutionRowCenter {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .solutionRowRightDouble {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    align-items: end;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -482,6 +529,53 @@
   .centerMessageIcon {
     width: 0.875rem;
     height: 0.875rem;
+  }
+
+  /* Pain Points Grid Layout - Keep exact positioning */
+  .painPointsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .painPointRowRight {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .painPointRowCenter {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .painPointRowLeftDouble {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+  }
+
+  /* Solutions Grid Layout - Keep exact positioning */
+  .solutionsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .solutionRowLeft {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .solutionRowCenter {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .solutionRowRightDouble {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    align-items: end;
   }
 }
 
@@ -902,6 +996,115 @@
   text-align: center;
   line-height: 42px;
   padding-left: 35px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 991px) {
+  .edgeFeaturesOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 2rem;
+  }
+
+  .edgeFeature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .edgeFeaturesOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 2rem;
+  }
+
+  .edgeFeature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .edgeFeaturesOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 2rem;
+  }
+
+  .edgeFeature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .edgeFeatureIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--Black-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
+  }
+
+  .edgeFeatureSvg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--Black-color);
+  }
+
+  .edge1FeatureIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--Black-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+  }
+
+  .edge1FeatureSvg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--Black-color);
+  }
+  .edgeFeature span {
+    font-family: "BespokeSans-Medium";
+    font-size: 0.5rem;
+    color: var(--Black-color);
+    padding: 0.15rem 0.25rem;
+    border-radius: 4px;
+  }
 }
 
 /* Responsive Design */

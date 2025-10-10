@@ -1966,7 +1966,7 @@ export default function ServiceOfferings() {
       </div>
 
       {/* mobile screen */}
-      <div className="d-block d-lg-none py-3" data-aos="fade-up">  
+      <div className="d-block d-lg-none p-3" data-aos="fade-up">  
           <p className={`${styles.para3} text-center mb-5`}>
             <MoveRight size={24} color="#F71735" style={{ backgroundColor: "#ffffff", margin: "12px 0px" }} />
             At i11Labs, We Take Complete Accountability and Execute Without Compromising Quality, Innovation and Creativity

@@ -175,6 +175,17 @@
   line-height: 72px;
 }
 
+.heading2 {
+  font-size: var(--heading1);
+  font-family: "Bespoke-sans Light";
+  color: var(--Black-color);
+  opacity: var(--opacity);
+  text-align: Left;
+  line-height: 72px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
 .subheading {
   font-size: var(--heading4);
   font-family: "Bespoke-sans Light";
@@ -336,6 +347,34 @@
   font-family: "Bespoke-sans Light";
   font-size: var(--heading1);
   color: var(--Black-color);
+}
+
+.paragraph4 {
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: center;
+  font-family: "Erode Regular";
+  font-size: 18px;
+  color: var(--Black-color);
+  /* padding-right: 70px; */
+}
+
+.paragraph5 {
+  line-height: 36px;
+  letter-spacing: 0px;
+  text-align: center;
+  font-family: "Erode Regular";
+  font-size: var(--heading2);
+  color: var(--Black-color);
+}
+
+.subheading1 {
+  font-size: var(--heading4);
+  font-family: "Bespoke-sans Light";
+  color: var(--Black-color);
+  opacity: var(--opacity);
+  text-align: center;
+  line-height: 18px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -659,6 +698,7 @@ letter-spacing: 0px;
   text-align: Left;
   line-height: 72px;
 }
+
 .stage_mini{
   font-size: 30px;
   font-family: "Erode Regular";
