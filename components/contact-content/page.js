@@ -6,9 +6,6 @@ import { useRouter } from "next/navigation";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Calendar, Clock, Mail, MapPin, Phone } from "lucide-react";
-import linkedin1 from "../../public/images/home/linkedin1.png";
-import twitter from "../../public/images/home/Twitter.png";
-import instagram from "../../public/images/home/Instagram.png";
 
 const Contact = () => {
   const router = useRouter();
@@ -526,14 +523,19 @@ const Contact = () => {
             backgroundSize: "cover",
           }}
         >
-          <p className={`${styles.bgtext2} text-center text-black mt-5`}>Follow Us</p>
+          <p className={`${styles.bgtext2} text-center text-black mt-5`}>
+            Follow Us
+          </p>
           <p className={`${styles.para3} text-center text-black mb-5`}>
             Stay connected and get the latest updates
           </p>
           <div className="col-12 col-md-12 mt-3 d-flex justify-content-center gap-3">
-            <Link href="https://www.linkedin.com/company/www.i11labs.com/posts/?feedView=all" target="_blank">
+            <Link
+              href="https://www.linkedin.com/company/www.i11labs.com/posts/?feedView=all"
+              target="_blank"
+            >
               <Image
-                src={linkedin1}
+                src="/images/home/linkedin1.png"
                 alt="Linkedin"
                 title="Linkedin"
                 className="img-fluid"
@@ -541,9 +543,10 @@ const Contact = () => {
                 height={50}
               />
             </Link>
+
             <Link href="https://x.com/i11labs" target="_blank">
               <Image
-                src={twitter}
+                src="/images/home/Twitter.png"
                 alt="Twitter"
                 title="Twitter"
                 className="img-fluid"
@@ -551,9 +554,10 @@ const Contact = () => {
                 height={39}
               />
             </Link>
+
             <Link href="#" target="_blank">
               <Image
-                src={instagram}
+                src="/images/home/Instagram.png"
                 alt="Instagram"
                 title="Instagram"
                 className="img-fluid"
