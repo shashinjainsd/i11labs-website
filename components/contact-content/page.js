@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Calendar, Clock, Mail, MapPin, Phone } from "lucide-react";
-import linkedin from "../../public/images/home/Linkedin1.png";
+import linkedin1 from "../../public/images/home/linkedin1.png";
 import twitter from "../../public/images/home/Twitter.png";
 import instagram from "../../public/images/home/Instagram.png";
 
@@ -533,9 +533,9 @@ const Contact = () => {
           <div className="col-12 col-md-12 mt-3 d-flex justify-content-center gap-3">
             <Link href="https://www.linkedin.com/company/www.i11labs.com/posts/?feedView=all" target="_blank">
               <Image
-                src={linkedin}
-                alt="LinkedIn"
-                title="LinkedIn"
+                src={linkedin1}
+                alt="Linkedin"
+                title="Linkedin"
                 className="img-fluid"
                 width={150}
                 height={50}
