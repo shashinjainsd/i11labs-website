@@ -195,6 +195,15 @@
   line-height: 18px;
 }
 
+.subheading2{
+  font-size: var(--heading1);
+  font-family: "Bespoke-sans Light";
+  color: var(--Black-color);
+  opacity: var(--opacity);
+  text-align: Center;
+  line-height: 48px;
+}
+
 .para {
   font-size: var(--heading4);
   font-family: "Erode Regular";
@@ -359,6 +368,16 @@
   /* padding-right: 70px; */
 }
 
+.paragraph6 {
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: left;
+  font-family: "Erode Regular";
+  font-size: 18px;
+  color: var(--Black-color);
+  /* padding-right: 70px; */
+}
+
 .paragraph5 {
   line-height: 36px;
   letter-spacing: 0px;
@@ -475,6 +494,15 @@
   text-align: left;
   font-family: "Erode Regular";
   font-size: var(--heading2);
+  color: var(--Black-color);
+}
+
+.para8 {
+  line-height: 36px;
+  letter-spacing: 0px;
+  text-align: left;
+  font-family: "Erode Regular";
+  font-size: var(--heading4);
   color: var(--Black-color);
 }
 
@@ -665,6 +693,37 @@ letter-spacing: -1.8px;
   }
 
 }
+
+
+.btn1{
+  font-size: 14px !important;
+  font-family: "BespokeSans-Medium";
+  color: #41464a!important;
+  opacity: var(--opacity);
+  text-align: Center;
+  line-height: 20px;
+  border: 2px solid #E2E4E9;
+  border-radius: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 38px;
+  background-color: #FFFFFF ;
+  background: linear-gradient(to right, #191E23 50%, #ffffff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+.btn1:hover{
+  background-position: left bottom;
+  color: #ffffff !important;
+}
+@media only screen and (max-width: 991px) {
+  .btn1 {
+      font-size: 15px !important;
+  }
+
+}
+
 /* appmodernazation */
 .banner_text1{
   font-size: 72px;

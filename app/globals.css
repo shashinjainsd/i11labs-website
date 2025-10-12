@@ -885,12 +885,12 @@ overflow: hidden;
 }
 .form_group {
   position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
+  padding: 0px ;
+  margin-top: 1rem;
   width: 100%;
 }
 .errors {
-  color: #d94a4a;
+  color: #f52626;
   font-size: 12px;
   font-family: Manrope-SemiBold;
   opacity: 1;
@@ -901,17 +901,26 @@ overflow: hidden;
   opacity: 1;
 }
 .form-control {
-  border-radius: 0px !important;
-  font-size: 21px !important;
-  line-height: 32px !important;
+  border: "1px solid #E2E4E9";
+  font-size: 16px !important;
+  line-height: 24px !important;
   font-family: "Erode Regular";
   padding: 10px !important;
-  color: #191e23 !important;
+  color: #272d32 !important;
 }
 .form-control:focus {
   border-color: #c1d1e0 !important;
   box-shadow: none !important;
 }
+.form-label {
+  font-family: "Erode Regular";
+  font-size: 18px;
+  font-weight: 500;
+  color: #14181f;
+  margin-bottom: 3px;
+  display: block;
+}
+
 /* Thankyou page */
 .thankyou {
   display: flex;
@@ -990,6 +999,21 @@ overflow: hidden;
   background-size: 100% 100%;
   padding: 27% 10% 3% 10%;
 }
+
+/* Contact-Us*/
+.bg-con {
+  background: url("../public/images/contact/contact-us@2x.jpg")
+    no-repeat;
+  background-size: 100% 100%;
+  padding: 27% 10% 3% 10%;
+}
+.bg-con-mb {
+  background: url("../public/images/contact/contact-us@mob.jpg")
+    no-repeat;
+  background-size: 100% 100%;
+  padding: 27% 10% 3% 10%;
+}
+
 /*DTI*/
 .bg-dti {
   background: url("../public/images/dti/DTI@2x.webp") no-repeat;
@@ -1069,6 +1093,11 @@ overflow: hidden;
     no-repeat;
   background-size: cover;
   padding: 27% 10% 3% 10%;
+}
+
+/* lucide icons */
+.lucide {
+  stroke-width: 1.2;
 }
 
 /* i11fleet */
@@ -1171,3 +1200,4 @@ width: -moz-available !important; */
     height: 155px !important;
   }
 }
+

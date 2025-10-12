@@ -38,15 +38,14 @@ export default function ApplicationModernization() {
     return (
         <>
 
-          <div className='container-fluid'>
+      <div className='container-fluid'>
         <div className='row'>
           <div className='col p-0'>
             <div className="bg-app d-none d-sm-block">
               <h1 className={`${styles.banner_text1} mt-5`}>Application Modernization</h1>
             </div>
             <div className="bg-app-mb d-block d-sm-none">
-              <h1 className={`${styles.banner_text1} mt-5`}>Application Modernization</h1>
-              
+              <h1 className={`${styles.banner_text1} mt-5`}>Application Modernization</h1> 
             </div>
           </div>
         </div>
