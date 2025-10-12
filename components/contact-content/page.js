@@ -535,7 +535,7 @@ const Contact = () => {
               target="_blank"
             >
               <Image
-                src="/images/home/linkedin1.png"
+                src="/images/home/new/Linkedin.png"
                 alt="Linkedin"
                 title="Linkedin"
                 className="img-fluid"
