@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Calendar, Clock, Mail, MapPin, Phone } from "lucide-react";
-import linkedin from "../../public/images/home/Linkedin.png";
+import linkedin from "../../public/images/home/Linkedin1.png";
 import twitter from "../../public/images/home/Twitter.png";
 import instagram from "../../public/images/home/Instagram.png";
 
