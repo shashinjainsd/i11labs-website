@@ -15,6 +15,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import link from "../public/images/home/link.webp";
 import linkedin from "../public/images/home/linkedin.webp";
+import { Quote } from "lucide-react";
 
 export default function Home() {
   const customSlider2 = createRef();
@@ -120,12 +121,12 @@ export default function Home() {
   ];
 
   const service = [
-    { link: "/service-offerings#logistic", content: "LOGISTICS", Image: Right },
-    { link: "/service-offerings#retail", content: "RETAIL", Image: Right },
-    { link: "/service-offerings#bank", content: "BANKING", Image: Right },
+    { link: "/service-offerings#logistic", content: "Logistics", Image: Right },
+    { link: "/service-offerings#retail", content: "Retail", Image: Right },
+    { link: "/service-offerings#bank", content: "Banking", Image: Right },
     {
       link: "/service-offerings#bank",
-      content: "FINANCE & SECURITIES",
+      content: "Finance & Securities",
       Image: Right,
     },
   ];
@@ -894,9 +895,8 @@ export default function Home() {
           }}
         >
           <p className={`${styles.bgtext2} text-center  mt-5`}>
-            {" "}
-            'IDEAS ARE EASY, <br />
-            EXECUTION IS EVERYTHING.'
+            " IDEAS ARE EASY, <br />
+            EXECUTION IS EVERYTHING. "
           </p>
           <p className={`${styles.para3} text-center text-white mb-5`}>
             {" "}

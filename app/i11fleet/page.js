@@ -36,6 +36,8 @@ import card2 from "../../public/images/i11fleet/card2.jpg";
 import card3 from "../../public/images/i11fleet/card3.jpg";
 import edgeBg from "../../public/images/i11fleet/Edge-bg.png";
 import edgeImage from "../../public/images/i11fleet/edge.jpg";
+import VideoModal from "../../components/Video/i11fleetVideoModal.js";
+
 
 export const metadata = {
   title: "i11Fleet - i11 Fleet Management Solutions by i11Labs",
@@ -72,7 +74,7 @@ export default function i11fleet() {
                   platform.
                 </p>
                 <div className={styles.heroButtons}>
-                  <Link href="/contact" className={styles.heroBtn}>
+                  <Link href="#video-section" className={styles.heroBtn}>
                     Watch Demo
                   </Link>
                   <Link href="/contact" className={styles.heroBtn}>
@@ -94,22 +96,32 @@ export default function i11fleet() {
           <div className="row justify-content-center text-center mb-5">
             <div className="col-12">
               <h2 className={styles.heading}>
-                Why Fleets Choose <span style={{ color: "#F71735" }}>i</span>11Fleet (Watch Demo Below)
+                Why Fleets Choose <span style={{ color: "#F71735" }}>i</span>
+                11Fleet (Watch Demo Below)
               </h2>
               <p className={styles.stage_mini}>
-                See how <span style={{ color: "#F71735" }}>i</span>11Fleet simplifies fleet management - in 90Seconds
+                See how <span style={{ color: "#F71735" }}>i</span>11Fleet
+                simplifies fleet management - in 90Seconds
               </p>
             </div>
           </div>
 
-          <div className="row justify-content-center">
-      
-              
-        
+          <div className="col-8">
+            <video
+              src="/images/i11fleet/I11fleetVideo.mp4"
+              controls
+              autoPlay
+              loop
+              muted
+              style={{ width: "100%", borderRadius: "8px" }}
+            />
           </div>
         </div>
       </div> */}
 
+
+    {/* Video Section - Using the separate component */}
+      <VideoModal />
 
       {/* Why We Built Section */}
       <div className={styles.whyWeBuiltSection}>

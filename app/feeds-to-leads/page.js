@@ -29,10 +29,10 @@ export default function FTL() {
         <div className='row'>
           <div className='col p-0'>
             <div className="bg-ftl d-none d-sm-block">
-              <h1 className={`${styles.banner_text} mt-5`}>Feeds To Leads</h1>
+              <h1 className={`${styles.banner_text} mt-5`}>FeedsToLeads</h1>
             </div>
             <div className="bg-ftl-mb d-block d-sm-none">
-              <h1 className={`${styles.banner_text} mt-5`}>Feeds To Leads</h1>
+              <h1 className={`${styles.banner_text} mt-5`}>FeedsToLeads</h1>
             </div>
           </div>
         </div>

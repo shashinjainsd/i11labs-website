@@ -79,6 +79,148 @@
   color: black;
 }
 
+
+/* Video Section */
+.videoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.videoContainer:hover {
+  transform: scale(1.02);
+}
+
+.videoThumbnail {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.videoThumbnail:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.videoThumbnail:hover .thumbnailImage {
+  filter: brightness(0.8);
+}
+
+/* Play Button Overlay */
+.playButtonOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.videoThumbnail:hover .playButtonOverlay {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.playButton {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.videoThumbnail:hover .playButton {
+  transform: scale(1.1);
+  background: #f0f0f0;
+}
+
+.playIcon {
+  width: 30px;
+  height: 30px;
+  color: #F71735;
+  margin-left: 4px;
+}
+
+.videoCaption {
+  text-align: center;
+  font-family: "Erode Regular";
+  color: var(--Black-color);
+  opacity: 0.7;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Video Modal */
+.videoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modalVideoContainer {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background: black;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.modalCloseButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
 /* Why We Built Section */
 .whyWeBuiltSection {
   padding: 2rem 0;
