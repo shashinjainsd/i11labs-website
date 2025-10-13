@@ -73,10 +73,10 @@ export default function i11fleet() {
                 </p>
                 <div className={styles.heroButtons}>
                   <Link href="/contact" className={styles.heroBtn}>
-                    Request Demo
+                    Watch Demo
                   </Link>
                   <Link href="/contact" className={styles.heroBtn}>
-                    Talk To Us
+                    Request A Demo
                   </Link>
                 </div>
               </div>
@@ -84,6 +84,32 @@ export default function i11fleet() {
           </div>
         </div>
       </div>
+
+      {/* Demo Video */}
+      {/* <div
+        className="container-fluid pt-5 mt-5"
+        style={{ background: "#FFFFFF" }}
+      >
+        <div className="container">
+          <div className="row justify-content-center text-center mb-5">
+            <div className="col-12">
+              <h2 className={styles.heading}>
+                Why Fleets Choose <span style={{ color: "#F71735" }}>i</span>11Fleet (Watch Demo Below)
+              </h2>
+              <p className={styles.stage_mini}>
+                See how <span style={{ color: "#F71735" }}>i</span>11Fleet simplifies fleet management - in 90Seconds
+              </p>
+            </div>
+          </div>
+
+          <div className="row justify-content-center">
+      
+              
+        
+          </div>
+        </div>
+      </div> */}
+
 
       {/* Why We Built Section */}
       <div className={styles.whyWeBuiltSection}>
@@ -463,10 +489,7 @@ export default function i11fleet() {
           </div>
 
           <div className="row justify-content-center mt-5">
-            <div className="col-12 col-lg-8">
-              <div className={styles.red3Circle}></div>
-              <div className={styles.red4Circle}></div>
-              <div className={styles.red5Circle}></div>
+            <div className="col-12 col-lg-7">
               <div className={styles.edgeImageContainer}>
                 <Image
                   src={edgeImage}

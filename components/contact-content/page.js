@@ -6,9 +6,12 @@ import { useRouter } from "next/navigation";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Calendar, Clock, Mail, MapPin, Phone } from "lucide-react";
+import BookingSidebar from "../booking-sidebar/page.js";
+import { useState } from "react";
 
 const Contact = () => {
   const router = useRouter();
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   const validationSchema = Yup.object({
     firstname: Yup.string()
@@ -85,10 +88,10 @@ const Contact = () => {
         <div className="row">
           <div className="col p-0">
             <div className="bg-con d-none d-sm-block">
-              <h1 className={`${styles.banner_text1} mt-5`}>Contact Us</h1>
+              <h1 className={`${styles.banner_text1} mt-5`}>Connect With Us</h1>
             </div>
             <div className="bg-con-mb d-block d-sm-none">
-              <h1 className={`${styles.banner_text1} mt-5`}>Contact Us</h1>
+              <h1 className={`${styles.banner_text1} mt-5`}>Connect With Us</h1>
             </div>
           </div>
         </div>
@@ -108,7 +111,7 @@ const Contact = () => {
               >
                 <Mail
                   size={50}
-                  color="#B152E0"
+                  color="#F71735"
                   style={{
                     backgroundColor: "#F9FAFB",
                     marginBottom: "12px",
@@ -120,13 +123,17 @@ const Contact = () => {
                 <p className={`${styles.para3} pt-1`}>contact@i11labs.com</p>
                 <div className="row justify-content-center">
                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
-                    <button
-                      className={`${styles.btn1} `}
-                      type="submit"
-                      htef="#"
+                    <a
+                      href="mailto:contact@i11labs.com?subject=Inquiry%20from%20Website&body=Hi%20i11Labs%2C%0A"
+                      className={`${styles.btn1}`}
+                      style={{
+                        textDecoration: "none",
+                        display: "inline-block",
+                        alignContent: "center",
+                      }}
                     >
                       Send Message
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -143,7 +150,7 @@ const Contact = () => {
               >
                 <Phone
                   size={50}
-                  color="#594DE6"
+                  color="#F71735"
                   style={{
                     backgroundColor: "#F9FAFB",
                     marginBottom: "12px",
@@ -155,19 +162,24 @@ const Contact = () => {
                 <p className={`${styles.para3} pt-1`}>+1 (555) 123-4567</p>
                 <div className="row justify-content-center">
                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
-                    <button
-                      className={`${styles.btn1} `}
-                      type="submit"
-                      htef="#"
+                    <a
+                      href="tel:+19152359076"
+                      className={`${styles.btn1}`}
+                      style={{
+                        textDecoration: "none",
+                        display: "inline-block",
+                        alignContent: "center",
+                      }}
                     >
                       Start Call
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Card 3 */}
+            {/* Card 3 - Updated Book Appointment Card */}
             <div className="col-12 col-md-4">
               <div
                 className="p-4 h-100"
@@ -178,7 +190,7 @@ const Contact = () => {
               >
                 <Calendar
                   size={50}
-                  color="#594DE6"
+                  color="#F71735"
                   style={{
                     backgroundColor: "#F9FAFB",
                     marginBottom: "12px",
@@ -193,9 +205,8 @@ const Contact = () => {
                 <div className="row justify-content-center">
                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
                     <button
-                      className={`${styles.btn1} `}
-                      type="submit"
-                      htef="#"
+                      className={`${styles.btn1}`}
+                      onClick={() => setIsBookingOpen(true)} 
                     >
                       Schedule Now
                     </button>
@@ -389,10 +400,25 @@ const Contact = () => {
               >
                 <iframe
                   title="Dallas Location"
-                  src="https://www.google.com/maps?q=5930+Lyndon+B+Johnson+Fwy,+Dallas,+TX+75240,+USA&z=11&output=embed"
+                  src="https://www.google.com/maps?q=8105+Rasor+Blvd,+Plano,+TX,+Dallas,+USA&z=12&output=embed"
                   width="100%"
-                  height="570"
-                  style={{ border: "0", borderRadius: "8px" }}
+                  height="320"
+                  style={{ border: "1px solid black", borderRadius: "8px" }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+
+                <iframe
+                  title="Bengaluru Location"
+                  src="https://www.google.com/maps?q=17,+19th+H+Main,+1st+Block,+Rajajinagar,+Bangalore,+Karnataka,+India+560010&z=12&output=embed"
+                  width="100%"
+                  height="320"
+                  style={{
+                    border: "1px solid black",
+                    borderRadius: "8px",
+                    marginTop: "16px",
+                  }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -403,7 +429,9 @@ const Contact = () => {
             {/* Visit Us */}
             <div className="col-12 col-md-6">
               <div className="h-100" style={{ backgroundColor: "#ffffffff" }}>
-                <p className={`${styles.para5} mb-0`}>Visit Our Office</p>
+                <p className={`${styles.para5} mb-0`}>
+                  Where Innovation Happens - Visit Our Offices
+                </p>
                 <p className={`${styles.para3} pt-3`}>
                   Drop by for a coffee and let's discuss how we can work
                   together.
@@ -414,7 +442,7 @@ const Contact = () => {
                   <div
                     className="p-3 h-100 d-flex align-items-start"
                     style={{
-                      backgroundColor: "#F0F4F7",
+                      backgroundColor: "#F9FAFB",
                       border: "1px solid #E2E4E9",
                       gap: "16px",
                     }}
@@ -431,11 +459,39 @@ const Contact = () => {
                       }}
                     />
                     <div className="d-flex flex-column">
-                      <p className={`${styles.para8} mb-1`}>Address</p>
+                      <p className={`${styles.para8} mb-1`}>
+                        Headquarters – USA
+                      </p>
                       <p className={`${styles.paragraph6} mb-0`}>
-                        5930 LBJ Freeway, Suite 310, Dallas, TX 75240 USA. -
-                        Headquarters
-                        <br />
+                        8105 Rasor Blvd, Plano, TX, Dallas
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-12 mt-3">
+                  <div
+                    className="p-3 h-100 d-flex align-items-start"
+                    style={{
+                      backgroundColor: "#F9FAFB",
+                      border: "1px solid #E2E4E9",
+                      gap: "16px",
+                    }}
+                  >
+                    <MapPin
+                      size={40}
+                      color="#594DE6"
+                      style={{
+                        backgroundColor: "#594DE61A",
+                        padding: "10px",
+                        borderRadius: "6px",
+                        marginTop: "10px",
+                        flexShrink: 0,
+                      }}
+                    />
+                    <div className="d-flex flex-column">
+                      <p className={`${styles.para8} mb-1`}>India Office</p>
+                      <p className={`${styles.paragraph6} mb-0`}>
                         17, 19th H Main, 1st Block, Rajajinagar, Bangalore –
                         560010, Karnataka, India.
                       </p>
@@ -448,7 +504,7 @@ const Contact = () => {
                   <div
                     className="p-3 h-100 d-flex align-items-start"
                     style={{
-                      backgroundColor: "#F0F4F7",
+                      backgroundColor: "#F9FAFB",
                       border: "1px solid #E2E4E9",
                       gap: "16px",
                     }}
@@ -482,7 +538,7 @@ const Contact = () => {
                   <div
                     className="p-3 h-100 d-flex align-items-start"
                     style={{
-                      backgroundColor: "#F0F4F7",
+                      backgroundColor: "#F9FAFB",
                       border: "1px solid #E2E4E9",
                       gap: "16px",
                     }}
@@ -555,7 +611,10 @@ const Contact = () => {
               />
             </Link>
 
-            <Link href="#" target="_blank">
+            <Link
+              href="https://www.instagram.com/i11labs_team?igsh=MW52djRxNHRjZ2lmcw=="
+              target="_blank"
+            >
               <Image
                 src="/images/home/Instagram.png"
                 alt="Instagram"
@@ -737,6 +796,11 @@ const Contact = () => {
           </div>
         </div>
       </div> */}
+
+      <BookingSidebar 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </>
   );
 };

@@ -32,9 +32,9 @@ export default function Footer() {
                     </div>
                     <div className="col-xl-3 col-lg-3 col-md-6 col-12 pt-4 pt-md-0">
                     <div className={`${style.footerheading}`}><Link href="/products" style={{textDecoration:"none", color:"#191E23"}}>Products</Link></div>
-                      <div className={`${style.footercontent} pt-3`}><Link href="/i11fleet" className={`${style.commonlink}`} >i11Fleet</Link></div>
-                      <div className={`${style.footercontent} pt-3`}><Link href="/feeds-to-leads" className={`${style.commonlink}`} >Feeds To Leads</Link></div>
-                      <div className={`${style.footercontent} pt-3`}><Link href="/dti-dumptruckit" className={`${style.commonlink}`}>Dump Truck It</Link></div>
+                      <div className={`${style.footercontent} pt-3`}><Link href="/i11fleet" className={`${style.commonlink}`} ><span style={{ color: "#F71735" }}>i</span>11Fleet</Link></div>
+                      <div className={`${style.footercontent} pt-3`}><Link href="/feeds-to-leads" className={`${style.commonlink}`} >FeedsToLeads</Link></div>
+                      <div className={`${style.footercontent} pt-3`}><Link href="/dti-dumptruckit" className={`${style.commonlink}`}>DumpTruckIt</Link></div>
                       {/* <div className={`${style.footercontent} pt-3`}><Link href="/know-whereabouts-of-crew" className={`${style.commonlink}`}>KWC – Know Whereabout of Crew</Link></div> */}
                     </div>
                     <div className="col-xl-7 col-lg-6 col-12 pt-4 pt-lg-0">

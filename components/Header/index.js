@@ -60,13 +60,13 @@ export default function Header() {
                                             </Link>
                                             <ul className={`dropdown-menu ps-3 ${isDropdownOpen.built ? 'show' : ''}`} aria-labelledby="navbarDropdown">
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/i11fleet" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>i11Fleet</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/i11fleet" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}><span style={{ color: "#F71735" }}>i</span>11Fleet</Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/feeds-to-leads" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Feeds To Leads</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/feeds-to-leads" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>FeedsToLeads</Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/dti-dumptruckit" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Dump Truck It</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/dti-dumptruckit" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>DumpTruckIt</Link>
                                                 </li>
                                                 {/* <li data-bs-dismiss="offcanvas" aria-current="page">
                                                     <Link className={`${styles.subheadercontent1} dropdown-item ms-2 pt-3`} href="/know-whereabouts-of-crew/" rel="noreferrer">KWC – Know Whereabout of Crew</Link>
@@ -131,13 +131,13 @@ export default function Header() {
                                     </Link>
                                     <ul className={`dropdown-menu ${isDropdownOpen.built ? 'show' : ''}`} aria-labelledby="navbarDropdown">
                                         <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/i11fleet" ? styles.activeLink : ""}`} href="/i11fleet">i11Fleet</Link>
+                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/i11fleet" ? styles.activeLink : ""}`} href="/i11fleet"><span style={{ color: "#F71735" }}>i</span>11Fleet</Link>
                                         </li>
                                         <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/feeds-to-leads" ? styles.activeLink : ""}`} href="/feeds-to-leads">Feeds To Leads</Link>
+                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/feeds-to-leads" ? styles.activeLink : ""}`} href="/feeds-to-leads">FeedsToLeads</Link>
                                         </li>
                                         <li className="centerheader">
-                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/dti-dumptruckit" ? styles.activeLink : ""}`} href="/dti-dumptruckit">Dump Truck It</Link>
+                                            <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/dti-dumptruckit" ? styles.activeLink : ""}`} href="/dti-dumptruckit">DumpTruckIt</Link>
                                         </li>
                                         {/* <li className="centerheader">
                                             <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/know-whereabouts-of-crew/" ? styles.activeLink : ""}`} href="/know-whereabouts-of-crew/">KWC – Know Whereabout of Crew</Link>

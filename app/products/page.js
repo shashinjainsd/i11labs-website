@@ -197,14 +197,14 @@ export default function Home() {
                     >
                       <div className="leftborder">
                         <h2 className={`${styles.carouselheading} mx-3`}>
-                          i11Fleet
+                          <span style={{ color: "#F71735" }}>i</span>11Fleet
                         </h2>
                       </div>
                       <div className="pt-xl-5 pt-lg-3">
                         <p className={`${styles.paragraph}`}>
                           Managing fleets is complex. Drivers, brokers, clients,
                           deliveries - it all needs to work together. That’s
-                          where i11Fleet comes in.
+                          where <span style={{ color: "#F71735" }}>i</span>11Fleet comes in.
                         </p>
                       </div>
                       <div className="pt-3">
@@ -232,14 +232,14 @@ export default function Home() {
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
                           <h2 className={`${styles.carouselheading} mx-3`}>
-                            i11Fleet
+                            <span style={{ color: "#F71735" }}>i</span>11Fleet
                           </h2>
                         </div>
                         <div className="pt-3">
                           <p className={`${styles.paragraph}`}>
                             Managing fleets is complex. Drivers, brokers,
                             clients, deliveries - it all needs to work together.
-                            That’s where i11Fleet comes in.
+                            That’s where <span style={{ color: "#F71735" }}>i</span>11Fleet comes in.
                           </p>
                         </div>
                         <div className="pt-3">
@@ -271,14 +271,14 @@ export default function Home() {
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
                           <h2 className={`${styles.carouselheading} mx-3`}>
-                            i11Fleet
+                            <span style={{ color: "#F71735" }}>i</span>11Fleet
                           </h2>
                         </div>
                         <div className="pt-3">
                           <p className={`${styles.paragraph}`}>
                             Managing fleets is complex. Drivers, brokers,
                             clients, deliveries - it all needs to work together.
-                            That’s where i11Fleet comes in.
+                            That’s where <span style={{ color: "#F71735" }}>i</span>11Fleet comes in.
                           </p>
                         </div>
                         <div className="pt-3">
@@ -316,7 +316,7 @@ export default function Home() {
                     >
                       <div className="leftborder">
                         <h1 className={`${styles.carouselheading} mx-3`}>
-                          Feeds To Leads
+                          FeedsToLeads
                         </h1>
                       </div>
                       <div className="pt-xl-5 pt-lg-3">
@@ -353,13 +353,13 @@ export default function Home() {
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
                           <h1 className={`${styles.carouselheading} mx-3`}>
-                            Feeds To Leads
+                            FeedsToLeads
                           </h1>
                         </div>
                         <div className="pt-3">
                           <p className={`${styles.paragraph}`}>
                             Less chasing, more closing — that’s the promise of
-                            Feeds To Leads.
+                            FeedsToLeads.
                           </p>
                         </div>
                         <div className="pt-3">
@@ -391,13 +391,13 @@ export default function Home() {
                       <div className="mx-md-5 mx-sm-3 pt-3">
                         <div className="leftborder">
                           <h1 className={`${styles.carouselheading} mx-3`}>
-                            Feeds To Leads
+                            FeedsToLeads
                           </h1>
                         </div>
                         <div className="pt-3">
                           <p className={`${styles.paragraph}`}>
                             Less chasing, more closing — that’s the promise of
-                            Feeds To Leads.
+                            FeedsToLeads.
                           </p>
                         </div>
                         <div className="pt-3">
@@ -691,16 +691,22 @@ export default function Home() {
       </div>
 
       <div className="container py-lg-5 py-3 d-lg-block d-none">
-        <div className="row" data-aos="fade-up">
-          <div className="col-lg-4 col-md-6 col-12 h-100">
-            <div style={{ borderRight: "1px solid  #C1D1E0" }}>
-              <p className={`${styles.para1}`}>i11Fleet</p>
-              <p className={`${styles.para3}`}>
-                Managing fleets is complex. Drivers, brokers, clients,
-                deliveries—it all needs to work together. That’s where i11Fleet
-                comes in.
-              </p>
-              <div className="pt-xl-5 pt-4">
+        <div className="row align-items-stretch" data-aos="fade-up">
+          <div className="col-lg-4 col-md-6 col-12">
+            <div
+              className="d-flex flex-column h-100"
+              style={{ borderRight: "1px solid #C1D1E0", padding: "1.25rem" }}
+            >
+              <div>
+                <p className={`${styles.para1}`}><span style={{ color: "#F71735" }}>i</span>11Fleet</p>
+                <p className={`${styles.para3}`}>
+                  Managing fleets is complex. Drivers, brokers, clients,
+                  deliveries - it all needs to work together. That’s where
+                  i11Fleet comes in.
+                </p>
+              </div>
+
+              <div className="mt-auto pt-3">
                 <button className="viewall ps-0">
                   <Link href="/i11fleet" className="viewallvoiletlink">
                     Know More
@@ -710,14 +716,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6 col-12 h-100">
-            <div style={{ borderRight: "1px solid  #C1D1E0" }}>
-              <p className={`${styles.para1}`}>Feeds To Leads</p>
-              <p className={`${styles.para3}`}>
-                Less chasing, more closing — that’s the promise of Feeds To
-                Leads.
-              </p>
-              <div className="pt-xl-3 pt-0">
+          <div className="col-lg-4 col-md-6 col-12">
+            <div
+              className="d-flex flex-column h-100"
+              style={{ borderRight: "1px solid #C1D1E0", padding: "1.25rem" }}
+            >
+              <div>
+                <p className={`${styles.para1}`}>FeedsToLeads</p>
+                <p className={`${styles.para3}`}>
+                  Less chasing, more closing - that’s the promise of Feeds To
+                  Leads.
+                </p>
+              </div>
+              <div className="mt-auto pt-3">
                 <button className="viewall ps-0">
                   <Link href="/feeds-to-leads" className="viewallvoiletlink">
                     Know More
@@ -727,13 +738,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6 col-12 h-100">
-            <div style={{ borderRight: "1px solid  #C1D1E0" }}>
-              <p className={`${styles.para1}`}>DumpTruckIt</p>
-              <p className={`${styles.para3}`}>
-                Meet the mobile app built specifically for dump truck businesses
-              </p>
-              <div className="pt-xl-5 pt-0">
+          <div className="col-lg-4 col-md-6 col-12">
+            <div
+              className="d-flex flex-column h-100"
+              style={{ borderRight: "1px solid #C1D1E0", padding: "1.25rem" }}
+            >
+              <div>
+                <p className={`${styles.para1}`}>DumpTruckIt</p>
+                <p className={`${styles.para3}`}>
+                  Meet the mobile app built specifically for dump truck
+                  businesses.
+                </p>
+              </div>
+              <div className="mt-auto pt-3">
                 <button className="viewall ps-0">
                   <Link href="/dti-dumptruckit" className="viewallvoiletlink">
                     Know More
@@ -750,8 +767,8 @@ export default function Home() {
               <Image
                 src={i11}
                 className="img-fluid"
-                width={378}
-                height={368}
+                width={338}
+                height={328}
                 alt="i11Fleet"
                 title="i11Fleet"
               />
@@ -763,8 +780,8 @@ export default function Home() {
               <Image
                 src={FTL}
                 className="img-fluid"
-                width={308}
-                height={298}
+                width={328}
+                height={318}
                 alt="Feeds To Leads"
                 title="Feeds To Leads"
               />
@@ -776,8 +793,8 @@ export default function Home() {
               <Image
                 src={DTI}
                 className="img-fluid"
-                width={288}
-                height={278}
+                width={258}
+                height={248}
                 alt="DumpTruckIt"
                 title="DumpTruckIt"
               />
