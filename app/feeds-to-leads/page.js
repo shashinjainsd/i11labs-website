@@ -25,7 +25,7 @@ export default function FTL() {
     return (
         <>
 
-          <div className='container-fluid'>
+      <div className='container-fluid'>
         <div className='row'>
           <div className='col p-0'>
             <div className="bg-ftl d-none d-sm-block">

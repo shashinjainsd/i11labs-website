@@ -52,24 +52,40 @@ const TestimonialCard = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const carouselRef = useRef(null);
   const animationRef = useRef(null);
 
-  // Continuous sliding animation
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
+  // Continuous sliding animation for all screens
   useEffect(() => {
     const startAnimation = () => {
       const carousel = carouselRef.current;
       if (!carousel) return;
 
       let position = 0;
-      const speed = 0.5; // pixels per frame - adjust for speed
-      const cardWidth = 800; // approximate card width with margin
+      const speed = isMobile ? 0.3 : 0.5; // Slower speed for mobile
+      const cardWidth = isMobile ? window.innerWidth * 0.85 : 800; // 85vw for mobile
 
       const animate = () => {
         position -= speed;
 
         // Reset position when we've scrolled through all cards
-        if (Math.abs(position) >= cardWidth * testimonials.length) {
+        const totalWidth = cardWidth * testimonials.length;
+        if (Math.abs(position) >= totalWidth) {
           position = 0;
         }
 
@@ -82,19 +98,18 @@ const TestimonialCard = () => {
 
     startAnimation();
 
-    // Cleanup
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [testimonials.length]);
+  }, [testimonials.length, isMobile]);
 
-  // Also update current index for dot indicators
+  // Update current index for dot indicators
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 3000); // Change index every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [testimonials.length]);
@@ -103,8 +118,8 @@ const TestimonialCard = () => {
     return [...Array(5)].map((_, index) => (
       <svg
         key={index}
-        width="20"
-        height="20"
+        width={isMobile ? "16" : "20"}
+        height={isMobile ? "16" : "20"}
         viewBox="0 0 24 24"
         fill={index < rating ? "#FFD700" : "#E4E5E9"}
         className={styles.star}
@@ -114,120 +129,105 @@ const TestimonialCard = () => {
     ));
   };
 
+  const renderTestimonialCards = (testimonialsToRender, keyPrefix = "") => {
+    return testimonialsToRender.map((testimonial) => (
+      <div
+        key={`${keyPrefix}${testimonial.id}`}
+        className={styles.testimonialCard}
+      >
+        <div className={styles.cardBody}>
+          {/* Mobile layout - vertical but in horizontal scroll */}
+          {isMobile ? (
+            <div className="text-center h-100 d-flex flex-column justify-content-between">
+              <div className={styles.profileSection}>
+                <div
+                  className={styles.profileImage}
+                  style={{
+                    backgroundImage: `url(${testimonial.image})`,
+                  }}
+                />
+                <h5 className={styles.name}>{testimonial.name}</h5>
+                <p className={styles.role}>{testimonial.role}</p>
+              </div>
+
+              <div className={styles.contentSection}>
+                <img
+                  src="/images/Testimonials/QuoteLeft.png"
+                  alt="left quote"
+                  className={styles.quoteLeftDecor}
+                />
+                <p className={styles.content}>{testimonial.content}</p>
+                <div className={styles.quoteRightDecor}>
+                  <img
+                    src="/images/Testimonials/QuoteRight.png"
+                    alt="right quote"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.ratingSection}>
+                <div className={styles.stars}>
+                  {renderStars(testimonial.rating)}
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* Desktop layout - horizontal */
+            <div className="row align-items-center h-100">
+              <div className="col-12 col-md-4 text-center mb-4 mb-md-0">
+                <div className={styles.profileSection}>
+                  <div
+                    className={styles.profileImage}
+                    style={{
+                      backgroundImage: `url(${testimonial.image})`,
+                    }}
+                  />
+                  <h5 className={styles.name}>{testimonial.name}</h5>
+                  <p className={styles.role}>{testimonial.role}</p>
+                </div>
+              </div>
+
+              <div className="col-12 col-md-8">
+                <div className={styles.contentSection}>
+                  <img
+                    src="/images/Testimonials/QuoteLeft.png"
+                    alt="left quote"
+                    className={styles.quoteLeftDecor}
+                  />
+                  <p className={styles.content}>{testimonial.content}</p>
+                  <div className={styles.quoteRightDecor}>
+                    <img
+                      src="/images/Testimonials/QuoteRight.png"
+                      alt="right quote"
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.ratingSection}>
+                  <div className={styles.stars}>
+                    {renderStars(testimonial.rating)}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    ));
+  };
+
   return (
     <div className={styles.testimonialSection}>
       <div className="container mt-4 py-4 mx-auto" data-aos="fade-up">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-12">
-            {/* Testimonials Carousel Container */}
             <div className={styles.carouselContainer}>
               <div ref={carouselRef} className={styles.carouselTrack}>
                 {/* Original testimonials */}
-                {testimonials.map((testimonial) => (
-                  <div key={testimonial.id} className={styles.testimonialCard}>
-                    <div className={styles.cardBody}>
-                      <div className="row align-items-center h-100">
-                        {/* Left Side - Image & Details (30%) */}
-                        <div className="col-12 col-md-4 text-center mb-4 mb-md-0">
-                          <div className={styles.profileSection}>
-                            <div
-                              className={styles.profileImage}
-                              style={{
-                                backgroundImage: `url(${testimonial.image})`,
-                              }}
-                            />
-                            <h5 className={styles.name}>{testimonial.name}</h5>
-                            <p className={styles.role}>{testimonial.role}</p>
-                          </div>
-                        </div>
-
-                        {/* Right Side - Content & Rating (70%) */}
-                        <div className="col-12 col-md-8">
-                          <div className={styles.contentSection}>
-                            {/* Left Quote Positioned Absolutely */}
-                            <img
-                              src="/images/Testimonials/QuoteLeft.png"
-                              alt="left quote"
-                              className={styles.quoteLeftDecor}
-                            />
-
-                            <p className={styles.content}>
-                              {testimonial.content}
-                            </p>
-
-                            {/* Right Quote Positioned Absolutely */}
-                            <div className={styles.quoteRightDecor}>
-                              <img
-                                src="/images/Testimonials/QuoteRight.png"
-                                alt="right quote"
-                              />
-                            </div>
-                          </div>
-
-                          <div className={styles.ratingSection}>
-                            <div className={styles.stars}>
-                              {renderStars(testimonial.rating)}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                {renderTestimonialCards(testimonials)}
 
                 {/* Duplicated testimonials for seamless loop */}
-                {testimonials.map((testimonial) => (
-                  <div
-                    key={`duplicate-${testimonial.id}`}
-                    className={styles.testimonialCard}
-                  >
-                    <div className={styles.cardBody}>
-                      <div className="row align-items-center h-100">
-                        <div className="col-12 col-md-4 text-center mb-4 mb-md-0">
-                          <div className={styles.profileSection}>
-                            <div
-                              className={styles.profileImage}
-                              style={{
-                                backgroundImage: `url(${testimonial.image})`,
-                              }}
-                            />
-                            <h5 className={styles.name}>{testimonial.name}</h5>
-                            <p className={styles.role}>{testimonial.role}</p>
-                          </div>
-                        </div>
-
-                        <div className="col-12 col-md-8">
-                          <div className={styles.contentSection}>
-                            {/* Left Quote Positioned Absolutely */}
-                            <img
-                              src="/images/Testimonials/QuoteLeft.png"
-                              alt="left quote"
-                              className={styles.quoteLeftDecor}
-                            />
-
-                            <p className={styles.content}>
-                              {testimonial.content}
-                            </p>
-
-                            {/* Right Quote Positioned Absolutely */}
-                            <div className={styles.quoteRightDecor}>
-                              <img
-                                src="/images/Testimonials/QuoteRight.png"
-                                alt="right quote"
-                              />
-                            </div>
-                          </div>
-
-                          <div className={styles.ratingSection}>
-                            <div className={styles.stars}>
-                              {renderStars(testimonial.rating)}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                {renderTestimonialCards(testimonials, "duplicate-")}
               </div>
             </div>
           </div>

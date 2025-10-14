@@ -412,8 +412,8 @@ export default function Home() {
                   <Image
                     src={i11}
                     className="pt-md-5 pt-4"
-                    width={278}
-                    height={268}
+                    width={308}
+                    height={218}
                     alt="i11Fleet"
                     title="i11Fleet"
                   />
@@ -424,7 +424,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 col-11 h-100 me-3">
               <div className="card">
                 <div className="card-bodyies">
-                  <p className={`${styles.para1}`}>Feeds To Leads</p>
+                  <p className={`${styles.para1}`}>FeedsToLeads</p>
                   <p className={`${styles.para3}`}>
                     Less chasing, more closing - that’s the promise of Feeds To
                     Leads.
@@ -445,7 +445,7 @@ export default function Home() {
                     src={FTL}
                     className="pt-md-5 pt-4"
                     width={278}
-                    height={268}
+                    height={188}
                     alt="Feeds To Leads"
                     title="Feeds To Leads"
                   />
@@ -476,8 +476,8 @@ export default function Home() {
                   <Image
                     src={DTI}
                     className="pt-md-5 pt-4"
-                    width={278}
-                    height={268}
+                    width={248}
+                    height={208}
                     alt="DumpTruckIt"
                     title="DumpTruckIt"
                   />

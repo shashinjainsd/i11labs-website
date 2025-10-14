@@ -158,8 +158,7 @@ export default function ourDNA() {
                     Pavan Ekshwakula
                   </p>
                   <div
-                    className="col-1"
-                    style={{ paddingLeft: "1rem", paddingBottom: "1rem" }}
+                    className={`${styles.linkedincontainer} col-1`}
                   >
                     <Link
                       href="https://www.linkedin.com/in/pavan-ekshwakula-5162aa125"
@@ -169,7 +168,7 @@ export default function ourDNA() {
                         src={linkedin}
                         alt="LinkedIn"
                         title="LinkedIn"
-                        className="img-fluid"
+                        className={`img-fluid ${styles.linkedinIcon}`}
                         width={28}
                         height={28}
                       />
@@ -218,8 +217,7 @@ export default function ourDNA() {
                     Priyanka Agarwal
                   </p>
                   <div
-                    className="col-1"
-                    style={{ paddingLeft: "1rem", paddingBottom: "1rem" }}
+                    className={`${styles.linkedincontainer} col-1`}
                   >
                     <Link
                       href="https://www.linkedin.com/in/priyankaagarwal7/"
@@ -229,7 +227,7 @@ export default function ourDNA() {
                         src={linkedin}
                         alt="LinkedIn"
                         title="LinkedIn"
-                        className="img-fluid"
+                        className={`img-fluid ${styles.linkedinIcon}`}
                         width={28}
                         height={28}
                       />
@@ -287,8 +285,7 @@ export default function ourDNA() {
                 <div className="d-flex flex-row justify-content-center align-items-center">
                   <p className={`${styles.paragraph5} mb-3`}>Biju Nair</p>
                   <div
-                    className="col-1"
-                    style={{ paddingLeft: "1rem", paddingBottom: "1rem" }}
+                    className={`${styles.linkedincontainer} col-1`}
                   >
                     <Link
                       href="https://www.linkedin.com/in/bijunair2000"
@@ -298,7 +295,7 @@ export default function ourDNA() {
                         src={linkedin}
                         alt="LinkedIn"
                         title="LinkedIn"
-                        className="img-fluid"
+                        className={`img-fluid ${styles.linkedinIcon}`}
                         width={28}
                         height={28}
                       />
@@ -351,8 +348,7 @@ export default function ourDNA() {
                     Gertrude Van Horn
                   </p>
                   <div
-                    className="col-1"
-                    style={{ paddingLeft: "1rem", paddingBottom: "1rem" }}
+                    className={`${styles.linkedincontainer} col-1`}
                   >
                     <Link
                       href="https://www.linkedin.com/in/gertrudevanhorn"
@@ -362,7 +358,7 @@ export default function ourDNA() {
                         src={linkedin}
                         alt="LinkedIn"
                         title="LinkedIn"
-                        className="img-fluid"
+                        className={`img-fluid ${styles.linkedinIcon}`}
                         width={28}
                         height={28}
                       />
