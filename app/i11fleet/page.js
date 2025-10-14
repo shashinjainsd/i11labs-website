@@ -38,7 +38,6 @@ import edgeBg from "../../public/images/i11fleet/Edge-bg.png";
 import edgeImage from "../../public/images/i11fleet/edge.jpg";
 import VideoModal from "../../components/Video/i11fleetVideoModal.js";
 
-
 export const metadata = {
   title: "i11Fleet - i11 Fleet Management Solutions by i11Labs",
   description:
@@ -88,7 +87,7 @@ export default function i11fleet() {
       </div>
 
       {/* Demo Video */}
-      {/* <div
+      <div
         className="container-fluid pt-5 mt-5"
         style={{ background: "#FFFFFF" }}
       >
@@ -99,29 +98,52 @@ export default function i11fleet() {
                 Why Fleets Choose <span style={{ color: "#F71735" }}>i</span>
                 11Fleet (Watch Demo Below)
               </h2>
-              <p className={styles.stage_mini}>
-                See how <span style={{ color: "#F71735" }}>i</span>11Fleet
-                simplifies fleet management - in 90Seconds
-              </p>
             </div>
           </div>
 
-          <div className="col-8">
-            <video
-              src="/images/i11fleet/I11fleetVideo.mp4"
-              controls
-              autoPlay
-              loop
-              muted
-              style={{ width: "100%", borderRadius: "8px" }}
-            />
+          <div
+            className="row justify-content-center"
+            style={{
+              backgroundColor: "#ffffff",
+              borderRadius: "12px",
+              padding: "8px",
+              marginBottom: "4rem",
+              transform: "translateZ(0)", // Add this
+              backfaceVisibility: "hidden", // Add this
+            }}
+          >
+            <div className="col-12 col-md-10 col-lg-8 d-flex justify-content-center">
+              <video
+                src="/images/i11fleet/I11fleetVideo.mp4"
+                controls
+                autoPlay
+                loop
+                muted
+                style={{
+                  display: "block",
+                  width: "100%",
+                  maxWidth: "800px",
+                  borderRadius: "8px",
+                  border: "none",
+                  outline: "none",
+                  backgroundColor: "#ffffff",
+                  transform: "translateZ(0)",
+                  WebkitTransform: "translateZ(0)",
+                  MozTransform: "translateZ(0)",
+                  // Optional: Add one of these if needed
+                  border: "1px solid #ffffff", // Solution 2
+                  // OR
+                  // boxShadow: "0 0 0 1px #ffffff", // Alternative to border
+                }}
+                className="videoElement" // Add this class for CSS targeting
+              />
+            </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
-
-    {/* Video Section - Using the separate component */}
-      <VideoModal />
+      {/* Video Section - Using the separate component */}
+      {/* <VideoModal /> */}
 
       {/* Why We Built Section */}
       <div className={styles.whyWeBuiltSection}>

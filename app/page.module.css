@@ -232,7 +232,7 @@
 }
 
 .subheading {
-  font-size: var(--heading4);
+  font-size: var(--heading5);
   font-family: "Bespoke-sans Light";
   color: var(--Black-color);
   opacity: var(--opacity);
@@ -739,7 +739,6 @@ letter-spacing: -1.8px;
 
 }
 
-
 .btn1{
   font-size: 14px !important;
   font-family: "BespokeSans-Medium";
@@ -847,7 +846,8 @@ font-size: 24px;
     line-height: 26px;
 }
 .subheading {
-  line-height: 22px;
+  line-height: 14px;
+  font-size: 16px;
 }
 }
 /* dti */

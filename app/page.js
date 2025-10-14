@@ -394,11 +394,11 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 col-11 h-100 me-3">
               <div className="card">
                 <div className="card-bodyies">
-                  <p className={`${styles.para1}`}>i11Fleet</p>
+                  <p className={`${styles.para1}`}><span style={{ color: "#F71735" }}>i</span>11Fleet</p>
                   <p className={`${styles.para3}`}>
                     Managing fleets is complex. Drivers, brokers, clients,
                     deliveries - it all needs to work together. That’s where
-                    i11Fleet comes in.
+                    <span style={{ color: "#F71735" }}>i</span>11Fleet comes in.
                   </p>
                   <div className="pt-md-2 pt-2">
                     <button className="viewall ps-0">
@@ -520,7 +520,7 @@ export default function Home() {
                       <div>
                         <div className="col-10">
                           <p
-                            className={`${styles.subheading} ${styles.overflowtext1} mb-0 mb-md-5`}
+                            className={`${styles.subheading} mb-0 mb-md-5`}
                             id={`${styles.mobilemedia}`}
                           >
                             {item.content}

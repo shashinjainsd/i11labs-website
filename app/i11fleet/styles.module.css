@@ -80,146 +80,17 @@
 }
 
 
-/* Video Section */
-.videoContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  margin-bottom: 1rem;
+/* Video rendering fixes */
+.video-render-fix {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  outline: 1px solid transparent;
 }
 
-.videoContainer:hover {
-  transform: scale(1.02);
-}
 
-.videoThumbnail {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.videoThumbnail:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-.thumbnailImage {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: filter 0.3s ease;
-}
-
-.videoThumbnail:hover .thumbnailImage {
-  filter: brightness(0.8);
-}
-
-/* Play Button Overlay */
-.playButtonOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
-}
-
-.videoThumbnail:hover .playButtonOverlay {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.playButton {
-  width: 80px;
-  height: 80px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  transform: scale(1);
-}
-
-.videoThumbnail:hover .playButton {
-  transform: scale(1.1);
-  background: #f0f0f0;
-}
-
-.playIcon {
-  width: 30px;
-  height: 30px;
-  color: #F71735;
-  margin-left: 4px;
-}
-
-.videoCaption {
-  text-align: center;
-  font-family: "Erode Regular";
-  color: var(--Black-color);
-  opacity: 0.7;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-/* Video Modal */
-.videoModal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.modalVideoContainer {
-  position: relative;
-  width: 90%;
-  max-width: 800px;
-  background: black;
-  border-radius: 12px;
-  overflow: hidden;
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
-}
-
-.modalCloseButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-}
-
-.modalCloseButton:hover {
-  background: rgba(0, 0, 0, 0.9);
-}
 
 /* Why We Built Section */
 .whyWeBuiltSection {
@@ -948,6 +819,7 @@
 }
 
 /* Edge Section */
+/* Edge Section - Updated with smaller icons and borders */
 .edgeSection {
   padding: 4rem 0;
   text-align: center;
@@ -1010,6 +882,7 @@
   object-fit: cover;
 }
 
+/* Default desktop layout - horizontal with smaller icons and borders */
 .edgeFeaturesOverlay {
   position: absolute;
   top: 0;
@@ -1027,42 +900,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
+/* Reduced icon sizes and borders for web */
 .edgeFeatureIcon {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 2.5rem; /* Reduced from 3.5rem */
+  height: 2.5rem; /* Reduced from 3.5rem */
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid var(--Black-color);
-  border-radius: 8px;
+  border: 0.5px solid var(--Black-color); /* Reduced from 1px */
+  border-radius: 6px; /* Slightly smaller radius */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
+  padding: 0.5rem; /* Reduced from 0.75rem */
 }
 
 .edgeFeatureSvg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem; /* Reduced from 1.5rem */
+  height: 1.25rem; /* Reduced from 1.5rem */
   color: var(--Black-color);
 }
 
 .edge1FeatureIcon {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 3rem; /* Reduced from 4.5rem */
+  height: 3rem; /* Reduced from 4.5rem */
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid var(--Black-color);
-  border-radius: 8px;
+  border: 0.5px solid var(--Black-color); /* Reduced from 1px */
+  border-radius: 6px; /* Slightly smaller radius */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
+  padding: 0.5rem; /* Reduced from 0.75rem */
 }
 
 .edge1FeatureSvg {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.75rem; /* Reduced from 2.5rem */
+  height: 1.75rem; /* Reduced from 2.5rem */
   color: var(--Black-color);
 }
 
@@ -1072,144 +946,157 @@
   color: var(--Black-color);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-}
-
-/* Existing styles from old code (keep these) */
-.vr {
-  color: var(--Red-color) !important;
-  border-left: 4px solid var(--Red-color);
-  padding-left: 8px;
-  opacity: 1;
-}
-
-.heading {
-  font-size: var(--heading1);
-  font-family: "Bespoke-sans Light";
-  color: var(--Black-color);
-  opacity: var(--opacity);
   text-align: center;
-  line-height: 72px;
 }
 
-.stage_mini {
-  font-size: 20px;
-  font-family: "Erode Regular";
-  color: var(--Black-color);
-  opacity: var(--opacity);
-  text-align: center;
-  line-height: 42px;
-  padding-left: 35px;
-}
-
-/* Responsive Design */
-@media only screen and (max-width: 991px) {
+/* Mobile triangular layout with even smaller icons */
+@media only screen and (max-width: 768px) {
   .edgeFeaturesOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 2rem;
+    display: grid;
+    grid-template-areas: 
+      "target rocket"
+      "lighting lighting";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+    justify-items: center;
+    gap: 1.5rem; /* Reduced gap */
+    padding: 1.5rem 1rem; /* Reduced padding */
+  }
+
+  /* Position each feature in the triangular grid */
+  .edgeFeature:nth-child(1) {
+    grid-area: target;
+    justify-self: end;
+    margin-right: 0.75rem; /* Reduced margin */
+  }
+
+  .edgeFeature:nth-child(2) {
+    grid-area: lighting;
+    justify-self: center;
+    margin-top: 0.25rem; /* Reduced margin */
+  }
+
+  .edgeFeature:nth-child(3) {
+    grid-area: rocket;
+    justify-self: start;
+    margin-left: 0.75rem; /* Reduced margin */
   }
 
   .edgeFeature {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.4rem; /* Reduced gap */
+  }
+
+  /* Further reduced icon sizes for mobile */
+  .edgeFeatureIcon {
+    width: 2rem; /* Reduced from 3rem */
+    height: 2rem; /* Reduced from 3rem */
+    padding: 0.4rem; /* Reduced from 0.5rem */
+    border: 0.5px solid var(--Black-color);
+    border-radius: 5px;
+  }
+
+  .edgeFeatureSvg {
+    width: 1rem; /* Reduced from 1.25rem */
+    height: 1rem; /* Reduced from 1.25rem */
+  }
+
+  .edge1FeatureIcon {
+    width: 2.25rem; /* Reduced from 3.5rem */
+    height: 2.25rem; /* Reduced from 3.5rem */
+    padding: 0.4rem; /* Reduced from 0.5rem */
+    border: 0.5px solid var(--Black-color);
+    border-radius: 5px;
+  }
+
+  .edge1FeatureSvg {
+    width: 1.25rem; /* Reduced from 1.75rem */
+    height: 1.25rem; /* Reduced from 1.75rem */
+  }
+
+  .edgeFeature span {
+    font-size: 0.75rem; /* Slightly smaller text */
+    padding: 0.2rem 0.4rem;
+    line-height: 1.2;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .edgeFeaturesOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 2rem;
-  }
-
-  .edgeFeature {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-  }
-}
-
+/* Further adjustments for very small screens */
 @media only screen and (max-width: 500px) {
   .edgeFeaturesOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 2rem;
+    gap: 1rem; /* Further reduced gap */
+    padding: 1rem 0.5rem; /* Further reduced padding */
   }
 
-  .edgeFeature {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  .edgeFeature:nth-child(1) {
+    margin-right: 0.5rem;
   }
+
+  .edgeFeature:nth-child(3) {
+    margin-left: 0.5rem;
+  }
+
+  .edgeFeature:nth-child(2) {
+    margin-top: 0.1rem;
+  }
+
   .edgeFeatureIcon {
-    width: 1.5rem;
-    height: 1.5rem;
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid var(--Black-color);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 1.75rem; /* Even smaller for very small screens */
+    height: 1.75rem;
     padding: 0.3rem;
   }
 
   .edgeFeatureSvg {
-    width: 1.5rem;
-    height: 1.5rem;
-    color: var(--Black-color);
+    width: 0.875rem;
+    height: 0.875rem;
   }
 
   .edge1FeatureIcon {
-    width: 2.5rem;
-    height: 2.5rem;
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid var(--Black-color);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem;
+    width: 2rem; /* Even smaller for very small screens */
+    height: 2rem;
+    padding: 0.3rem;
   }
 
   .edge1FeatureSvg {
-    width: 1.5rem;
-    height: 1.5rem;
-    color: var(--Black-color);
+    width: 1.1rem;
+    height: 1.1rem;
   }
+
   .edgeFeature span {
-    font-family: "BespokeSans-Medium";
-    font-size: 0.5rem;
-    color: var(--Black-color);
-    padding: 0.15rem 0.25rem;
-    border-radius: 4px;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.3rem;
   }
 }
 
+/* Keep your existing responsive design for other sections */
+@media only screen and (max-width: 991px) {
+  .edgeTitle {
+    font-size: 2rem;
+  }
+  
+  .edgeSubtitle {
+    font-size: 1.2rem;
+  }
+  
+  .edgeDescription {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .edgeMainImage {
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .edgeMainImage {
+    height: 200px;
+  }
+}
 /* Responsive Design */
 @media only screen and (max-width: 991px) {
   .heroTitle {
