@@ -536,7 +536,7 @@ export default function ourDNA() {
                   height={66}
                   style={{ paddingBottom: "16px" }}
                 />
-                <p className={`${styles.para5} mb-0`}>Real-world Solutions</p>
+                <p className={`${styles.para5} mb-0`}>Adaptability & Flexibility</p>
                 <p className={`${styles.para3} pt-3`}>
                   We embrace feedback, iterate relentlessly, and remain agile in
                   our pursuit of excellence, always striving to exceed
