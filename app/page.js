@@ -895,8 +895,8 @@ export default function Home() {
           }}
         >
           <p className={`${styles.bgtext2} text-center  mt-5`}>
-            " IDEAS ARE EASY, <br />
-            EXECUTION IS EVERYTHING. "
+            "IDEAS ARE EASY, <br />
+            EXECUTION IS EVERYTHING."
           </p>
           <p className={`${styles.para3} text-center text-white mb-5`}>
             {" "}
@@ -917,8 +917,8 @@ export default function Home() {
         >
           <p className={`${styles.bgtext2} text-center  mt-5`}>
             {" "}
-            'IDEAS ARE EASY, <br />
-            EXECUTION IS EVERYTHING.'
+            "IDEAS ARE EASY, <br />
+            EXECUTION IS EVERYTHING."
           </p>
           <p className={`${styles.para3} text-center text-white mb-5`}>
             {" "}
