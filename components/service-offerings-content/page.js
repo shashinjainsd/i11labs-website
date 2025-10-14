@@ -1056,7 +1056,7 @@ export default function ServiceOfferings() {
       </div>
 
       {/* AI, Digital sign and Digital Revamping of DFWATW*/}
-      <div className="container-fluid pt-5 mb-5 mb-md-0">
+      <div className="container-fluid py-5 mb-5 mb-md-0">
         <div className="container pt-md-4 pt-2 mx-auto" data-aos="fade-up">
           <div className="row">
             <div className="col-12 py-2 ">
@@ -1258,7 +1258,7 @@ export default function ServiceOfferings() {
       </div>
 
       {/* add here testimonial sliding cards, write a code for that  */}
-      <div className="container-fluid pt-5 mb-5 mb-md-0">
+      {/* <div className="container-fluid pt-5 mb-5 mb-md-0">
         <div className="container pt-md-4 pt-2 mx-auto" data-aos="fade-up">
           <div className="col-12 py-2">
             <div className={`${styles.vr}`}>
@@ -1269,7 +1269,7 @@ export default function ServiceOfferings() {
             <TestimonialCard />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Cards */}
       <div className="container d-lg-block d-none py-4">

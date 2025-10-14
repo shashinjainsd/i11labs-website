@@ -104,7 +104,7 @@ export default function Home() {
   const items = [
     {
       title: "Biju Nair",
-      description: "EVP & President at Assurant",
+      description: "EVP & President",
       img: "/images/home/new/Biju Nair mob.webp",
       mail: "www.bijunair.me",
       url: "/our-dna#biju",
@@ -112,7 +112,7 @@ export default function Home() {
     },
     {
       title: "Gertrude Van Horn",
-      description: "CIO & Technology Executive at Rimini Street",
+      description: "CIO & Technology Executive",
       img: "/images/home/new/gertrude-van-horn mob.webp",
       mail: "www.gertrudevanhorn.com",
       url: "/our-dna#gvh",

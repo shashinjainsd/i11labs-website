@@ -303,7 +303,7 @@ export default function ourDNA() {
                   </div>
                 </div>
                 <p className={`${styles.subheading1} mb-4`}>
-                  EVP & President at Assurant
+                  EVP & President
                 </p>
                 <p className={`${styles.paragraph4} pt-3`}>
                   Biju Nair's entrepreneurial and innovation leadership spans
@@ -366,8 +366,7 @@ export default function ourDNA() {
                   </div>
                 </div>
                 <p className={`${styles.subheading1} mb-4`}>
-                  CIO & Technology Executive at Rimini Street
-                  <span style={{ color: "#F71735" }}>i</span>11Labs
+                  CIO & Technology Executive
                 </p>
                 <p className={`${styles.paragraph4} pt-3`}>
                   Gertrude Van Horn, aka Trude, a seasoned Global CIO with

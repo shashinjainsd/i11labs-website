@@ -163,7 +163,7 @@ const Contact = () => {
                 <div className="row justify-content-center">
                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
                     <a
-                      href="tel:+19152359076"
+                      href="tel:+15108579196"
                       className={`${styles.btn1}`}
                       style={{
                         textDecoration: "none",
