@@ -271,7 +271,9 @@ export default function Home() {
               style={{ borderRight: "1px solid #C1D1E0", padding: "1.25rem" }}
             >
               <div>
-                <p className={`${styles.para1}`}><span style={{ color: "#F71735" }}>i</span>11Fleet</p>
+                <p className={`${styles.para1}`}>
+                  <span style={{ color: "#F71735" }}>i</span>11Fleet
+                </p>
                 <p className={`${styles.para3}`}>
                   Managing fleets is complex. Drivers, brokers, clients,
                   deliveries - it all needs to work together. That’s where
@@ -394,7 +396,9 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 col-11 h-100 me-3">
               <div className="card">
                 <div className="card-bodyies">
-                  <p className={`${styles.para1}`}><span style={{ color: "#F71735" }}>i</span>11Fleet</p>
+                  <p className={`${styles.para1}`}>
+                    <span style={{ color: "#F71735" }}>i</span>11Fleet
+                  </p>
                   <p className={`${styles.para3}`}>
                     Managing fleets is complex. Drivers, brokers, clients,
                     deliveries - it all needs to work together. That’s where
@@ -892,16 +896,18 @@ export default function Home() {
             backgroundImage: "url('/images/home/quote bg.webp')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            width: "100%",
+            height: "20rem",
           }}
         >
-          <p className={`${styles.bgtext2} text-center  mt-5`}>
+          {/* <p className={`${styles.bgtext2} text-center mt-5`}>
             "IDEAS ARE EASY, <br />
             EXECUTION IS EVERYTHING."
           </p>
           <p className={`${styles.para3} text-center text-white mb-5`}>
             {" "}
             - John Doerr{" "}
-          </p>
+          </p> */}
         </div>
       </main>
 
@@ -913,9 +919,11 @@ export default function Home() {
             backgroundImage: "url('/images/home/quote bg-sm.webp')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            width: "100%",
+            height: "13rem",
           }}
         >
-          <p className={`${styles.bgtext2} text-center  mt-5`}>
+          {/* <p className={`${styles.bgtext2} text-center  mt-5`}>
             {" "}
             "IDEAS ARE EASY, <br />
             EXECUTION IS EVERYTHING."
@@ -923,7 +931,7 @@ export default function Home() {
           <p className={`${styles.para3} text-center text-white mb-5`}>
             {" "}
             - John Doerr{" "}
-          </p>
+          </p> */}
         </div>
       </main>
     </>

@@ -818,8 +818,7 @@
   background-color: #dc2626;
 }
 
-/* Edge Section */
-/* Edge Section - Updated with smaller icons and borders */
+/* Edge Section - Updated for triangular mobile layout with labels below icons */
 .edgeSection {
   padding: 4rem 0;
   text-align: center;
@@ -882,7 +881,7 @@
   object-fit: cover;
 }
 
-/* Default desktop layout - horizontal with smaller icons and borders */
+/* Default desktop layout - horizontal with labels below icons */
 .edgeFeaturesOverlay {
   position: absolute;
   top: 0;
@@ -900,43 +899,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-/* Reduced icon sizes and borders for web */
 .edgeFeatureIcon {
-  width: 2.5rem; /* Reduced from 3.5rem */
-  height: 2.5rem; /* Reduced from 3.5rem */
+  width: 3.5rem;
+  height: 3.5rem;
   background: rgba(255, 255, 255, 0.5);
-  border: 0.5px solid var(--Black-color); /* Reduced from 1px */
-  border-radius: 6px; /* Slightly smaller radius */
+  border: 1px solid var(--Black-color);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem; /* Reduced from 0.75rem */
+  padding: 0.75rem;
 }
 
 .edgeFeatureSvg {
-  width: 1.25rem; /* Reduced from 1.5rem */
-  height: 1.25rem; /* Reduced from 1.5rem */
+  width: 1.5rem;
+  height: 1.5rem;
   color: var(--Black-color);
 }
 
 .edge1FeatureIcon {
-  width: 3rem; /* Reduced from 4.5rem */
-  height: 3rem; /* Reduced from 4.5rem */
+  width: 4.5rem;
+  height: 4.5rem;
   background: rgba(255, 255, 255, 0.5);
-  border: 0.5px solid var(--Black-color); /* Reduced from 1px */
-  border-radius: 6px; /* Slightly smaller radius */
+  border: 1px solid var(--Black-color);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem; /* Reduced from 0.75rem */
+  padding: 0.75rem;
 }
 
 .edge1FeatureSvg {
-  width: 1.75rem; /* Reduced from 2.5rem */
-  height: 1.75rem; /* Reduced from 2.5rem */
+  width: 2.5rem;
+  height: 2.5rem;
   color: var(--Black-color);
 }
 
@@ -949,7 +947,7 @@
   text-align: center;
 }
 
-/* Mobile triangular layout with even smaller icons */
+/* Mobile triangular layout with labels below icons */
 @media only screen and (max-width: 768px) {
   .edgeFeaturesOverlay {
     display: grid;
@@ -960,66 +958,62 @@
     grid-template-rows: auto auto;
     align-items: start;
     justify-items: center;
-    gap: 1.5rem; /* Reduced gap */
-    padding: 1.5rem 1rem; /* Reduced padding */
+    gap: 2rem;
+    padding: 2rem 1rem;
   }
 
   /* Position each feature in the triangular grid */
   .edgeFeature:nth-child(1) {
     grid-area: target;
     justify-self: end;
-    margin-right: 0.75rem; /* Reduced margin */
+    margin-right: 1rem;
   }
 
   .edgeFeature:nth-child(2) {
     grid-area: lighting;
     justify-self: center;
-    margin-top: 0.25rem; /* Reduced margin */
+    margin-top: 0.5rem;
   }
 
   .edgeFeature:nth-child(3) {
     grid-area: rocket;
     justify-self: start;
-    margin-left: 0.75rem; /* Reduced margin */
+    margin-left: 1rem;
   }
 
   .edgeFeature {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem; /* Reduced gap */
+    gap: 0.5rem;
   }
 
-  /* Further reduced icon sizes for mobile */
+  /* Adjust icon sizes for mobile */
   .edgeFeatureIcon {
-    width: 2rem; /* Reduced from 3rem */
-    height: 2rem; /* Reduced from 3rem */
-    padding: 0.4rem; /* Reduced from 0.5rem */
-    border: 0.5px solid var(--Black-color);
-    border-radius: 5px;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
   }
 
   .edgeFeatureSvg {
-    width: 1rem; /* Reduced from 1.25rem */
-    height: 1rem; /* Reduced from 1.25rem */
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   .edge1FeatureIcon {
-    width: 2.25rem; /* Reduced from 3.5rem */
-    height: 2.25rem; /* Reduced from 3.5rem */
-    padding: 0.4rem; /* Reduced from 0.5rem */
-    border: 0.5px solid var(--Black-color);
-    border-radius: 5px;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.5rem;
   }
 
   .edge1FeatureSvg {
-    width: 1.25rem; /* Reduced from 1.75rem */
-    height: 1.25rem; /* Reduced from 1.75rem */
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   .edgeFeature span {
-    font-size: 0.75rem; /* Slightly smaller text */
-    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+    text-align: center;
     line-height: 1.2;
   }
 }
@@ -1027,8 +1021,8 @@
 /* Further adjustments for very small screens */
 @media only screen and (max-width: 500px) {
   .edgeFeaturesOverlay {
-    gap: 1rem; /* Further reduced gap */
-    padding: 1rem 0.5rem; /* Further reduced padding */
+    gap: 1.5rem;
+    padding: 0.8rem 0.5rem;
   }
 
   .edgeFeature:nth-child(1) {
@@ -1040,34 +1034,34 @@
   }
 
   .edgeFeature:nth-child(2) {
-    margin-top: 0.1rem;
+    margin-top: 0.25rem;
   }
 
   .edgeFeatureIcon {
-    width: 1.75rem; /* Even smaller for very small screens */
-    height: 1.75rem;
-    padding: 0.3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.4rem;
   }
 
   .edgeFeatureSvg {
-    width: 0.875rem;
-    height: 0.875rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   .edge1FeatureIcon {
-    width: 2rem; /* Even smaller for very small screens */
-    height: 2rem;
-    padding: 0.3rem;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.4rem;
   }
 
   .edge1FeatureSvg {
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .edgeFeature span {
     font-size: 0.7rem;
-    padding: 0.15rem 0.3rem;
+    padding: 0.15rem 0.25rem;
   }
 }
 
@@ -1097,6 +1091,8 @@
     height: 200px;
   }
 }
+
+
 /* Responsive Design */
 @media only screen and (max-width: 991px) {
   .heroTitle {
