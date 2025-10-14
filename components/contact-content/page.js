@@ -159,7 +159,7 @@ const Contact = () => {
                   }}
                 />
                 <p className={`${styles.para5} mb-0`}>Call Us</p>
-                <p className={`${styles.para3} pt-1`}>+1 (555) 123-4567</p>
+                <p className={`${styles.para3} pt-1`}>+1 (510) 857-9196</p>
                 <div className="row justify-content-center">
                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
                     <a
