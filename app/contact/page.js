@@ -1,4 +1,4 @@
-import Contact from "../components/Contact";
+import Contact from "../../components/contact-content/page";
 
 export const metadata = {
     title: "Contact Us - Get in Touch with i11Labs",
