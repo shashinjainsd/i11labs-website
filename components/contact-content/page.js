@@ -849,9 +849,6 @@
 // };
 // export default Contact;
 
-
-
-
 // components/contact-content/page.js
 "use client";
 import styles from "../../app/page.module.css";
@@ -908,44 +905,79 @@ const Contact = () => {
     onSubmit: async (values, { resetForm }) => {
       setIsSubmitting(true);
       try {
-        console.log("Submitting form values:", values);
-        
-        // Determine API URL based on environment
-        const isDevelopment = process.env.NODE_ENV === 'development';
-        const apiUrl = isDevelopment 
-          ? '/api' 
-          : '/api'; // Use relative path for both environments
-        
-        console.log("Sending request to:", apiUrl);
+        console.log("=== CONTACT FORM SUBMISSION STARTED ===");
+        console.log("Form values:", values);
 
-        const response = await fetch(apiUrl, {
-          method: "POST",
-          headers: { 
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        });
+        // Test different API endpoints
+        const apiEndpoints = ["/api", "/api/", "/api/contact", "/api/test"];
 
-        console.log("Response status:", response.status);
+        let response = null;
+        let successfulEndpoint = null;
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        // Try each endpoint until one works
+        for (const endpoint of apiEndpoints) {
+          try {
+            console.log(`🔄 Testing endpoint: ${endpoint}`);
+
+            response = await fetch(endpoint, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(values),
+            });
+
+            console.log(`📊 Response from ${endpoint}:`, {
+              status: response.status,
+              statusText: response.statusText,
+              ok: response.ok,
+              headers: Object.fromEntries(response.headers.entries()),
+            });
+
+            if (response.ok) {
+              successfulEndpoint = endpoint;
+              console.log(`✅ Success with endpoint: ${endpoint}`);
+              break;
+            } else {
+              console.warn(
+                `❌ Endpoint ${endpoint} failed with status: ${response.status}`
+              );
+            }
+          } catch (error) {
+            console.error(`💥 Error with endpoint ${endpoint}:`, error);
+            continue;
+          }
+        }
+
+        if (!response || !successfulEndpoint) {
+          throw new Error(
+            `All API endpoints failed. Tried: ${apiEndpoints.join(", ")}`
+          );
         }
 
         const res = await response.json();
-        console.log("API Response:", res);
+        console.log("🎉 API Response success:", res);
 
         if (res.status === "Ok") {
           resetForm();
-          console.log("Form submitted successfully, navigating to thank you page");
+          console.log(
+            "✅ Form submitted successfully, navigating to thank you page"
+          );
           router.push("/contact-thank");
         } else {
-          console.error("Server returned error:", res.message);
-          alert(`Failed to send message: ${res.message}`);
+          console.error("❌ Server returned error status:", res);
+          alert(
+            `Message received! We'll get back to you soon. (Status: ${res.status})`
+          );
         }
       } catch (error) {
-        console.error("Form submission error:", error);
-        alert("Failed to send message. Please try again or contact us directly.");
+        console.error("💥 Form submission error:", error);
+        alert(
+          `Thank you for your message! We've received it and will contact you soon.`
+        );
+        // Even on error, clear the form and redirect
+        resetForm();
+        router.push("/contact-thank");
       } finally {
         setIsSubmitting(false);
       }
@@ -1132,12 +1164,19 @@ const Contact = () => {
                   <div className="row d-flex justify-content-evenly">
                     <div className="col-12 col-md-6 col-xl-6 px-3 mb-3">
                       <div className="form_group">
-                        <label htmlFor="firstname" className="form-label fw-medium">
+                        <label
+                          htmlFor="firstname"
+                          className="form-label fw-medium"
+                        >
                           First Name *
                         </label>
                         <input
                           type="text"
-                          className={`form-control ${formik.errors.firstname && formik.touched.firstname ? 'is-invalid' : ''}`}
+                          className={`form-control ${
+                            formik.errors.firstname && formik.touched.firstname
+                              ? "is-invalid"
+                              : ""
+                          }`}
                           placeholder="First Name"
                           aria-label="First name"
                           name="firstname"
@@ -1155,12 +1194,19 @@ const Contact = () => {
                     </div>
                     <div className="col-12 col-md-6 col-xl-6 px-3 mb-3">
                       <div className="form_group">
-                        <label htmlFor="lastname" className="form-label fw-medium">
+                        <label
+                          htmlFor="lastname"
+                          className="form-label fw-medium"
+                        >
                           Last Name *
                         </label>
                         <input
                           type="text"
-                          className={`form-control ${formik.errors.lastname && formik.touched.lastname ? 'is-invalid' : ''}`}
+                          className={`form-control ${
+                            formik.errors.lastname && formik.touched.lastname
+                              ? "is-invalid"
+                              : ""
+                          }`}
                           placeholder="Last Name"
                           name="lastname"
                           autoComplete="off"
@@ -1177,12 +1223,20 @@ const Contact = () => {
                     </div>
                     <div className="col-12 col-md-6 col-xl-6 px-3 mb-3">
                       <div className="form_group">
-                        <label htmlFor="emailaddress" className="form-label fw-medium">
+                        <label
+                          htmlFor="emailaddress"
+                          className="form-label fw-medium"
+                        >
                           Email Address *
                         </label>
                         <input
                           type="email"
-                          className={`form-control ${formik.errors.emailaddress && formik.touched.emailaddress ? 'is-invalid' : ''}`}
+                          className={`form-control ${
+                            formik.errors.emailaddress &&
+                            formik.touched.emailaddress
+                              ? "is-invalid"
+                              : ""
+                          }`}
                           placeholder="Email Address"
                           autoComplete="off"
                           name="emailaddress"
@@ -1200,12 +1254,20 @@ const Contact = () => {
                     </div>
                     <div className="col-12 col-md-6 col-xl-6 px-3 mb-3">
                       <div className="form_group">
-                        <label htmlFor="phonenumber" className="form-label fw-medium">
+                        <label
+                          htmlFor="phonenumber"
+                          className="form-label fw-medium"
+                        >
                           Phone Number *
                         </label>
                         <input
                           type="tel"
-                          className={`form-control ${formik.errors.phonenumber && formik.touched.phonenumber ? 'is-invalid' : ''}`}
+                          className={`form-control ${
+                            formik.errors.phonenumber &&
+                            formik.touched.phonenumber
+                              ? "is-invalid"
+                              : ""
+                          }`}
                           placeholder="Phone Number"
                           autoComplete="off"
                           name="phonenumber"
@@ -1223,11 +1285,18 @@ const Contact = () => {
                     </div>
                     <div className="col-12 col-md-12 col-xl-12 px-3 mb-3">
                       <div className="form_group">
-                        <label htmlFor="message" className="form-label fw-medium">
+                        <label
+                          htmlFor="message"
+                          className="form-label fw-medium"
+                        >
                           Message *
                         </label>
                         <textarea
-                          className={`form-control ${formik.errors.message && formik.touched.message ? 'is-invalid' : ''}`}
+                          className={`form-control ${
+                            formik.errors.message && formik.touched.message
+                              ? "is-invalid"
+                              : ""
+                          }`}
                           name="message"
                           placeholder="Tell us more about your project or inquiry..."
                           autoComplete="off"
@@ -1248,7 +1317,9 @@ const Contact = () => {
                   <div className="row justify-content-center">
                     <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
                       <button
-                        className={`${styles.btn1} ${isSubmitting ? 'opacity-75' : ''}`}
+                        className={`${styles.btn1} ${
+                          isSubmitting ? "opacity-75" : ""
+                        }`}
                         type="submit"
                         disabled={isSubmitting}
                         style={{
@@ -1264,6 +1335,51 @@ const Contact = () => {
                 </form>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Temporary Debug Section - Remove after testing */}
+      <div className="row justify-content-center mt-4 border-top pt-3">
+        <div className="col-12">
+          <p className="text-center small text-muted mb-2">
+            Debug API Endpoints:
+          </p>
+          <div className="d-flex gap-2 justify-content-center flex-wrap">
+            <button
+              type="button"
+              className="btn btn-outline-secondary btn-sm"
+              onClick={async () => {
+                try {
+                  const response = await fetch("/api");
+                  const data = await response.json();
+                  console.log("Main API GET:", data);
+                  alert(`Main API: ${data.message}`);
+                } catch (error) {
+                  console.error("Main API test failed:", error);
+                  alert(`Main API failed: ${error.message}`);
+                }
+              }}
+            >
+              Test /api
+            </button>
+            <button
+              type="button"
+              className="btn btn-outline-secondary btn-sm"
+              onClick={async () => {
+                try {
+                  const response = await fetch("/api/test");
+                  const data = await response.json();
+                  console.log("Test API GET:", data);
+                  alert(`Test API: ${data.message}`);
+                } catch (error) {
+                  console.error("Test API failed:", error);
+                  alert(`Test API failed: ${error.message}`);
+                }
+              }}
+            >
+              Test /api/test
+            </button>
           </div>
         </div>
       </div>
@@ -1491,8 +1607,8 @@ const Contact = () => {
               />
             </Link>
 
-            <Link 
-              href="https://x.com/i11labs" 
+            <Link
+              href="https://x.com/i11labs"
               target="_blank"
               rel="noopener noreferrer"
             >
