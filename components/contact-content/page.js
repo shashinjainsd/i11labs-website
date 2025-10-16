@@ -12,7 +12,6 @@ import { useState } from "react";
 const Contact = () => {
   const router = useRouter();
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const validationSchema = Yup.object({
     firstname: Yup.string()
@@ -38,97 +37,56 @@ const Contact = () => {
       .min(5, "Minimum 5 characters"),
   });
 
-  // const formik = useFormik({
-  //   initialValues: {
-  //     firstname: "",
-  //     lastname: "",
-  //     emailaddress: "",
-  //     phonenumber: "",
-  //     message: "",
-  //   },
-  //   validationSchema,
-  //   onSubmit: async (values) => {
-  //     try {
-  //       console.log("", values);
-  //       // const response = await fetch(
-  //       //   "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
-  //       //   {
-  //       //     method: "POST",
-  //       //     headers: {
-  //       //       "Content-Type": "application/json",
-  //       //     },
-  //       //     body: JSON.stringify(values),
-  //       //   }
-  //       // );
-  //       const response = await fetch("/api", {
-  //         method: "POST",
-  //         headers: { "Content-Type": "application/json" },
-  //         body: JSON.stringify(values),
-  //       });
-
-  //       const res = await response.json();
-  //       console.log("", res);
-
-  //       if (res.status === "Ok" || res.message === "Email Sent Successfully") {
-  //         document.getElementById("contactform").reset();
-  //         console.log("");
-  //         router
-  //           .push("/contact-thank")
-  //           .then(() => {
-  //             console.log("");
-  //           })
-  //           .catch((err) => {
-  //             console.error("", err);
-  //           });
-  //       } else {
-  //         console.error("", res.message);
-  //       }
-  //     } catch (error) {
-  //       console.error("", error);
-  //     }
-  //   },
-  // });
-
-
   const formik = useFormik({
-    initialValues: {
-      firstname: "",
-      lastname: "",
-      emailaddress: "",
-      phonenumber: "",
-      message: "",
-    },
-    validationSchema,
-    onSubmit: async (values, { setSubmitting, resetForm }) => {
-      setSubmissionStatus(null);
-      setSubmitting(true);
-      try {
-        console.log("Submitting values:", values);
-        const response = await fetch("/api", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(values),
-        });
-        
-        const data = await response.json();
-        
-        if (response.ok) {
-            console.log("Email sent successfully:", data.message);
-            setSubmissionStatus('success');
-            resetForm();
-        } else {
-            console.error("API Error:", data.message);
-            setSubmissionStatus('error');
-        }
+    initialValues: {
+      firstname: "",
+      lastname: "",
+      emailaddress: "",
+      phonenumber: "",
+      message: "",
+    },
+    validationSchema,
+    onSubmit: async (values) => {
+      try {
+        console.log("", values);
+        // const response = await fetch(
+        // "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
+        //   {
+        //     method: "POST",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(values),
+        //   }
+        // );
+        const response = await fetch("/api", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        });
 
-      } catch (error) {
-        console.error("Network or Fetch Error:", error);
-        setSubmissionStatus('error');
-      } finally {
-        setSubmitting(false);
+        const res = await response.json();
+        console.log("", res);
+
+        if (res.status === "Ok" || res.message === "Email Sent Successfully") {
+          document.getElementById("contactform").reset();
+          console.log("");
+          router
+            .push("/contact-thank")
+            .then(() => {
+              console.log("");
+            })
+            .catch((err) => {
+              console.error("", err);
+            });
+        } else {
+          console.error("", res.message);
+        }
+      } catch (error) {
+        console.error("", error);
       }
-    },
-  });
+    },
+  });
 
   return (
     <>
@@ -414,7 +372,7 @@ const Contact = () => {
                       )}
                     </div>
                   </div>
-                  {/* <div className="row justify-content-center">
+                  <div className="row justify-content-center">
                     <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
                       <button
                         className={`${styles.btn1} `}
@@ -425,27 +383,7 @@ const Contact = () => {
                       </button>
                     </div>
                   </div>
-                </form> */}
-
-                 {submissionStatus === 'success' && (
-                  <p className="text-green-600 mt-4 text-center font-semibold">Your message was sent successfully!</p>
-                )}
-                {submissionStatus === 'error' && (
-                  <p className="text-red-600 mt-4 text-center font-semibold">There was an error sending your message. Please try again later.</p>
-                )}
-
-                  <div className="flex justify-center mt-6">
-                    <div className="w-full">
-                      <button
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200 disabled:opacity-50"
-                        type="submit"
-                        disabled={formik.isSubmitting}
-                      >
-                        {formik.isSubmitting ? 'Sending...' : "Let's Connect"}
-                      </button>
-                    </div>
-                  </div>
-                </form>
+                </form>
               </div>
             </div>
           </div>
