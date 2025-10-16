@@ -1,4 +1,3 @@
-// import Contact from '../../components/contact-content/page';
 import Contact from "../components/Contact";
 
 export const metadata = {
