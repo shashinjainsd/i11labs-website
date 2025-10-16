@@ -37,56 +37,104 @@ const Contact = () => {
       .min(5, "Minimum 5 characters"),
   });
 
+  // const formik = useFormik({
+  //   initialValues: {
+  //     firstname: "",
+  //     lastname: "",
+  //     emailaddress: "",
+  //     phonenumber: "",
+  //     message: "",
+  //   },
+  //   validationSchema,
+  //   onSubmit: async (values) => {
+  //     try {
+  //       console.log("", values); // Debugging submission values
+  //       // const response = await fetch(
+  //       //   "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
+  //       //   {
+  //       //     method: "POST",
+  //       //     headers: {
+  //       //       "Content-Type": "application/json",
+  //       //     },
+  //       //     body: JSON.stringify(values),
+  //       //   }
+  //       // );
+  //       const response = await fetch("/api/contact", {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify(values),
+  //       });
+
+  //       const res = await response.json();
+  //       console.log("", res); // Debugging response
+
+  //       if (res.status === "Ok" || res.message === "Email Sent Successfully") {
+  //         document.getElementById("contactform").reset();
+  //         console.log(""); // Debugging navigation
+  //         router
+  //           .push("/contact-thank")
+  //           .then(() => {
+  //             console.log("");
+  //           })
+  //           .catch((err) => {
+  //             console.error("", err);
+  //           });
+  //       } else {
+  //         console.error("", res.message);
+  //       }
+  //     } catch (error) {
+  //       console.error("", error);
+  //     }
+  //   },
+  // });
+
   const formik = useFormik({
-    initialValues: {
-      firstname: "",
-      lastname: "",
-      emailaddress: "",
-      phonenumber: "",
-      message: "",
-    },
-    validationSchema,
-    onSubmit: async (values) => {
-      try {
-        console.log("", values); // Debugging submission values
-        // const response = await fetch(
-        //   "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
-        //   {
-        //     method: "POST",
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify(values),
-        //   }
-        // );
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(values),
-        });
+  initialValues: {
+    firstname: "",
+    lastname: "",
+    emailaddress: "",
+    phonenumber: "",
+    message: "",
+  },
+  validationSchema,
+  onSubmit: async (values, { resetForm }) => {
+    try {
+      console.log("Submitting form values:", values);
+      
+      // Use relative path - this should work in both local and production
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
-        const res = await response.json();
-        console.log("", res); // Debugging response
+      console.log("Response status:", response.status);
+      console.log("Response ok:", response.ok);
 
-        if (res.status === "Ok" || res.message === "Email Sent Successfully") {
-          document.getElementById("contactform").reset();
-          console.log(""); // Debugging navigation
-          router
-            .push("/contact-thank")
-            .then(() => {
-              console.log("");
-            })
-            .catch((err) => {
-              console.error("", err);
-            });
-        } else {
-          console.error("", res.message);
-        }
-      } catch (error) {
-        console.error("", error);
+      // Check if response is OK before parsing JSON
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    },
-  });
+
+      const res = await response.json();
+      console.log("API Response:", res);
+
+      if (res.success || res.status === "Ok" || res.message === "Email sent successfully!") {
+        resetForm();
+        console.log("Form submitted successfully, navigating to thank you page");
+        router.push("/contact-thank");
+      } else {
+        console.error("Server returned error:", res.message);
+        alert(`Failed to send message: ${res.message}`);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Failed to send message. Please try again or contact us directly.");
+    }
+  },
+});
 
   return (
     <>
