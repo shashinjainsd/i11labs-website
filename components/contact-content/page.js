@@ -46,50 +46,81 @@ const Contact = () => {
       message: "",
     },
     validationSchema,
+    //   onSubmit: async (values) => {
+    //     try {
+    //       console.log("", values); // Debugging submission values
+    //       // const response = await fetch(
+    //       //   "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
+    //       //   {
+    //       //     method: "POST",
+    //       //     headers: {
+    //       //       "Content-Type": "application/json",
+    //       //     },
+    //       //     body: JSON.stringify(values),
+    //       //   }
+    //       // );
+    //       // const response = await fetch("/api", {
+    //       //   method: "POST",
+    //       //   headers: { "Content-Type": "application/json" },
+    //       //   body: JSON.stringify(values),
+    //       // });
+
+    //        const response = await fetch("https://dev-i11labs.vercel.app/api", {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(values),
+    //       });
+
+    //       const res = await response.json();
+    //       console.log("", res); // Debugging response
+
+    //       if (res.status === "Ok" || res.message === "Email Sent Successfully") {
+    //         document.getElementById("contactform").reset();
+    //         console.log(""); // Debugging navigation
+    //         router
+    //           .push("/contact-thank")
+    //           .then(() => {
+    //             console.log("");
+    //           })
+    //           .catch((err) => {
+    //             console.error("", err);
+    //           });
+    //       } else {
+    //         console.error("", res.message);
+    //       }
+    //     } catch (error) {
+    //       console.error("", error);
+    //     }
+    //   },
+    // });
+
     onSubmit: async (values) => {
       try {
-        console.log("", values); // Debugging submission values
-        // const response = await fetch(
-        //   "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
-        //   {
-        //     method: "POST",
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify(values),
-        //   }
-        // );
-        // const response = await fetch("/api", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/json" },
-        //   body: JSON.stringify(values),
-        // });
+        console.log("Submitting form values:", values);
 
-         const response = await fetch("https://dev-i11labs.vercel.app/api", {
+        // Use relative API path
+        const response = await fetch("/api", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(values),
         });
 
         const res = await response.json();
-        console.log("", res); // Debugging response
+        console.log("API response:", res);
 
-        if (res.status === "Ok" || res.message === "Email Sent Successfully") {
+        if (res.status === "Ok") {
+          // Reset form
           document.getElementById("contactform").reset();
-          console.log(""); // Debugging navigation
-          router
-            .push("/contact-thank")
-            .then(() => {
-              console.log("");
-            })
-            .catch((err) => {
-              console.error("", err);
-            });
+
+          // Navigate to thank you page
+          router.push("/contact-thank");
         } else {
-          console.error("", res.message);
+          console.error("Email send failed:", res.message);
+          alert("Failed to send email. Please try again later.");
         }
       } catch (error) {
-        console.error("", error);
+        console.error("Error sending form:", error);
+        alert("Something went wrong. Please try again later.");
       }
     },
   });
