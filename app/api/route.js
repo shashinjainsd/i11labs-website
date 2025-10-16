@@ -2,18 +2,20 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req, res) {
   const { firstname, lastname, emailaddress, phonenumber, message } = await req.json();
-
+ 
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS,
+      // user: process.env.GMAIL_USER,
+      // pass: process.env.GMAIL_PASS,
+      user: "shashinjain81@gmail.com",
+      pass: "mify vlrs zbtq scxc",
     },
   });
 
   let mailOptions = {
-    from: 'enquiries.i11labs@gmail.com',
-    to: 'connect@i11labs.com',
+    from: emailaddress,
+    to: 'shashinjain81@gmail.com',
     subject: `You received a new enquiry`,
     text: `
       FirstName: ${firstname}

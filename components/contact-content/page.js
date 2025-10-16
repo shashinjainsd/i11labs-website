@@ -49,16 +49,22 @@ const Contact = () => {
     onSubmit: async (values) => {
       try {
         console.log("", values); // Debugging submission values
-        const response = await fetch(
-          "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(values),
-          }
-        );
+        // const response = await fetch(
+        //   "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
+        //   {
+        //     method: "POST",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(values),
+        //   }
+        // );
+        const response = await fetch("/api", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        });
+
         const res = await response.json();
         console.log("", res); // Debugging response
 
@@ -120,11 +126,11 @@ const Contact = () => {
                   }}
                 />
                 <p className={`${styles.para5} mb-0`}>Send Us an Email</p>
-                <p className={`${styles.para3} pt-1`}>contact@i11labs.com</p>
+                <p className={`${styles.para3} pt-1`}>connect@i11labs.com</p>
                 <div className="row justify-content-center">
                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
                     <a
-                      href="mailto:contact@i11labs.com?subject=Inquiry%20from%20Website&body=Hi%20i11Labs%2C%0A"
+                      href="mailto:connect@i11labs.com?subject=Inquiry%20from%20Website&body=Hi%20i11Labs%2C%0A"
                       className={`${styles.btn1}`}
                       style={{
                         textDecoration: "none",
@@ -206,7 +212,7 @@ const Contact = () => {
                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
                     <button
                       className={`${styles.btn1}`}
-                      onClick={() => setIsBookingOpen(true)} 
+                      onClick={() => setIsBookingOpen(true)}
                     >
                       Schedule Now
                     </button>
@@ -559,7 +565,7 @@ const Contact = () => {
                       <p className={`${styles.paragraph6} mb-0`}>
                         connect@i11labs.com
                         <br />
-                        (915) 235-9076
+                        +1 (510) 857-9196
                       </p>
                     </div>
                   </div>
@@ -797,9 +803,9 @@ const Contact = () => {
         </div>
       </div> */}
 
-      <BookingSidebar 
-        isOpen={isBookingOpen} 
-        onClose={() => setIsBookingOpen(false)} 
+      <BookingSidebar
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
       />
     </>
   );

@@ -1,9 +1,9 @@
-'use client'
+'use client';
 import styles from "./header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/images/Navbar/i11 labs logo.svg";
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useState, useEffect } from "react";
 import Arrow from "../../public/images/Navbar/arrow.webp";
 import ActiveArrow from "../../public/images/Navbar/Activearrow.webp";
@@ -12,6 +12,8 @@ import Close from "../../public/images/Navbar/close.webp";
 
 export default function Header() {
     const currentRoute = usePathname();
+    const router = useRouter();
+
     const [stickyClass, setStickyClass] = useState('');
     const [i11labsClass, seti11labsClass] = useState('headclass');
     const [isDropdownOpen, setIsDropdownOpen] = useState({ built: false, offerings: false });
@@ -34,51 +36,56 @@ export default function Header() {
     };
 
     const handleMobileLinkClick = (type) => {
-        // First navigate to the main page
-        if (type === 'built') {
-            window.location.href = '/products';
-        } else if (type === 'offerings') {
-            window.location.href = '/service-offerings';
+        // Navigate using Next.js router (no full page reload)
+        if (type === "built") {
+            router.push("/products");
+        } else if (type === "offerings") {
+            router.push("/service-offerings");
         }
-        // Then toggle the dropdown
-        toggleDropdown(type);
+
+        // Close dropdowns
+        setIsDropdownOpen({ built: false, offerings: false });
+
+        // Close the offcanvas menu after navigation
+        const offcanvasElement = document.getElementById("offcanvasExample");
+        if (offcanvasInstance) offcanvasInstance.hide();
     };
 
     return (
         <div className={`${stickyClass} ${i11labsClass} container-fluid sticky-top w-100`} id="navhover" style={{ marginTop: "-5.5rem" }}>
-            <div className="">
+            <div>
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container-fluid py-3">
                         <Link href="/" className="mx-md-4 mx-2">
                             <Image src={Logo} className="img-fluid" height={42} width={125} alt="I11labs logo" title="i11labs" />
                         </Link>
+
+                        {/* Mobile Navigation */}
                         <div className="d-block d-lg-none">
                             <Image src={Menublack} alt="Menu" height={20} width={29} className="cursorPointer" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" />
                             <div style={{ overflowY: 'scroll', scrollbarheight: 'none' }} className="border offcanvas offcanvas-end" tabIndex={-1} id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                                 <div className="offcanvas-header justify-content-end">
                                     <Image src={Close} height={33} width={33} alt="Close" className="cursorPointer" aria-label="Close" data-bs-dismiss="offcanvas" />
                                 </div>
+
                                 <div className="col-12 offcanvas-body ps-4 ps-md-5">
                                     <ul className="navbar-nav header">
                                         <li className="nav-item navunderline py-2" data-bs-dismiss="offcanvas">
                                             <Link className={`${styles.headercontent1} nav-link pt-3`} aria-current="page" href="/">Home <span><Image src={Arrow} className="img-fluid float-end" alt="" /></span></Link>
                                         </li>
-                                        
-                                        {/* Products Section - Fixed */}
+
+                                        {/* Products Section */}
                                         <li className="nav-item navunderline py-2">
                                             <div className="d-flex justify-content-between align-items-center">
-                                                <Link 
-                                                    className={`${styles.headercontent1} nav-link pt-3 flex-grow-1`} 
-                                                    aria-current="page" 
+                                                <Link
+                                                    className={`${styles.headercontent1} nav-link pt-3 flex-grow-1`}
+                                                    aria-current="page"
                                                     href="/products"
-                                                    onClick={(e) => {
-                                                        e.preventDefault();
-                                                        handleMobileLinkClick('built');
-                                                    }}
+                                                    onClick={() => handleMobileLinkClick('built')}
                                                 >
                                                     Products
                                                 </Link>
-                                                <span 
+                                                <span
                                                     onClick={() => toggleDropdown('built')}
                                                     className="ps-2"
                                                     style={{ cursor: 'pointer' }}
@@ -89,32 +96,35 @@ export default function Header() {
                                             </div>
                                             <ul className={`dropdown-menu ps-3 ${isDropdownOpen.built ? 'show' : ''}`} aria-labelledby="navbarDropdown">
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/i11fleet" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}><span style={{ color: "#F71735" }}>i</span>11Fleet</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/i11fleet" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>
+                                                        <span style={{ color: "#F71735" }}>i</span>11Fleet
+                                                    </Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/feeds-to-leads" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>FeedsToLeads</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/feeds-to-leads" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>
+                                                        FeedsToLeads
+                                                    </Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/dti-dumptruckit" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>DumpTruckIt</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/dti-dumptruckit" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>
+                                                        DumpTruckIt
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </li>
 
-                                        {/* Service Offerings Section - Fixed */}
+                                        {/* Service Offerings Section */}
                                         <li className="nav-item navunderline py-2">
                                             <div className="d-flex justify-content-between align-items-center">
-                                                <Link 
-                                                    className={`${styles.headercontent1} nav-link pt-3 flex-grow-1`} 
-                                                    aria-current="page" 
+                                                <Link
+                                                    className={`${styles.headercontent1} nav-link pt-3 flex-grow-1`}
+                                                    aria-current="page"
                                                     href="/service-offerings"
-                                                    onClick={(e) => {
-                                                        e.preventDefault();
-                                                        handleMobileLinkClick('offerings');
-                                                    }}
+                                                    onClick={() => handleMobileLinkClick('offerings')}
                                                 >
                                                     Service Offerings
                                                 </Link>
-                                                <span 
+                                                <span
                                                     onClick={() => toggleDropdown('offerings')}
                                                     className="ps-2"
                                                     style={{ cursor: 'pointer' }}
@@ -125,24 +135,35 @@ export default function Header() {
                                             </div>
                                             <ul className={`dropdown-menu ps-md-3 ps-0 ${isDropdownOpen.offerings ? 'show' : ''}`} aria-labelledby="navbarDropdown">
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/ai-integration-development/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>AI Integration and Development</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/ai-integration-development/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>
+                                                        AI Integration and Development
+                                                    </Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/application-modernization/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Application Modernization</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/application-modernization/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>
+                                                        Application Modernization
+                                                    </Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/custom-software-development-integration/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Custom Software Development and Integration</Link>
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/custom-software-development-integration/" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>
+                                                        Custom Software Development and Integration
+                                                    </Link>
                                                 </li>
                                                 <li data-bs-dismiss="offcanvas" aria-current="page">
-                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/technology-consultation-strategy" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>Technology Consultation and Strategy</Link>
-                                                </li>   
+                                                    <Link className={`${styles.subheadercontent1} dropdown-item ms-2 mb-2 navunderline py-3`} href="/technology-consultation-strategy" rel="noreferrer" style={{ borderBottom: "1px solid #C1D1E0" }}>
+                                                        Technology Consultation and Strategy
+                                                    </Link>
+                                                </li>
                                             </ul>
                                         </li>
 
                                         <li className="nav-item navunderline py-2" data-bs-dismiss="offcanvas">
-                                            <Link className={`${styles.headercontent1} nav-link pt-3`} aria-current="page" href="/our-dna">Our DNA<Image src={Arrow} className="img-fluid float-end" alt="" /></Link>
+                                            <Link className={`${styles.headercontent1} nav-link pt-3`} aria-current="page" href="/our-dna">
+                                                Our DNA <Image src={Arrow} className="img-fluid float-end" alt="" />
+                                            </Link>
                                         </li>
                                     </ul>
+
                                     <div className="d-block d-lg-none py-5" data-bs-dismiss="offcanvas">
                                         <Link href="/contact">
                                             <button className={`${styles.btn}`} type="submit">Let&apos;s Connect</button>
@@ -152,18 +173,19 @@ export default function Header() {
                             </div>
                         </div>
 
-                        {/* Desktop version remains the same */}
+                        {/* Desktop Version */}
                         <div className="collapse navbar-collapse justify-content-xl-end justify-content-center" id="navbarSupportedContent">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
                                     <Link className={`${styles.headercontent} nav-link mx-lg-1 mx-xl-2 ${currentRoute === "/" ? styles.active : ""}`} aria-current="page" href="/">Home</Link>
                                 </li>
 
+                                {/* Desktop Dropdowns remain unchanged */}
                                 <li className="nav-item dropdown" style={{ position: "initial" }}
                                     onMouseEnter={() => toggleDropdown('built')}
                                     onMouseLeave={() => toggleDropdown('built')}
                                 >
-                                    <Link className={`${styles.headercontent} nav-link mx-lg-1 mx-xl-2 ${currentRoute === "/dti-dumptruckit/" || currentRoute === "/feeds-to-leads/" || currentRoute === "/know-whereabouts-of-crew/"  || currentRoute === "/products/" ? styles.active : ""}`}
+                                    <Link className={`${styles.headercontent} nav-link mx-lg-1 mx-xl-2 ${currentRoute === "/dti-dumptruckit/" || currentRoute === "/feeds-to-leads/" || currentRoute === "/know-whereabouts-of-crew/" || currentRoute === "/products/" ? styles.active : ""}`}
                                         id="navbarDropdown"
                                         role="button"
                                         aria-expanded={isDropdownOpen.built}
@@ -208,8 +230,8 @@ export default function Header() {
                                         </li>
                                         <li className="centerheader">
                                             <Link className={`${styles.subheadercontent} dropdown-item py-2 mx-lg-3 mx-xl-4 ${currentRoute === "/technology-consultation-strategy/" ? styles.activeLink : ""}`} href="/technology-consultation-strategy/">Technology Consultation and Strategy</Link>
-                                        </li>                                   
-                                   </ul>
+                                        </li>
+                                    </ul>
                                 </li>
 
                                 <li className="nav-item">
