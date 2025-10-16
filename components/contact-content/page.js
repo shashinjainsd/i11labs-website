@@ -65,7 +65,7 @@ const Contact = () => {
         //   body: JSON.stringify(values),
         // });
 
-         const response = await fetch("https://dev-i11labs.vercel.app/api/", {
+         const response = await fetch("https://dev-i11labs.vercel.app/api", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(values),
