@@ -103,7 +103,7 @@ export async function POST(request) {
         // Use your sending email address
         user: "shashinjain81@gmail.com", 
         // Use your generated App Password here (important for security)
-        pass: "mify vlrs zbtq scxc", 
+        pass: "mifyvlrszbtqscxc", 
       },
     });
 
