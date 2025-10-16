@@ -1,855 +1,3 @@
-// "use client";
-// import styles from "../../app/page.module.css";
-// import Link from "next/link";
-// import Image from "next/image";
-// import { useRouter } from "next/navigation";
-// import * as Yup from "yup";
-// import { useFormik } from "formik";
-// import { Calendar, Clock, Mail, MapPin, Phone } from "lucide-react";
-// import BookingSidebar from "../booking-sidebar/page.js";
-// import { useState } from "react";
-
-// const Contact = () => {
-//   const router = useRouter();
-//   const [isBookingOpen, setIsBookingOpen] = useState(false);
-
-//   const validationSchema = Yup.object({
-//     firstname: Yup.string()
-//       .required("Please fill out this field")
-//       .min(3, "Minimum 3 characters"),
-//     lastname: Yup.string()
-//       .required("Please fill out this field")
-//       .min(1, "Minimum 1 character"),
-//     emailaddress: Yup.string()
-//       .email("Please enter a valid email address")
-//       .required("Please enter an email address")
-//       .matches(
-//         /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$/,
-//         "Please enter a valid email address"
-//       ),
-//     phonenumber: Yup.string()
-//       .min(10, "Please enter a valid phone number")
-//       .max(20, "Please enter a valid phone number")
-//       // .matches(/^[0-9]{10}$/, 'Please enter a valid 10-digit phone number')
-//       .required("Please enter a phone number"),
-//     message: Yup.string()
-//       .required("Please fill out this field")
-//       .min(5, "Minimum 5 characters"),
-//   });
-
-//   const formik = useFormik({
-//     initialValues: {
-//       firstname: "",
-//       lastname: "",
-//       emailaddress: "",
-//       phonenumber: "",
-//       message: "",
-//     },
-//     validationSchema,
-//     //   onSubmit: async (values) => {
-//     //     try {
-//     //       console.log("", values); // Debugging submission values
-//     //       // const response = await fetch(
-//     //       //   "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
-//     //       //   {
-//     //       //     method: "POST",
-//     //       //     headers: {
-//     //       //       "Content-Type": "application/json",
-//     //       //     },
-//     //       //     body: JSON.stringify(values),
-//     //       //   }
-//     //       // );
-//     //       // const response = await fetch("/api", {
-//     //       //   method: "POST",
-//     //       //   headers: { "Content-Type": "application/json" },
-//     //       //   body: JSON.stringify(values),
-//     //       // });
-
-//     //        const response = await fetch("https://dev-i11labs.vercel.app/api", {
-//     //         method: "POST",
-//     //         headers: { "Content-Type": "application/json" },
-//     //         body: JSON.stringify(values),
-//     //       });
-
-//     //       const res = await response.json();
-//     //       console.log("", res); // Debugging response
-
-//     //       if (res.status === "Ok" || res.message === "Email Sent Successfully") {
-//     //         document.getElementById("contactform").reset();
-//     //         console.log(""); // Debugging navigation
-//     //         router
-//     //           .push("/contact-thank")
-//     //           .then(() => {
-//     //             console.log("");
-//     //           })
-//     //           .catch((err) => {
-//     //             console.error("", err);
-//     //           });
-//     //       } else {
-//     //         console.error("", res.message);
-//     //       }
-//     //     } catch (error) {
-//     //       console.error("", error);
-//     //     }
-//     //   },
-//     // });
-
-//     onSubmit: async (values) => {
-//       try {
-//         console.log("Submitting form values:", values);
-
-//         // Use relative API path
-//         const response = await fetch("/api", {
-//           method: "POST",
-//           headers: { "Content-Type": "application/json" },
-//           body: JSON.stringify(values),
-//         });
-
-//         const res = await response.json();
-//         console.log("API response:", res);
-
-//         if (res.status === "Ok") {
-//           // Reset form
-//           document.getElementById("contactform").reset();
-
-//           // Navigate to thank you page
-//           router.push("/contact-thank");
-//         } else {
-//           console.error("Email send failed:", res.message);
-//           alert("Failed to send email. Please try again later.");
-//         }
-//       } catch (error) {
-//         console.error("Error sending form:", error);
-//         alert("Something went wrong. Please try again later.");
-//       }
-//     },
-//   });
-
-//   return (
-//     <>
-//       <div className="container-fluid">
-//         <div className="row">
-//           <div className="col p-0">
-//             <div className="bg-con d-none d-sm-block">
-//               <h1 className={`${styles.banner_text1} mt-5`}>Connect With Us</h1>
-//             </div>
-//             <div className="bg-con-mb d-block d-sm-none">
-//               <h1 className={`${styles.banner_text1} mt-5`}>Connect With Us</h1>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="container-fluid" style={{ backgroundColor: "#ffffffff" }}>
-//         <div className="container pt-md-5 pt-2 mx-auto" data-aos="fade-up">
-//           <div className="row gy-4 py-5">
-//             {/* Card 1 */}
-//             <div className="col-12 col-md-4">
-//               <div
-//                 className="p-4 h-100"
-//                 style={{
-//                   border: "1px solid #E2E4E9",
-//                   boxShadow: "0px 4px 6px -1px #14181F1A",
-//                 }}
-//               >
-//                 <Mail
-//                   size={50}
-//                   color="#F71735"
-//                   style={{
-//                     backgroundColor: "#F9FAFB",
-//                     marginBottom: "12px",
-//                     padding: "12px",
-//                     borderRadius: "4px",
-//                   }}
-//                 />
-//                 <p className={`${styles.para5} mb-0`}>Send Us an Email</p>
-//                 <p className={`${styles.para3} pt-1`}>connect@i11labs.com</p>
-//                 <div className="row justify-content-center">
-//                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
-//                     <a
-//                       href="mailto:connect@i11labs.com?subject=Inquiry%20from%20Website&body=Hi%20i11Labs%2C%0A"
-//                       className={`${styles.btn1}`}
-//                       style={{
-//                         textDecoration: "none",
-//                         display: "inline-block",
-//                         alignContent: "center",
-//                       }}
-//                     >
-//                       Send Message
-//                     </a>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* Card 2 */}
-//             <div className="col-12 col-md-4">
-//               <div
-//                 className="p-4 h-100"
-//                 style={{
-//                   border: "1px solid #E2E4E9",
-//                   boxShadow: "0px 4px 6px -1px #14181F1A",
-//                 }}
-//               >
-//                 <Phone
-//                   size={50}
-//                   color="#F71735"
-//                   style={{
-//                     backgroundColor: "#F9FAFB",
-//                     marginBottom: "12px",
-//                     padding: "12px",
-//                     borderRadius: "4px",
-//                   }}
-//                 />
-//                 <p className={`${styles.para5} mb-0`}>Call Us</p>
-//                 <p className={`${styles.para3} pt-1`}>+1 (510) 857-9196</p>
-//                 <div className="row justify-content-center">
-//                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
-//                     <a
-//                       href="tel:+15108579196"
-//                       className={`${styles.btn1}`}
-//                       style={{
-//                         textDecoration: "none",
-//                         display: "inline-block",
-//                         alignContent: "center",
-//                       }}
-//                     >
-//                       Start Call
-//                     </a>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* Card 3 */}
-//             {/* Card 3 - Updated Book Appointment Card */}
-//             <div className="col-12 col-md-4">
-//               <div
-//                 className="p-4 h-100"
-//                 style={{
-//                   border: "1px solid #E2E4E9",
-//                   boxShadow: "0px 4px 6px -1px #14181F1A",
-//                 }}
-//               >
-//                 <Calendar
-//                   size={50}
-//                   color="#F71735"
-//                   style={{
-//                     backgroundColor: "#F9FAFB",
-//                     marginBottom: "12px",
-//                     padding: "12px",
-//                     borderRadius: "4px",
-//                   }}
-//                 />
-//                 <p className={`${styles.para5} mb-0`}>Book an Appointment</p>
-//                 <p className={`${styles.para3} pt-1`}>
-//                   Schedule a call with our team
-//                 </p>
-//                 <div className="row justify-content-center">
-//                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
-//                     <button
-//                       className={`${styles.btn1}`}
-//                       onClick={() => setIsBookingOpen(true)}
-//                     >
-//                       Schedule Now
-//                     </button>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Send Us a Message */}
-//       <div className="container-fluid" style={{ backgroundColor: "#ffffffff" }}>
-//         <div className="container pt-md-5 pt-2 mx-auto" data-aos="fade-up">
-//           <div className="row mb-1 justify-content-center">
-//             <div className="col-12 col-lg-6 py-2 ps-sm-0 ps-4">
-//               <h2 className={`${styles.subheading2} mb-0`}>
-//                 Send Us a Message
-//               </h2>
-//               <p className={`${styles.paragraph4} pt-3`}>
-//                 Fill out the form below and we'll respond as soon as possible
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="row gy-4 py-1 justify-content-center">
-//             {/* Card 1 */}
-//             <div className="col-12 col-md-8">
-//               <div
-//                 className="p-4 h-100"
-//                 style={{
-//                   backgroundColor: "#ffffffff",
-//                   border: "1px solid #E2E4E9",
-//                   boxShadow: "0px 4px 6px -1px #14181F1A",
-//                 }}
-//               >
-//                 <form
-//                   onSubmit={formik.handleSubmit}
-//                   id="contactform"
-//                   autoComplete="off"
-//                 >
-//                   <div className="row d-flex justify-content-evenly">
-//                     <div className="col-12 col-md-6 col-xl-6 px-3">
-//                       <div className="form_group">
-//                         <label htmlFor="firstname" className="form-label">
-//                           First Name
-//                         </label>
-//                         <input
-//                           type="text"
-//                           className="form-control"
-//                           placeholder="First Name"
-//                           aria-label="First name"
-//                           name="firstname"
-//                           autoComplete="off"
-//                           value={formik.values.firstname}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                         />
-//                       </div>
-//                       {formik.errors.firstname && formik.touched.firstname && (
-//                         <p className="errors pt-2 mb-0">
-//                           {formik.errors.firstname}
-//                         </p>
-//                       )}
-//                     </div>
-//                     <div className="col-12 col-md-6 col-xl-6 px-3">
-//                       <div className="form_group">
-//                         <label htmlFor="lastname" className="form-label">
-//                           Last Name
-//                         </label>
-//                         <input
-//                           type="text"
-//                           className="form-control"
-//                           placeholder="Last Name"
-//                           name="lastname"
-//                           autoComplete="off"
-//                           value={formik.values.lastname}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                         />
-//                       </div>
-//                       {formik.errors.lastname && formik.touched.lastname && (
-//                         <p className="errors pt-2 mb-0">
-//                           {formik.errors.lastname}
-//                         </p>
-//                       )}
-//                     </div>
-//                     <div className="col-12 col-md-6 col-xl-6 px-3">
-//                       <div className="form_group">
-//                         <label htmlFor="emailaddress" className="form-label">
-//                           Email Address
-//                         </label>
-//                         <input
-//                           type="email"
-//                           className="form-control"
-//                           placeholder="Email Address"
-//                           autoComplete="off"
-//                           name="emailaddress"
-//                           value={formik.values.emailaddress}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                         />
-//                       </div>
-//                       {formik.errors.emailaddress &&
-//                         formik.touched.emailaddress && (
-//                           <p className="errors pt-2 mb-0">
-//                             {formik.errors.emailaddress}
-//                           </p>
-//                         )}
-//                     </div>
-//                     <div className="col-12 col-md-6 col-xl-6 px-3">
-//                       <div className="form_group">
-//                         <label htmlFor="phonenumber" className="form-label">
-//                           Phone Number
-//                         </label>
-//                         <input
-//                           type="tel"
-//                           className="form-control"
-//                           placeholder="Phone No"
-//                           autoComplete="off"
-//                           name="phonenumber"
-//                           value={formik.values.phonenumber}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                         />
-//                       </div>
-//                       {formik.errors.phonenumber &&
-//                         formik.touched.phonenumber && (
-//                           <p className="errors pt-2 mb-0">
-//                             {formik.errors.phonenumber}
-//                           </p>
-//                         )}
-//                     </div>
-//                     <div className="col-12 col-md-12 col-xl-12 px-3">
-//                       <div className="form_group">
-//                         <label htmlFor="message" className="form-label">
-//                           Message
-//                         </label>
-//                         <textarea
-//                           type="text"
-//                           className="form-control"
-//                           id="exampleFormControlTextarea1"
-//                           name="message"
-//                           placeholder="Tell us more about your project or inquiry..."
-//                           autoComplete="off"
-//                           value={formik.values.message}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                           rows="3"
-//                           style={{ resize: "none" }}
-//                         ></textarea>
-//                       </div>
-//                       {formik.errors.message && formik.touched.message && (
-//                         <p className="errors pt-2 mb-0">
-//                           {formik.errors.message}
-//                         </p>
-//                       )}
-//                     </div>
-//                   </div>
-//                   <div className="row justify-content-center">
-//                     <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
-//                       <button
-//                         className={`${styles.btn1} `}
-//                         type="submit"
-//                         htef="#"
-//                       >
-//                         Let's Connect
-//                       </button>
-//                     </div>
-//                   </div>
-//                 </form>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="container-fluid" style={{ backgroundColor: "#ffffffff" }}>
-//         <div className="container pt-md-5 pt-2 mx-auto" data-aos="fade-up">
-//           <div className="row gy-4 py-5">
-//             {/* Card 1 */}
-//             <div className="col-12 col-md-6">
-//               {/* Google Map - Dallas Location */}
-//               <div
-//                 style={{
-//                   width: "100%",
-//                   height: "100%",
-//                   borderRadius: "8px",
-//                   overflow: "hidden",
-//                 }}
-//               >
-//                 <iframe
-//                   title="Dallas Location"
-//                   src="https://www.google.com/maps?q=8105+Rasor+Blvd,+Plano,+TX,+Dallas,+USA&z=12&output=embed"
-//                   width="100%"
-//                   height="320"
-//                   style={{ border: "1px solid black", borderRadius: "8px" }}
-//                   allowFullScreen=""
-//                   loading="lazy"
-//                   referrerPolicy="no-referrer-when-downgrade"
-//                 ></iframe>
-
-//                 <iframe
-//                   title="Bengaluru Location"
-//                   src="https://www.google.com/maps?q=17,+19th+H+Main,+1st+Block,+Rajajinagar,+Bangalore,+Karnataka,+India+560010&z=12&output=embed"
-//                   width="100%"
-//                   height="320"
-//                   style={{
-//                     border: "1px solid black",
-//                     borderRadius: "8px",
-//                     marginTop: "16px",
-//                   }}
-//                   allowFullScreen=""
-//                   loading="lazy"
-//                   referrerPolicy="no-referrer-when-downgrade"
-//                 ></iframe>
-//               </div>
-//             </div>
-
-//             {/* Visit Us */}
-//             <div className="col-12 col-md-6">
-//               <div className="h-100" style={{ backgroundColor: "#ffffffff" }}>
-//                 <p className={`${styles.para5} mb-0`}>
-//                   Where Innovation Happens - Visit Our Offices
-//                 </p>
-//                 <p className={`${styles.para3} pt-3`}>
-//                   Drop by for a coffee and let's discuss how we can work
-//                   together.
-//                 </p>
-
-//                 {/* card1 */}
-//                 <div className="col-12 col-md-12">
-//                   <div
-//                     className="p-3 h-100 d-flex align-items-start"
-//                     style={{
-//                       backgroundColor: "#F9FAFB",
-//                       border: "1px solid #E2E4E9",
-//                       gap: "16px",
-//                     }}
-//                   >
-//                     <MapPin
-//                       size={40}
-//                       color="#594DE6"
-//                       style={{
-//                         backgroundColor: "#594DE61A",
-//                         padding: "10px",
-//                         borderRadius: "6px",
-//                         marginTop: "10px",
-//                         flexShrink: 0,
-//                       }}
-//                     />
-//                     <div className="d-flex flex-column">
-//                       <p className={`${styles.para8} mb-1`}>
-//                         Headquarters – USA
-//                       </p>
-//                       <p className={`${styles.paragraph6} mb-0`}>
-//                         8105 Rasor Blvd, Plano, TX, Dallas
-//                       </p>
-//                     </div>
-//                   </div>
-//                 </div>
-
-//                 <div className="col-12 col-md-12 mt-3">
-//                   <div
-//                     className="p-3 h-100 d-flex align-items-start"
-//                     style={{
-//                       backgroundColor: "#F9FAFB",
-//                       border: "1px solid #E2E4E9",
-//                       gap: "16px",
-//                     }}
-//                   >
-//                     <MapPin
-//                       size={40}
-//                       color="#594DE6"
-//                       style={{
-//                         backgroundColor: "#594DE61A",
-//                         padding: "10px",
-//                         borderRadius: "6px",
-//                         marginTop: "10px",
-//                         flexShrink: 0,
-//                       }}
-//                     />
-//                     <div className="d-flex flex-column">
-//                       <p className={`${styles.para8} mb-1`}>India Office</p>
-//                       <p className={`${styles.paragraph6} mb-0`}>
-//                         17, 19th H Main, 1st Block, Rajajinagar, Bangalore –
-//                         560010, Karnataka, India.
-//                       </p>
-//                     </div>
-//                   </div>
-//                 </div>
-
-//                 {/* card2 */}
-//                 <div className="col-12 col-md-12 mt-3">
-//                   <div
-//                     className="p-3 h-100 d-flex align-items-start"
-//                     style={{
-//                       backgroundColor: "#F9FAFB",
-//                       border: "1px solid #E2E4E9",
-//                       gap: "16px",
-//                     }}
-//                   >
-//                     <Clock
-//                       size={40}
-//                       color="#B152E0"
-//                       style={{
-//                         backgroundColor: "#B152E01A",
-//                         padding: "10px",
-//                         marginTop: "10px",
-//                         borderRadius: "6px",
-//                         flexShrink: 0,
-//                       }}
-//                     />
-//                     <div className="d-flex flex-column">
-//                       <p className={`${styles.para8} mb-1`}>Business Hours</p>
-//                       <p className={`${styles.paragraph6} mb-0`}>
-//                         Monday - Friday: 9:00 AM - 6:00 PM
-//                         <br />
-//                         Saturday: 10:00 AM - 4:00 PM
-//                         <br />
-//                         Sunday: Closed
-//                       </p>
-//                     </div>
-//                   </div>
-//                 </div>
-
-//                 {/* card3 */}
-//                 <div className="col-12 col-md-12 mt-3">
-//                   <div
-//                     className="p-3 h-100 d-flex align-items-start"
-//                     style={{
-//                       backgroundColor: "#F9FAFB",
-//                       border: "1px solid #E2E4E9",
-//                       gap: "16px",
-//                     }}
-//                   >
-//                     <Mail
-//                       size={40}
-//                       color="#33CC80"
-//                       style={{
-//                         backgroundColor: "#33CC801A",
-//                         padding: "10px",
-//                         marginTop: "10px",
-//                         borderRadius: "6px",
-//                         flexShrink: 0,
-//                       }}
-//                     />
-//                     <div className="d-flex flex-column">
-//                       <p className={`${styles.para8} mb-1`}>Email & Phone</p>
-//                       <p className={`${styles.paragraph6} mb-0`}>
-//                         connect@i11labs.com
-//                         <br />
-//                         +1 (510) 857-9196
-//                       </p>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       <main className="d-none d-lg-block py-5" data-aos="fade-up">
-//         <div
-//           className={`${styles.bgimage} container-fluid py-5 `}
-//           style={{
-//             backgroundImage: "url('/images/i11fleet/Edge-bg.png')",
-//             backgroundRepeat: "no-repeat",
-//             backgroundSize: "cover",
-//           }}
-//         >
-//           <p className={`${styles.bgtext2} text-center text-black mt-5`}>
-//             Follow Us
-//           </p>
-//           <p className={`${styles.para3} text-center text-black mb-5`}>
-//             Stay connected and get the latest updates
-//           </p>
-//           <div className="col-12 col-md-12 mt-3 d-flex justify-content-center gap-3">
-//             <Link
-//               href="https://www.linkedin.com/company/www.i11labs.com/posts/?feedView=all"
-//               target="_blank"
-//             >
-//               <Image
-//                 src="/images/home/new/Linkedin.png"
-//                 alt="Linkedin"
-//                 title="Linkedin"
-//                 className="img-fluid"
-//                 width={150}
-//                 height={50}
-//               />
-//             </Link>
-
-//             <Link href="https://x.com/i11labs" target="_blank">
-//               <Image
-//                 src="/images/home/Twitter.png"
-//                 alt="Twitter"
-//                 title="Twitter"
-//                 className="img-fluid"
-//                 width={140}
-//                 height={39}
-//               />
-//             </Link>
-
-//             <Link
-//               href="https://www.instagram.com/i11labs_team?igsh=MW52djRxNHRjZ2lmcw=="
-//               target="_blank"
-//             >
-//               <Image
-//                 src="/images/home/Instagram.png"
-//                 alt="Instagram"
-//                 title="Instagram"
-//                 className="img-fluid"
-//                 width={150}
-//                 height={80}
-//               />
-//             </Link>
-//           </div>
-//         </div>
-//       </main>
-
-//       {/* <div className="container-fluid mb-5">
-//         <div className="row">
-//           <div className="col-lg-4 col-md-5 col-12 p-5" id="bgcolorsection">
-//             <div className="bgcolorposition pt-5 pt-md-0">
-//               <div className={`${styles.vr}`}>
-//                 <h2 className={`${styles.heading} ps-4 mb-0`}>Reach Us</h2>
-//               </div>
-//               <div className="pt-5 pt-md-3">
-//                 <p className={`${styles.para} mb-0`}>
-//                   <Link
-//                     style={{ textDecoration: "none", color: "#191E23" }}
-//                     href="tel: (915) 235-9076"
-//                     rel="noreferrer"
-//                     target="_blank"
-//                   >
-//                     (915) 235-9076{" "}
-//                   </Link>
-//                 </p>
-//                 <p className={`${styles.para} mb-0`}>
-//                   <Link
-//                     style={{ textDecoration: "none", color: "#191E23" }}
-//                     href="mailto: connect@i11labs.com"
-//                     rel="noreferrer"
-//                     target="_blank"
-//                   >
-//                     connect@i11labs.com
-//                   </Link>
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//           <div
-//             className="offset-lg-2 col-lg-6 col-md-7 col-12 p-lg-5 pt-5 pt-md-0"
-//             id="contactpad"
-//           >
-//             <div className={`${styles.vr}`}>
-//               <h2 className={`${styles.heading} ps-4 mb-0`}>Write To Us</h2>
-//               <p className={`${styles.subheading} ps-4 mb-0`}>
-//                 We would love to hear from you!
-//               </p>
-//             </div>
-//             <div className="row">
-//               <div className="col">
-//                 <form
-//                   onSubmit={formik.handleSubmit}
-//                   id="contactform"
-//                   autoComplete="off"
-//                 >
-//                   <div className="row">
-//                     <div className="col-12 col-md-6 col-xl-5">
-//                       <div className="form_group">
-//                         <input
-//                           type="text"
-//                           className="form-control"
-//                           placeholder="First Name"
-//                           aria-label="First name"
-//                           name="firstname"
-//                           autoComplete="off"
-//                           value={formik.values.firstname}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                         />
-//                       </div>
-//                       {formik.errors.firstname && formik.touched.firstname && (
-//                         <p className="errors pt-2 mb-0">
-//                           {formik.errors.firstname}
-//                         </p>
-//                       )}
-//                     </div>
-//                     <div className="col-12 col-md-6 col-xl-5">
-//                       <div className="form_group">
-//                         <input
-//                           type="text"
-//                           className="form-control"
-//                           placeholder="Last Name"
-//                           name="lastname"
-//                           autoComplete="off"
-//                           value={formik.values.lastname}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                         />
-//                       </div>
-//                       {formik.errors.lastname && formik.touched.lastname && (
-//                         <p className="errors pt-2 mb-0">
-//                           {formik.errors.lastname}
-//                         </p>
-//                       )}
-//                     </div>
-//                     <div className="col-12 col-md-6 col-xl-5">
-//                       <div className="form_group">
-//                         <input
-//                           type="email"
-//                           className="form-control"
-//                           placeholder="Email Address"
-//                           autoComplete="off"
-//                           name="emailaddress"
-//                           value={formik.values.emailaddress}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                         />
-//                       </div>
-//                       {formik.errors.emailaddress &&
-//                         formik.touched.emailaddress && (
-//                           <p className="errors pt-2 mb-0">
-//                             {formik.errors.emailaddress}
-//                           </p>
-//                         )}
-//                     </div>
-//                     <div className="col-12 col-md-6 col-xl-5">
-//                       <div className="form_group">
-//                         <input
-//                           type="tel"
-//                           className="form-control"
-//                           placeholder="Phone No"
-//                           autoComplete="off"
-//                           name="phonenumber"
-//                           value={formik.values.phonenumber}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                         />
-//                       </div>
-//                       {formik.errors.phonenumber &&
-//                         formik.touched.phonenumber && (
-//                           <p className="errors pt-2 mb-0">
-//                             {formik.errors.phonenumber}
-//                           </p>
-//                         )}
-//                     </div>
-//                     <div className="col-12 col-md-12 col-xl-10">
-//                       <div className="form_group">
-//                         <textarea
-//                           type="text"
-//                           className="form-control"
-//                           id="exampleFormControlTextarea1"
-//                           name="message"
-//                           placeholder="Your Message"
-//                           autoComplete="off"
-//                           value={formik.values.message}
-//                           onChange={formik.handleChange}
-//                           onBlur={formik.handleBlur}
-//                           rows="3"
-//                           style={{ resize: "none" }}
-//                         ></textarea>
-//                       </div>
-//                       {formik.errors.message && formik.touched.message && (
-//                         <p className="errors pt-2 mb-0">
-//                           {formik.errors.message}
-//                         </p>
-//                       )}
-//                     </div>
-//                   </div>
-//                   <div className="row">
-//                     <div className="col-12 col-md-12 col-xl-10 pt-4 pt-xl-5">
-//                       <button
-//                         className={`${styles.btn} `}
-//                         type="submit"
-//                         htef="#"
-//                       >
-//                         Submit
-//                       </button>
-//                     </div>
-//                   </div>
-//                 </form>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div> */}
-
-//       <BookingSidebar
-//         isOpen={isBookingOpen}
-//         onClose={() => setIsBookingOpen(false)}
-//       />
-//     </>
-//   );
-// };
-// export default Contact;
-
-// components/contact-content/page.js
 "use client";
 import styles from "../../app/page.module.css";
 import Link from "next/link";
@@ -864,17 +12,14 @@ import { useState } from "react";
 const Contact = () => {
   const router = useRouter();
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validationSchema = Yup.object({
     firstname: Yup.string()
       .required("Please fill out this field")
-      .min(3, "Minimum 3 characters")
-      .max(50, "Maximum 50 characters"),
+      .min(3, "Minimum 3 characters"),
     lastname: Yup.string()
       .required("Please fill out this field")
-      .min(1, "Minimum 1 character")
-      .max(50, "Maximum 50 characters"),
+      .min(1, "Minimum 1 character"),
     emailaddress: Yup.string()
       .email("Please enter a valid email address")
       .required("Please enter an email address")
@@ -885,12 +30,11 @@ const Contact = () => {
     phonenumber: Yup.string()
       .min(10, "Please enter a valid phone number")
       .max(20, "Please enter a valid phone number")
-      .matches(/^[+]?[0-9\s\-()]{10,20}$/, "Please enter a valid phone number")
+      // .matches(/^[0-9]{10}$/, 'Please enter a valid 10-digit phone number')
       .required("Please enter a phone number"),
     message: Yup.string()
       .required("Please fill out this field")
-      .min(10, "Minimum 10 characters")
-      .max(1000, "Maximum 1000 characters"),
+      .min(5, "Minimum 5 characters"),
   });
 
   const formik = useFormik({
@@ -902,84 +46,44 @@ const Contact = () => {
       message: "",
     },
     validationSchema,
-    onSubmit: async (values, { resetForm }) => {
-      setIsSubmitting(true);
+    onSubmit: async (values) => {
       try {
-        console.log("=== CONTACT FORM SUBMISSION STARTED ===");
-        console.log("Form values:", values);
-
-        // Test different API endpoints
-        const apiEndpoints = ["/api", "/api/", "/api/contact", "/api/test"];
-
-        let response = null;
-        let successfulEndpoint = null;
-
-        // Try each endpoint until one works
-        for (const endpoint of apiEndpoints) {
-          try {
-            console.log(`🔄 Testing endpoint: ${endpoint}`);
-
-            response = await fetch(endpoint, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(values),
-            });
-
-            console.log(`📊 Response from ${endpoint}:`, {
-              status: response.status,
-              statusText: response.statusText,
-              ok: response.ok,
-              headers: Object.fromEntries(response.headers.entries()),
-            });
-
-            if (response.ok) {
-              successfulEndpoint = endpoint;
-              console.log(`✅ Success with endpoint: ${endpoint}`);
-              break;
-            } else {
-              console.warn(
-                `❌ Endpoint ${endpoint} failed with status: ${response.status}`
-              );
-            }
-          } catch (error) {
-            console.error(`💥 Error with endpoint ${endpoint}:`, error);
-            continue;
-          }
-        }
-
-        if (!response || !successfulEndpoint) {
-          throw new Error(
-            `All API endpoints failed. Tried: ${apiEndpoints.join(", ")}`
-          );
-        }
+        console.log("", values); // Debugging submission values
+        // const response = await fetch(
+        //   "https://www.i11labs.com/i11nodeemail/api/emailService/i11contact",
+        //   {
+        //     method: "POST",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(values),
+        //   }
+        // );
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        });
 
         const res = await response.json();
-        console.log("🎉 API Response success:", res);
+        console.log("", res); // Debugging response
 
-        if (res.status === "Ok") {
-          resetForm();
-          console.log(
-            "✅ Form submitted successfully, navigating to thank you page"
-          );
-          router.push("/contact-thank");
+        if (res.status === "Ok" || res.message === "Email Sent Successfully") {
+          document.getElementById("contactform").reset();
+          console.log(""); // Debugging navigation
+          router
+            .push("/contact-thank")
+            .then(() => {
+              console.log("");
+            })
+            .catch((err) => {
+              console.error("", err);
+            });
         } else {
-          console.error("❌ Server returned error status:", res);
-          alert(
-            `Message received! We'll get back to you soon. (Status: ${res.status})`
-          );
+          console.error("", res.message);
         }
       } catch (error) {
-        console.error("💥 Form submission error:", error);
-        alert(
-          `Thank you for your message! We've received it and will contact you soon.`
-        );
-        // Even on error, clear the form and redirect
-        resetForm();
-        router.push("/contact-thank");
-      } finally {
-        setIsSubmitting(false);
+        console.error("", error);
       }
     },
   });
@@ -1009,7 +113,6 @@ const Contact = () => {
                 style={{
                   border: "1px solid #E2E4E9",
                   boxShadow: "0px 4px 6px -1px #14181F1A",
-                  borderRadius: "8px",
                 }}
               >
                 <Mail
@@ -1033,8 +136,6 @@ const Contact = () => {
                         textDecoration: "none",
                         display: "inline-block",
                         alignContent: "center",
-                        width: "100%",
-                        textAlign: "center",
                       }}
                     >
                       Send Message
@@ -1051,7 +152,6 @@ const Contact = () => {
                 style={{
                   border: "1px solid #E2E4E9",
                   boxShadow: "0px 4px 6px -1px #14181F1A",
-                  borderRadius: "8px",
                 }}
               >
                 <Phone
@@ -1065,7 +165,7 @@ const Contact = () => {
                   }}
                 />
                 <p className={`${styles.para5} mb-0`}>Call Us</p>
-                <p className={`${styles.para3} pt-1`}>+1 (510) 857-9196</p>
+                <p className={`${styles.para3} pt-1`}>+1 (510) 857-9196</p>
                 <div className="row justify-content-center">
                   <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
                     <a
@@ -1075,8 +175,6 @@ const Contact = () => {
                         textDecoration: "none",
                         display: "inline-block",
                         alignContent: "center",
-                        width: "100%",
-                        textAlign: "center",
                       }}
                     >
                       Start Call
@@ -1086,14 +184,14 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Card 3 - Book Appointment Card */}
+            {/* Card 3 */}
+            {/* Card 3 - Updated Book Appointment Card */}
             <div className="col-12 col-md-4">
               <div
                 className="p-4 h-100"
                 style={{
                   border: "1px solid #E2E4E9",
                   boxShadow: "0px 4px 6px -1px #14181F1A",
-                  borderRadius: "8px",
                 }}
               >
                 <Calendar
@@ -1115,11 +213,6 @@ const Contact = () => {
                     <button
                       className={`${styles.btn1}`}
                       onClick={() => setIsBookingOpen(true)}
-                      style={{
-                        width: "100%",
-                        border: "none",
-                        cursor: "pointer",
-                      }}
                     >
                       Schedule Now
                     </button>
@@ -1146,6 +239,7 @@ const Contact = () => {
           </div>
 
           <div className="row gy-4 py-1 justify-content-center">
+            {/* Card 1 */}
             <div className="col-12 col-md-8">
               <div
                 className="p-4 h-100"
@@ -1153,7 +247,6 @@ const Contact = () => {
                   backgroundColor: "#ffffffff",
                   border: "1px solid #E2E4E9",
                   boxShadow: "0px 4px 6px -1px #14181F1A",
-                  borderRadius: "8px",
                 }}
               >
                 <form
@@ -1162,21 +255,14 @@ const Contact = () => {
                   autoComplete="off"
                 >
                   <div className="row d-flex justify-content-evenly">
-                    <div className="col-12 col-md-6 col-xl-6 px-3 mb-3">
+                    <div className="col-12 col-md-6 col-xl-6 px-3">
                       <div className="form_group">
-                        <label
-                          htmlFor="firstname"
-                          className="form-label fw-medium"
-                        >
-                          First Name *
+                        <label htmlFor="firstname" className="form-label">
+                          First Name
                         </label>
                         <input
                           type="text"
-                          className={`form-control ${
-                            formik.errors.firstname && formik.touched.firstname
-                              ? "is-invalid"
-                              : ""
-                          }`}
+                          className="form-control"
                           placeholder="First Name"
                           aria-label="First name"
                           name="firstname"
@@ -1187,26 +273,19 @@ const Contact = () => {
                         />
                       </div>
                       {formik.errors.firstname && formik.touched.firstname && (
-                        <div className="text-danger small pt-1">
+                        <p className="errors pt-2 mb-0">
                           {formik.errors.firstname}
-                        </div>
+                        </p>
                       )}
                     </div>
-                    <div className="col-12 col-md-6 col-xl-6 px-3 mb-3">
+                    <div className="col-12 col-md-6 col-xl-6 px-3">
                       <div className="form_group">
-                        <label
-                          htmlFor="lastname"
-                          className="form-label fw-medium"
-                        >
-                          Last Name *
+                        <label htmlFor="lastname" className="form-label">
+                          Last Name
                         </label>
                         <input
                           type="text"
-                          className={`form-control ${
-                            formik.errors.lastname && formik.touched.lastname
-                              ? "is-invalid"
-                              : ""
-                          }`}
+                          className="form-control"
                           placeholder="Last Name"
                           name="lastname"
                           autoComplete="off"
@@ -1216,27 +295,19 @@ const Contact = () => {
                         />
                       </div>
                       {formik.errors.lastname && formik.touched.lastname && (
-                        <div className="text-danger small pt-1">
+                        <p className="errors pt-2 mb-0">
                           {formik.errors.lastname}
-                        </div>
+                        </p>
                       )}
                     </div>
-                    <div className="col-12 col-md-6 col-xl-6 px-3 mb-3">
+                    <div className="col-12 col-md-6 col-xl-6 px-3">
                       <div className="form_group">
-                        <label
-                          htmlFor="emailaddress"
-                          className="form-label fw-medium"
-                        >
-                          Email Address *
+                        <label htmlFor="emailaddress" className="form-label">
+                          Email Address
                         </label>
                         <input
                           type="email"
-                          className={`form-control ${
-                            formik.errors.emailaddress &&
-                            formik.touched.emailaddress
-                              ? "is-invalid"
-                              : ""
-                          }`}
+                          className="form-control"
                           placeholder="Email Address"
                           autoComplete="off"
                           name="emailaddress"
@@ -1247,28 +318,20 @@ const Contact = () => {
                       </div>
                       {formik.errors.emailaddress &&
                         formik.touched.emailaddress && (
-                          <div className="text-danger small pt-1">
+                          <p className="errors pt-2 mb-0">
                             {formik.errors.emailaddress}
-                          </div>
+                          </p>
                         )}
                     </div>
-                    <div className="col-12 col-md-6 col-xl-6 px-3 mb-3">
+                    <div className="col-12 col-md-6 col-xl-6 px-3">
                       <div className="form_group">
-                        <label
-                          htmlFor="phonenumber"
-                          className="form-label fw-medium"
-                        >
-                          Phone Number *
+                        <label htmlFor="phonenumber" className="form-label">
+                          Phone Number
                         </label>
                         <input
                           type="tel"
-                          className={`form-control ${
-                            formik.errors.phonenumber &&
-                            formik.touched.phonenumber
-                              ? "is-invalid"
-                              : ""
-                          }`}
-                          placeholder="Phone Number"
+                          className="form-control"
+                          placeholder="Phone No"
                           autoComplete="off"
                           name="phonenumber"
                           value={formik.values.phonenumber}
@@ -1278,57 +341,45 @@ const Contact = () => {
                       </div>
                       {formik.errors.phonenumber &&
                         formik.touched.phonenumber && (
-                          <div className="text-danger small pt-1">
+                          <p className="errors pt-2 mb-0">
                             {formik.errors.phonenumber}
-                          </div>
+                          </p>
                         )}
                     </div>
-                    <div className="col-12 col-md-12 col-xl-12 px-3 mb-3">
+                    <div className="col-12 col-md-12 col-xl-12 px-3">
                       <div className="form_group">
-                        <label
-                          htmlFor="message"
-                          className="form-label fw-medium"
-                        >
-                          Message *
+                        <label htmlFor="message" className="form-label">
+                          Message
                         </label>
                         <textarea
-                          className={`form-control ${
-                            formik.errors.message && formik.touched.message
-                              ? "is-invalid"
-                              : ""
-                          }`}
+                          type="text"
+                          className="form-control"
+                          id="exampleFormControlTextarea1"
                           name="message"
                           placeholder="Tell us more about your project or inquiry..."
                           autoComplete="off"
                           value={formik.values.message}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
-                          rows="4"
+                          rows="3"
                           style={{ resize: "none" }}
                         ></textarea>
                       </div>
                       {formik.errors.message && formik.touched.message && (
-                        <div className="text-danger small pt-1">
+                        <p className="errors pt-2 mb-0">
                           {formik.errors.message}
-                        </div>
+                        </p>
                       )}
                     </div>
                   </div>
                   <div className="row justify-content-center">
                     <div className="col-12 col-md-12 col-xl-12 pt-4 pt-xl-3">
                       <button
-                        className={`${styles.btn1} ${
-                          isSubmitting ? "opacity-75" : ""
-                        }`}
+                        className={`${styles.btn1} `}
                         type="submit"
-                        disabled={isSubmitting}
-                        style={{
-                          width: "100%",
-                          border: "none",
-                          cursor: isSubmitting ? "not-allowed" : "pointer",
-                        }}
+                        htef="#"
                       >
-                        {isSubmitting ? "Sending..." : "Let's Connect"}
+                        Let's Connect
                       </button>
                     </div>
                   </div>
@@ -1339,57 +390,12 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Temporary Debug Section - Remove after testing */}
-      <div className="row justify-content-center mt-4 border-top pt-3">
-        <div className="col-12">
-          <p className="text-center small text-muted mb-2">
-            Debug API Endpoints:
-          </p>
-          <div className="d-flex gap-2 justify-content-center flex-wrap">
-            <button
-              type="button"
-              className="btn btn-outline-secondary btn-sm"
-              onClick={async () => {
-                try {
-                  const response = await fetch("/api");
-                  const data = await response.json();
-                  console.log("Main API GET:", data);
-                  alert(`Main API: ${data.message}`);
-                } catch (error) {
-                  console.error("Main API test failed:", error);
-                  alert(`Main API failed: ${error.message}`);
-                }
-              }}
-            >
-              Test /api
-            </button>
-            <button
-              type="button"
-              className="btn btn-outline-secondary btn-sm"
-              onClick={async () => {
-                try {
-                  const response = await fetch("/api/test");
-                  const data = await response.json();
-                  console.log("Test API GET:", data);
-                  alert(`Test API: ${data.message}`);
-                } catch (error) {
-                  console.error("Test API failed:", error);
-                  alert(`Test API failed: ${error.message}`);
-                }
-              }}
-            >
-              Test /api/test
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Visit Us Section */}
       <div className="container-fluid" style={{ backgroundColor: "#ffffffff" }}>
         <div className="container pt-md-5 pt-2 mx-auto" data-aos="fade-up">
           <div className="row gy-4 py-5">
-            {/* Google Maps */}
+            {/* Card 1 */}
             <div className="col-12 col-md-6">
+              {/* Google Map - Dallas Location */}
               <div
                 style={{
                   width: "100%",
@@ -1403,7 +409,7 @@ const Contact = () => {
                   src="https://www.google.com/maps?q=8105+Rasor+Blvd,+Plano,+TX,+Dallas,+USA&z=12&output=embed"
                   width="100%"
                   height="320"
-                  style={{ border: "1px solid #E2E4E9", borderRadius: "8px" }}
+                  style={{ border: "1px solid black", borderRadius: "8px" }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -1415,7 +421,7 @@ const Contact = () => {
                   width="100%"
                   height="320"
                   style={{
-                    border: "1px solid #E2E4E9",
+                    border: "1px solid black",
                     borderRadius: "8px",
                     marginTop: "16px",
                   }}
@@ -1426,7 +432,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Visit Us Information */}
+            {/* Visit Us */}
             <div className="col-12 col-md-6">
               <div className="h-100" style={{ backgroundColor: "#ffffffff" }}>
                 <p className={`${styles.para5} mb-0`}>
@@ -1437,15 +443,14 @@ const Contact = () => {
                   together.
                 </p>
 
-                {/* Headquarters Card */}
-                <div className="col-12 col-md-12 mb-3">
+                {/* card1 */}
+                <div className="col-12 col-md-12">
                   <div
                     className="p-3 h-100 d-flex align-items-start"
                     style={{
                       backgroundColor: "#F9FAFB",
                       border: "1px solid #E2E4E9",
                       gap: "16px",
-                      borderRadius: "8px",
                     }}
                   >
                     <MapPin
@@ -1470,15 +475,13 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* India Office Card */}
-                <div className="col-12 col-md-12 mb-3">
+                <div className="col-12 col-md-12 mt-3">
                   <div
                     className="p-3 h-100 d-flex align-items-start"
                     style={{
                       backgroundColor: "#F9FAFB",
                       border: "1px solid #E2E4E9",
                       gap: "16px",
-                      borderRadius: "8px",
                     }}
                   >
                     <MapPin
@@ -1502,15 +505,14 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Business Hours Card */}
-                <div className="col-12 col-md-12 mb-3">
+                {/* card2 */}
+                <div className="col-12 col-md-12 mt-3">
                   <div
                     className="p-3 h-100 d-flex align-items-start"
                     style={{
                       backgroundColor: "#F9FAFB",
                       border: "1px solid #E2E4E9",
                       gap: "16px",
-                      borderRadius: "8px",
                     }}
                   >
                     <Clock
@@ -1537,15 +539,14 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Email & Phone Card */}
-                <div className="col-12 col-md-12 mb-3">
+                {/* card3 */}
+                <div className="col-12 col-md-12 mt-3">
                   <div
                     className="p-3 h-100 d-flex align-items-start"
                     style={{
                       backgroundColor: "#F9FAFB",
                       border: "1px solid #E2E4E9",
                       gap: "16px",
-                      borderRadius: "8px",
                     }}
                   >
                     <Mail
@@ -1575,7 +576,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Social Media Section */}
       <main className="d-none d-lg-block py-5" data-aos="fade-up">
         <div
           className={`${styles.bgimage} container-fluid py-5 `}
@@ -1595,7 +595,6 @@ const Contact = () => {
             <Link
               href="https://www.linkedin.com/company/www.i11labs.com/posts/?feedView=all"
               target="_blank"
-              rel="noopener noreferrer"
             >
               <Image
                 src="/images/home/new/Linkedin.png"
@@ -1607,11 +606,7 @@ const Contact = () => {
               />
             </Link>
 
-            <Link
-              href="https://x.com/i11labs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://x.com/i11labs" target="_blank">
               <Image
                 src="/images/home/Twitter.png"
                 alt="Twitter"
@@ -1625,7 +620,6 @@ const Contact = () => {
             <Link
               href="https://www.instagram.com/i11labs_team?igsh=MW52djRxNHRjZ2lmcw=="
               target="_blank"
-              rel="noopener noreferrer"
             >
               <Image
                 src="/images/home/Instagram.png"
@@ -1640,6 +634,175 @@ const Contact = () => {
         </div>
       </main>
 
+      {/* <div className="container-fluid mb-5">
+        <div className="row">
+          <div className="col-lg-4 col-md-5 col-12 p-5" id="bgcolorsection">
+            <div className="bgcolorposition pt-5 pt-md-0">
+              <div className={`${styles.vr}`}>
+                <h2 className={`${styles.heading} ps-4 mb-0`}>Reach Us</h2>
+              </div>
+              <div className="pt-5 pt-md-3">
+                <p className={`${styles.para} mb-0`}>
+                  <Link
+                    style={{ textDecoration: "none", color: "#191E23" }}
+                    href="tel: (915) 235-9076"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    (915) 235-9076{" "}
+                  </Link>
+                </p>
+                <p className={`${styles.para} mb-0`}>
+                  <Link
+                    style={{ textDecoration: "none", color: "#191E23" }}
+                    href="mailto: connect@i11labs.com"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    connect@i11labs.com
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="offset-lg-2 col-lg-6 col-md-7 col-12 p-lg-5 pt-5 pt-md-0"
+            id="contactpad"
+          >
+            <div className={`${styles.vr}`}>
+              <h2 className={`${styles.heading} ps-4 mb-0`}>Write To Us</h2>
+              <p className={`${styles.subheading} ps-4 mb-0`}>
+                We would love to hear from you!
+              </p>
+            </div>
+            <div className="row">
+              <div className="col">
+                <form
+                  onSubmit={formik.handleSubmit}
+                  id="contactform"
+                  autoComplete="off"
+                >
+                  <div className="row">
+                    <div className="col-12 col-md-6 col-xl-5">
+                      <div className="form_group">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="First Name"
+                          aria-label="First name"
+                          name="firstname"
+                          autoComplete="off"
+                          value={formik.values.firstname}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                        />
+                      </div>
+                      {formik.errors.firstname && formik.touched.firstname && (
+                        <p className="errors pt-2 mb-0">
+                          {formik.errors.firstname}
+                        </p>
+                      )}
+                    </div>
+                    <div className="col-12 col-md-6 col-xl-5">
+                      <div className="form_group">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Last Name"
+                          name="lastname"
+                          autoComplete="off"
+                          value={formik.values.lastname}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                        />
+                      </div>
+                      {formik.errors.lastname && formik.touched.lastname && (
+                        <p className="errors pt-2 mb-0">
+                          {formik.errors.lastname}
+                        </p>
+                      )}
+                    </div>
+                    <div className="col-12 col-md-6 col-xl-5">
+                      <div className="form_group">
+                        <input
+                          type="email"
+                          className="form-control"
+                          placeholder="Email Address"
+                          autoComplete="off"
+                          name="emailaddress"
+                          value={formik.values.emailaddress}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                        />
+                      </div>
+                      {formik.errors.emailaddress &&
+                        formik.touched.emailaddress && (
+                          <p className="errors pt-2 mb-0">
+                            {formik.errors.emailaddress}
+                          </p>
+                        )}
+                    </div>
+                    <div className="col-12 col-md-6 col-xl-5">
+                      <div className="form_group">
+                        <input
+                          type="tel"
+                          className="form-control"
+                          placeholder="Phone No"
+                          autoComplete="off"
+                          name="phonenumber"
+                          value={formik.values.phonenumber}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                        />
+                      </div>
+                      {formik.errors.phonenumber &&
+                        formik.touched.phonenumber && (
+                          <p className="errors pt-2 mb-0">
+                            {formik.errors.phonenumber}
+                          </p>
+                        )}
+                    </div>
+                    <div className="col-12 col-md-12 col-xl-10">
+                      <div className="form_group">
+                        <textarea
+                          type="text"
+                          className="form-control"
+                          id="exampleFormControlTextarea1"
+                          name="message"
+                          placeholder="Your Message"
+                          autoComplete="off"
+                          value={formik.values.message}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          rows="3"
+                          style={{ resize: "none" }}
+                        ></textarea>
+                      </div>
+                      {formik.errors.message && formik.touched.message && (
+                        <p className="errors pt-2 mb-0">
+                          {formik.errors.message}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-12 col-xl-10 pt-4 pt-xl-5">
+                      <button
+                        className={`${styles.btn} `}
+                        type="submit"
+                        htef="#"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
       <BookingSidebar
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
@@ -1647,5 +810,4 @@ const Contact = () => {
     </>
   );
 };
-
 export default Contact;
